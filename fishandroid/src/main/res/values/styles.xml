@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="fishTheme" parent="android:Theme.Light"></style>
+
+    <style name="fishTheme.NoActionBar.FullScreen" parent="android:Theme.Light.NoTitleBar.Fullscreen"></style>
+
+    <style name="fishTheme.ProgressBar.Large" parent="android:Widget.ProgressBar.Large"></style>
+
+</resources>

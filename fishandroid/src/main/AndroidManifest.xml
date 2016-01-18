@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fish.fishapp">
+
+    <!-- <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.fish.fishapp.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.fish.fishapp.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- <permission android:name="com.fish.fishapp.permission.C2D_MESSAGE" android:protectionLevel="signature" /> -->
+    <application
+        android:name=".FishApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/fishTheme">
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/ic_launcher" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/app_id" />
+
+        <activity
+            android:name=".Main_Activity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Presentacio_Activity"
+            android:label="@string/title_activity_home"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Login_Activity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--
+        <activity
+            android:name="com.facebook.LoginActivity"
+            android:screenOrientation="portrait" />
+        -->
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".EulaAcceptar_Activity"
+            android:label="@string/title_activity_accept_eula"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Eula_Activity"
+            android:label="@string/title_activity_eula"
+            android:launchMode="singleTop"
+            android:parentActivityName=".EulaAcceptar_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feines.FeinesLlistat_Activity"
+            android:label="@string/title_activity_jobs"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PerfilEditar_Activity"
+            android:label="@string/title_activity_edit_profile"
+            android:launchMode="singleTop"
+            android:parentActivityName=".feines.FeinesLlistat_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Geolocalitzacio_Activity"
+            android:label="@string/title_activity_get_location"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".workerprofiles.WorkerProfilesActivity"
+            android:label="@string/title_activity_worker_profiles"
+            android:launchMode="singleTop"
+            android:parentActivityName=".feines.FeinesLlistat_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".workerprofiles.PerfilAfegirPerfilAddicional_Activity"
+            android:label="@string/title_activity_edit_worker_profile"
+            android:launchMode="singleTop"
+            android:parentActivityName=".workerprofiles.WorkerProfilesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".workerprofiles.CalendarViewActivity"
+            android:label="@string/title_activity_edit_calendar_worker_profile"
+            android:launchMode="singleTop"
+            android:parentActivityName=".workerprofiles.PerfilAfegirPerfilAddicional_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feines.FeinesDetall_Activity"
+            android:label="@string/title_activity_job_detail"
+            android:launchMode="singleTop"
+            android:parentActivityName=".feines.FeinesLlistat_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.FeinesContacte_Activity"
+            android:label="@string/title_activity_first_contact"
+            android:parentActivityName=".feines.FeinesLlistat_Activity" />
+        <activity
+            android:name=".contact.Xat_Activity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".feines.FeinesLlistat_Activity" />
+        <activity
+            android:name=".contact.Pagament_Activity"
+            android:label="@string/title_activity_pagament"
+            android:launchMode="singleTop"
+            android:parentActivityName=".contact.Pagament_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feines.FormulariContracte_Activity"
+            android:label="@string/title_activity_formulari_contracte"
+            android:launchMode="singleTop"
+            android:parentActivityName=".feines.FormulariContracte_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".feines.FormulariTreballador_Activity"
+            android:label="@string/title_activity_formulari_contracte"
+            android:launchMode="singleTop"
+            android:parentActivityName=".feines.FormulariContracte_Activity"
+            android:screenOrientation="portrait" />
+
+        <!--
+        <activity
+            android:name=".contact.ChatActivity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".feines.FeinesLlistat_Activity" >
+        </activity>
+        <activity
+            android:name=".ChatListActivity"
+            android:label="@string/title_activity_chat_list"
+            android:parentActivityName=".feines.FeinesLlistat_Activity" >
+        </activity>
+        -->
+        <!--
+        <activity
+            android:name="com.fish.fishapp.workerprofiles.CalendarActivity"
+            android:label="@string/title_activity_calendar" >
+        </activity>
+        -->
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.fish.fishapp" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".MyPushReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.fish.fishapp.UPDATE_STATUS" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.parse.ParsePushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <!-- <action android:name="com.parse.push.intent.OPEN" /> -->
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".feines.InfoContracteActivity" />
+        <activity android:name=".notificacions.LlistaNotificacions_Activity"></activity>
+    </application>
+
+</manifest>

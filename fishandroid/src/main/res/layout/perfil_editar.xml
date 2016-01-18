@@ -1,0 +1,180 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fish.fishapp.PerfilEditar_Activity"
+    tools:ignore="MergeRootFrame">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/mainScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imageViewProfilePicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal|top"
+                android:src="@drawable/ic_perm_group_personal_info"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:onClick="clickImage"
+                app:riv_corner_radius="10dp"
+                app:riv_border_width="1dp"
+                app:riv_border_color="#333333"
+                app:riv_mutate_background="false"
+                app:riv_oval="false"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:id="@+id/editTextProfileName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:clickable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/surname"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:id="@+id/editTextProfileSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:clickable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/text_gender"
+                android:layout_margin="10dp" />
+
+            <Spinner
+                android:id="@+id/spinnerProfileGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/list_of_genders"
+                android:prompt="@string/currency_prompt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:id="@+id/editTextProfilePhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number|phone"
+                android:clickable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/currency_prompt"
+                android:layout_margin="10dp" />
+
+            <Spinner
+                android:id="@+id/spinnerProfileCurrency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/list_of_currencies"
+                android:prompt="@string/currency_prompt"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:id="@+id/editTextProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/email"
+                android:clickable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/position"
+                android:layout_margin="10dp" />
+
+            <EditText
+                android:id="@+id/editTextProfileLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/position"
+                android:clickable="false"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/buttonUpdateLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:onClick="clickUpdateLocation"
+                android:text="@string/update_location"
+                android:singleLine="true"
+                android:layout_margin="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

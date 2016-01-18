@@ -1,0 +1,1923 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="form_cnae_array">
+        <item>Selecciona CNAE</item>
+        <item>Agricultura, ganadería, caza y servicios</item>
+        <item>Cultivos no perennes</item>
+        <item>Cultivo de cereales (excepto arroz), leg</item>
+        <item>Cultivo de arroz</item>
+        <item>Cultivo de hortalizas, raíces y tubércul</item>
+        <item>Cultivo de caña de azúcar</item>
+        <item>Cultivo de tabaco</item>
+        <item>Cultivo de plantas para fibras textiles</item>
+        <item>Otros cultivos no perennes</item>
+        <item>Cultivos perennes</item>
+        <item>Cultivo de la vid</item>
+        <item>Cultivo de frutos tropicales y subtropic</item>
+        <item>Cultivo de cítricos</item>
+        <item>Cultivo de frutos con hueso y pepitas</item>
+        <item>Cultivo de otros árboles y arbustos frut</item>
+        <item>Cultivo de frutos oleaginosos</item>
+        <item>Cultivo de plantas para bebidas</item>
+        <item>Cultivo de especias, plantas aromáticas,</item>
+        <item>Otros cultivos perennes</item>
+        <item>Propagación de plantas</item>
+        <item>Propagación de plantas</item>
+        <item>Producción ganadera</item>
+        <item>Explotación de ganado bovino para la pro</item>
+        <item>Explotación de otro ganado bovino y búfa</item>
+        <item>Explotación de caballos y otros equinos</item>
+        <item>Explotación de camellos y otros camélido</item>
+        <item>Explotación de ganado ovino y caprino</item>
+        <item>Explotación de ganado porcino</item>
+        <item>Avicultura</item>
+        <item>Otras explotaciones de ganado</item>
+        <item>Producción agrícola combinada con la pro</item>
+        <item>Producción agrícola combinada con la pro</item>
+        <item>Actividades de apoyo a la agricultura, a</item>
+        <item>Actividades de apoyo a la agricultura</item>
+        <item>Actividades de apoyo a la ganadería</item>
+        <item>Actividades de preparación posterior a l</item>
+        <item>Tratamiento de semillas para reproducció</item>
+        <item>Caza, captura de animales y servicios re</item>
+        <item>Caza, captura de animales y servicios re</item>
+        <item>Silvicultura y explotación forestal</item>
+        <item>Silvicultura y otras actividades foresta</item>
+        <item>Silvicultura y otras actividades foresta</item>
+        <item>Explotación de la madera</item>
+        <item>Explotación de la madera</item>
+        <item>Recolección de productos silvestres, exc</item>
+        <item>Recolección de productos silvestres, exc</item>
+        <item>Servicios de apoyo a la silvicultura</item>
+        <item>Servicios de apoyo a la silvicultura</item>
+        <item>Pesca y acuicultura</item>
+        <item>Pesca</item>
+        <item>Pesca marina</item>
+        <item>Pesca en agua dulce</item>
+        <item>Acuicultura</item>
+        <item>Acuicultura marina</item>
+        <item>Acuicultura en agua dulce</item>
+        <item>Extracción de antracita, hulla y lignito</item>
+        <item>Extracción de antracita y hulla</item>
+        <item>Extracción de antracita y hulla</item>
+        <item>Extracción de lignito</item>
+        <item>Extracción de lignito</item>
+        <item>Extracción de crudo de petróleo y gas na</item>
+        <item>Extracción de crudo de petróleo</item>
+        <item>Extracción de crudo de petróleo</item>
+        <item>Extracción de gas natural</item>
+        <item>Extracción de gas natural</item>
+        <item>Extracción de minerales metálicos</item>
+        <item>Extracción de minerales de hierro</item>
+        <item>Extracción de minerales de hierro</item>
+        <item>Extracción de minerales metálicos no fér</item>
+        <item>Extracción de minerales de uranio y tori</item>
+        <item>Extracción de otros minerales metálicos </item>
+        <item>Otras industrias extractivas</item>
+        <item>Extracción de piedra, arena y arcilla</item>
+        <item>Extracción de piedra ornamental y para l</item>
+        <item>Extracción de gravas y arenas; extracció</item>
+        <item>Industrias extractivas n.c.o.p.</item>
+        <item>Extracción de minerales para productos q</item>
+        <item>Extracción de turba</item>
+        <item>Extracción de sal</item>
+        <item>Otras industrias extractivas n.c.o.p.</item>
+        <item>Actividades de apoyo a las industrias ex</item>
+        <item>Actividades de apoyo a la extracción de </item>
+        <item>Actividades de apoyo a la extracción de </item>
+        <item>Actividades de apoyo a otras industrias </item>
+        <item>Actividades de apoyo a otras industrias </item>
+        <item>Industria de la alimentación</item>
+        <item>Procesado y conservación de carne y elab</item>
+        <item>Procesado y conservación de carne</item>
+        <item>Procesado y conservación de volatería</item>
+        <item>Elaboración de productos cárnicos y de v</item>
+        <item>Procesado y conservación de pescados, cr</item>
+        <item>Procesado de pescados, crustáceos y molu</item>
+        <item>Artes gráficas y reproducción de soporte</item>
+        <item>Artes gráficas y servicios relacionadas </item>
+        <item>Impresión de periódicos</item>
+        <item>Otras actividades de impresión y artes g</item>
+        <item>Servicios de preimpresión y preparación </item>
+        <item>Encuadernación y servicios relacionados </item>
+        <item>Reproducción de soportes grabados</item>
+        <item>Reproducción de soportes grabados</item>
+        <item>Coquerías y refino de petróleo</item>
+        <item>Coquerías</item>
+        <item>Coquerías</item>
+        <item>Refino de petróleo</item>
+        <item>Refino de petróleo</item>
+        <item>Industria química</item>
+        <item>Fabricación de productos químicos básico</item>
+        <item>Fabricación de gases industriales</item>
+        <item>Fabricación de colorantes y pigmentos</item>
+        <item>Fabricación de otros productos básicos d</item>
+        <item>Fabricación de otros productos básicos d</item>
+        <item>Fabricación de fertilizantes y compuesto</item>
+        <item>Fabricación de plásticos en formas prima</item>
+        <item>Fabricación de caucho sintético en forma</item>
+        <item>Fabricación de pesticidas y otros produc</item>
+        <item>Fabricación de pesticidas y otros produc</item>
+        <item>Fabricación de pinturas, barnices y reve</item>
+        <item>Fabricación de pinturas, barnices y reve</item>
+        <item>Fabricación de jabones, detergentes y ot</item>
+        <item>Fabricación de jabones, detergentes y ot</item>
+        <item>Fabricación de perfumes y cosméticos</item>
+        <item>Fabricación de otros productos químicos</item>
+        <item>Fabricación de explosivos</item>
+        <item>Fabricación de colas</item>
+        <item>Fabricación de aceites esenciales</item>
+        <item>Fabricación de otros productos químicos </item>
+        <item>Fabricación de fibras artificiales y sin</item>
+        <item>Fabricación de fibras artificiales y sin</item>
+        <item>Fabricación de productos farmacéuticos d</item>
+        <item>Fabricación de productos farmacéuticos d</item>
+        <item>Fabricación de especialidades farmacéuti</item>
+        <item>Fabricación de especialidades farmacéuti</item>
+        <item>Fabricación de productos de caucho</item>
+        <item>Fabricación de neumáticos y cámaras de c</item>
+        <item>Fabricación de otros productos de caucho</item>
+        <item>Fabricación de productos de plástico</item>
+        <item>Fabricación de placas, hojas, tubos y pe</item>
+        <item>Fabricación de envases y embalajes de pl</item>
+        <item>Fabricación de productos de plástico par</item>
+        <item>Fabricación de otros productos de plásti</item>
+        <item>Fabricación de vidrio y productos de vid</item>
+        <item>Fabricación de vidrio plano</item>
+        <item>Manipulado y transformación de vidrio pl</item>
+        <item>Fabricación de vidrio hueco</item>
+        <item>Fabricación de fibra de vidrio</item>
+        <item>Fabricación y manipulado de otro vidrio,</item>
+        <item>Fabricación de productos cerámicos refra</item>
+        <item>Fabricación de productos cerámicos refra</item>
+        <item>Fabricación de productos cerámicos para </item>
+        <item>Fabricación de azulejos y baldosas de ce</item>
+        <item>Fabricación de ladrillos, tejas y produc</item>
+        <item>Fabricación de otros productos cerámicos</item>
+        <item>Fabricación de artículos cerámicos de us</item>
+        <item>Fabricación de aparatos sanitarios cerám</item>
+        <item>Fabricación de aisladores y piezas aisla</item>
+        <item>Fabricación de otros productos cerámicos</item>
+        <item>Fabricación de otros productos cerámicos</item>
+        <item>Fabricación de cemento, cal y yeso</item>
+        <item>Fabricación de cemento</item>
+        <item>Fabricación de cal y yeso</item>
+        <item>Fabricación de elementos de hormigón, ce</item>
+        <item>Fabricación de elementos de hormigón par</item>
+        <item>Fabricación de elementos de yeso para la</item>
+        <item>Fabricación de hormigón fresco</item>
+        <item>Fabricación de mortero</item>
+        <item>Fabricación de fibrocemento</item>
+        <item>Fabricación de otros productos de hormig</item>
+        <item>Corte, tallado y acabado de la piedra</item>
+        <item>Corte, tallado y acabado de la piedra</item>
+        <item>Fabricación de productos abrasivos y pro</item>
+        <item>Fabricación de productos abrasivos</item>
+        <item>Fabricación de otros productos minerales</item>
+        <item>Fabricación de productos básicos de hier</item>
+        <item>Fabricación de productos básicos de hier</item>
+        <item>Fabricación de tubos, tuberías, perfiles</item>
+        <item>Fabricación de maquinaria de uso general</item>
+        <item>Comercio al por mayor de materias primas</item>
+        <item>Comercio al por mayor de cereales, tabac</item>
+        <item>Comercio al por mayor de flores y planta</item>
+        <item>Comercio al por mayor de animales vivos</item>
+        <item>Comercio al por mayor de cueros y pieles</item>
+        <item>Comercio al por mayor de productos alime</item>
+        <item>Comercio al por mayor de frutas y hortal</item>
+        <item>Comercio al por mayor de carne y product</item>
+        <item>Comercio al por mayor de productos lácte</item>
+        <item>Comercio al por mayor de bebidas</item>
+        <item>Comercio al por mayor de productos del t</item>
+        <item>Comercio al por mayor de azúcar, chocola</item>
+        <item>Comercio al por mayor de café, té, cacao</item>
+        <item>Comercio al por mayor de pescados, maris</item>
+        <item>Comercio al por mayor, no especializado,</item>
+        <item>Comercio al por mayor de artículos de us</item>
+        <item>Comercio al por mayor de textiles</item>
+        <item>Comercio al por mayor de prendas de vest</item>
+        <item>Comercio al por mayor de aparatos electr</item>
+        <item>Comercio al por mayor de porcelana, cris</item>
+        <item>Comercio al por mayor de productos de pe</item>
+        <item>Comercio al por mayor de productos farma</item>
+        <item>Comercio al por mayor de muebles, alfomb</item>
+        <item>Comercio al por mayor de artículos de re</item>
+        <item>Comercio al por mayor de otros artículos</item>
+        <item>Comercio al por mayor de equipos para la</item>
+        <item>Comercio al por mayor de ordenadores, eq</item>
+        <item>Comercio al por mayor de equipos electró</item>
+        <item>Comercio al por mayor de otra maquinaria</item>
+        <item>Comercio al por mayor de maquinaria, equ</item>
+        <item>Comercio al por mayor de máquinas herram</item>
+        <item>Comercio al por mayor de maquinaria para</item>
+        <item>Comercio al por mayor de maquinaria para</item>
+        <item>Comercio al por mayor de muebles de ofic</item>
+        <item>Comercio al por mayor de otra maquinaria</item>
+        <item>Comercio al por mayor de otra maquinaria</item>
+        <item>Otro comercio al por mayor especializado</item>
+        <item>Comercio al por mayor de combustibles só</item>
+        <item>Comercio al por mayor de metales y miner</item>
+        <item>Comercio al por mayor de madera, materia</item>
+        <item>Comercio al por mayor de ferretería, fon</item>
+        <item>Comercio al por mayor de productos quími</item>
+        <item>Comercio al por mayor de otros productos</item>
+        <item>Comercio al por mayor de chatarra y prod</item>
+        <item>Comercio al por mayor no especializado</item>
+        <item>Comercio al por mayor no especializado</item>
+        <item>Comercio al por menor, excepto de vehícu</item>
+        <item>Comercio al por menor en establecimiento</item>
+        <item>Comercio al por menor en establecimiento</item>
+        <item>Otro comercio al por menor en establecim</item>
+        <item>Comercio al por menor de productos alime</item>
+        <item>Comercio al por menor de frutas y hortal</item>
+        <item>Comercio al por menor de carne y product</item>
+        <item>Comercio al por menor de pescados y mari</item>
+        <item>Comercio al por menor de pan y productos</item>
+        <item>Comercio al por menor de bebidas en esta</item>
+        <item>Comercio al por menor de productos de ta</item>
+        <item>Otro comercio al por menor de productos </item>
+        <item>Comercio al por menor de combustible par</item>
+        <item>Comercio al por menor de combustible par</item>
+        <item>Comercio al por menor de equipos para la</item>
+        <item>Comercio al por menor de ordenadores, eq</item>
+        <item>Comercio al por menor de equipos de tele</item>
+        <item>Comercio al por menor de equipos de audi</item>
+        <item>Comercio al por menor de otros artículos</item>
+        <item>Comercio al por menor de textiles en est</item>
+        <item>Comercio al por menor de ferretería, pin</item>
+        <item>Comercio al por menor de alfombras, moqu</item>
+        <item>Comercio al por menor de aparatos electr</item>
+        <item>Comercio al por menor de muebles, aparat</item>
+        <item>Comercio al por menor de artículos cultu</item>
+        <item>Comercio al por menor de libros en estab</item>
+        <item>Comercio al por menor de periódicos y ar</item>
+        <item>Comercio al por menor de grabaciones de </item>
+        <item>Comercio al por menor de artículos depor</item>
+        <item>Fabricación de equipos de transmisión hi</item>
+        <item>Comercio al por menor de juegos y juguet</item>
+        <item>Comercio al por menor de otros artículos</item>
+        <item>Comercio al por menor de prendas de vest</item>
+        <item>Comercio al por menor de calzado y artíc</item>
+        <item>Comercio al por menor de productos farma</item>
+        <item>Comercio al por menor de artículos médic</item>
+        <item>Comercio al por menor de productos cosmé</item>
+        <item>Comercio al por menor de flores, plantas</item>
+        <item>Comercio al por menor de artículos de re</item>
+        <item>Otro comercio al por menor de artículos </item>
+        <item>Comercio al por menor de artículos de se</item>
+        <item>Comercio al por menor en puestos de vent</item>
+        <item>Comercio al por menor de productos alime</item>
+        <item>Comercio al por menor de productos texti</item>
+        <item>Comercio al por menor de otros productos</item>
+        <item>Comercio al por menor no realizado ni en</item>
+        <item>Comercio al por menor por correspondenci</item>
+        <item>Otro comercio al por menor no realizado </item>
+        <item>Transporte terrestre y por tubería</item>
+        <item>Transporte interurbano de pasajeros por </item>
+        <item>Transporte interurbano de pasajeros por </item>
+        <item>Transporte de mercancías por ferrocarril</item>
+        <item>Transporte de mercancías por ferrocarril</item>
+        <item>Otro transporte terrestre de pasajeros</item>
+        <item>Transporte terrestre urbano y suburbano </item>
+        <item>Transporte por taxi</item>
+        <item>Otros tipos de transporte terrestre de p</item>
+        <item>Transporte de mercancías por carretera y</item>
+        <item>Transporte de mercancías por carretera</item>
+        <item>Servicios de mudanza</item>
+        <item>Transporte por tubería</item>
+        <item>Transporte por tubería</item>
+        <item>Transporte marítimo y por vías navegable</item>
+        <item>Transporte marítimo de pasajeros</item>
+        <item>Transporte marítimo de pasajeros</item>
+        <item>Transporte marítimo de mercancías</item>
+        <item>Transporte marítimo de mercancías</item>
+        <item>Transporte de pasajeros por vías navegab</item>
+        <item>Transporte de pasajeros por vías navegab</item>
+        <item>Transporte de mercancías por vías navega</item>
+        <item>Transporte de mercancías por vías navega</item>
+        <item>Transporte aéreo de pasajeros</item>
+        <item>Transporte aéreo de pasajeros</item>
+        <item>Transporte aéreo de mercancías y transpo</item>
+        <item>Transporte aéreo de mercancías</item>
+        <item>Transporte espacial</item>
+        <item>Depósito y almacenamiento</item>
+        <item>Depósito y almacenamiento</item>
+        <item>Actividades anexas al transporte</item>
+        <item>Actividades anexas al transporte terrest</item>
+        <item>Actividades anexas al transporte marítim</item>
+        <item>Actividades anexas al transporte aéreo</item>
+        <item>Manipulación de mercancías</item>
+        <item>Otras actividades anexas al transporte</item>
+        <item>Actividades postales y de correos</item>
+        <item>Actividades postales sometidas a la obli</item>
+        <item>Actividades postales sometidas a la obli</item>
+        <item>Otras actividades postales y de correos</item>
+        <item>Otras actividades postales y de correos</item>
+        <item>Servicios de alojamiento</item>
+        <item>Hoteles y alojamientos similares</item>
+        <item>Hoteles y alojamientos similares</item>
+        <item>Alojamientos turísticos y otros alojamie</item>
+        <item>Alojamientos turísticos y otros alojamie</item>
+        <item>Campings</item>
+        <item>Campings</item>
+        <item>Otros alojamientos</item>
+        <item>Otros alojamientos</item>
+        <item>Servicios de comidas y bebidas</item>
+        <item>Restaurantes y puestos de comidas</item>
+        <item>Restaurantes y puestos de comidas</item>
+        <item>Provisión de comidas preparadas para eve</item>
+        <item>Provisión de comidas preparadas para eve</item>
+        <item>Otros servicios de comidas</item>
+        <item>Establecimientos de bebidas</item>
+        <item>Establecimientos de bebidas</item>
+        <item>Edición</item>
+        <item>Edición de libros, periódicos y otras ac</item>
+        <item>Edición de libros</item>
+        <item>Edición de directorios y guías de direcc</item>
+        <item>Edición de periódicos</item>
+        <item>Edición de revistas</item>
+        <item>Otras actividades editoriales</item>
+        <item>Edición de programas informáticos</item>
+        <item>Edición de videojuegos</item>
+        <item>Edición de otros programas informáticos</item>
+        <item>Actividades cinematográficas, de vídeo y</item>
+        <item>Actividades cinematográficas, de vídeo y</item>
+        <item>Actividades de postproducción cinematogr</item>
+        <item>Actividades de exhibición cinematográfic</item>
+        <item>Actividades de producción cinematográfic</item>
+        <item>Actividades de producción de programas d</item>
+        <item>Actividades de distribución cinematográf</item>
+        <item>Actividades de distribución de programas</item>
+        <item>Actividades de grabación de sonido y edi</item>
+        <item>Actividades de grabación de sonido y edi</item>
+        <item>Actividades de programación y emisión de</item>
+        <item>Actividades de radiodifusión</item>
+        <item>Actividades de radiodifusión</item>
+        <item>Actividades de programación y emisión de</item>
+        <item>Actividades de programación y emisión de</item>
+        <item>Telecomunicaciones por cable</item>
+        <item>Telecomunicaciones por cable</item>
+        <item>Telecomunicaciones inalámbricas</item>
+        <item>Telecomunicaciones inalámbricas</item>
+        <item>Telecomunicaciones por satélite</item>
+        <item>Telecomunicaciones por satélite</item>
+        <item>Otras actividades de telecomunicaciones</item>
+        <item>Otras actividades de telecomunicaciones</item>
+        <item>Actividades de programación informática</item>
+        <item>Actividades de consultoría informática</item>
+        <item>Gestión de recursos informáticos</item>
+        <item>Otros servicios relacionados con las tec</item>
+        <item>Servicios de información</item>
+        <item>Proceso de datos, hosting y actividades </item>
+        <item>Proceso de datos, hosting y actividades </item>
+        <item>Portales web</item>
+        <item>Otros servicios de información</item>
+        <item>Actividades de las agencias de noticias</item>
+        <item>Otros servicios de información n.c.o.p.</item>
+        <item>Servicios financieros, excepto seguros y</item>
+        <item>Intermediación monetaria</item>
+        <item>Banco central</item>
+        <item>Otra intermediación monetaria</item>
+        <item>Actividades de las sociedades holding</item>
+        <item>Actividades de las sociedades holding</item>
+        <item>Inversión colectiva, fondos y entidades </item>
+        <item>Inversión colectiva, fondos y entidades </item>
+        <item>Otros servicios financieros, excepto seg</item>
+        <item>Arrendamiento financiero</item>
+        <item>Otras actividades crediticias</item>
+        <item>Otros servicios financieros, excepto seg</item>
+        <item>Seguros, reaseguros y fondos de pensione</item>
+        <item>Seguros</item>
+        <item>Seguros de vida</item>
+        <item>Seguros distintos de los seguros de vida</item>
+        <item>Reaseguros</item>
+        <item>Reaseguros</item>
+        <item>Fondos de pensiones</item>
+        <item>Fondos de pensiones</item>
+        <item>Actividades auxiliares a los servicios f</item>
+        <item>Actividades auxiliares a los servicios f</item>
+        <item>Administración de mercados financieros</item>
+        <item>Actividades de intermediación en operaci</item>
+        <item>Otras actividades auxiliares a los servi</item>
+        <item>Actividades auxiliares a seguros y fondo</item>
+        <item>Evaluación de riesgos y daños</item>
+        <item>Actividades de agentes y corredores de s</item>
+        <item>Otras actividades auxiliares a seguros y</item>
+        <item>Actividades de gestión de fondos</item>
+        <item>Actividades de gestión de fondos</item>
+        <item>Actividades inmobiliarias</item>
+        <item>Compraventa de bienes inmobiliarios por </item>
+        <item>Compraventa de bienes inmobiliarios por </item>
+        <item>Alquiler de bienes inmobiliarios por cue</item>
+        <item>Alquiler de bienes inmobiliarios por cue</item>
+        <item>Actividades inmobiliarias por cuenta de </item>
+        <item>Agentes de la propiedad inmobiliaria</item>
+        <item>Gestión y administración de la propiedad</item>
+        <item>Actividades jurídicas y de contabilidad</item>
+        <item>Actividades jurídicas</item>
+        <item>Actividades jurídicas</item>
+        <item>Actividades de contabilidad, teneduría d</item>
+        <item>Actividades de contabilidad, teneduría d</item>
+        <item>Actividades de las sedes centrales; acti</item>
+        <item>Actividades de las sedes centrales</item>
+        <item>Actividades de las sedes centrales</item>
+        <item>Actividades de consultoría de gestión em</item>
+        <item>Relaciones públicas y comunicación</item>
+        <item>Otras actividades de consultoría de gest</item>
+        <item>Servicios técnicos de arquitectura e ing</item>
+        <item>Servicios técnicos de arquitectura</item>
+        <item>Servicios técnicos de ingeniería y otras</item>
+        <item>Ensayos y análisis técnicos</item>
+        <item>Ensayos y análisis técnicos</item>
+        <item>Investigación y desarrollo experimental </item>
+        <item>Otra investigación y desarrollo experime</item>
+        <item>Investigación y desarrollo experimental </item>
+        <item>Investigación y desarrollo experimental </item>
+        <item>Publicidad y estudios de mercado</item>
+        <item>Publicidad</item>
+        <item>Agencias de publicidad</item>
+        <item>Servicios de representación de medios de</item>
+        <item>Estudios de mercado y realización de enc</item>
+        <item>Estudios de mercado y realización de enc</item>
+        <item>Otras actividades profesionales, científ</item>
+        <item>Actividades de diseño especializado</item>
+        <item>Actividades de diseño especializado</item>
+        <item>Actividades de fotografía</item>
+        <item>Actividades de fotografía</item>
+        <item>Actividades de traducción e interpretaci</item>
+        <item>Actividades de traducción e interpretaci</item>
+        <item>Otras actividades profesionales, científ</item>
+        <item>Otras actividades profesionales, científ</item>
+        <item>Actividades veterinarias</item>
+        <item>Actividades veterinarias</item>
+        <item>Actividades veterinarias</item>
+        <item>Actividades de alquiler</item>
+        <item>Alquiler de vehículos de motor</item>
+        <item>Alquiler de automóviles y vehículos de m</item>
+        <item>Alquiler de camiones</item>
+        <item>Alquiler de efectos personales y artícul</item>
+        <item>Alquiler de artículos de ocio y deportiv</item>
+        <item>Alquiler de cintas de vídeo y discos</item>
+        <item>Alquiler de otros efectos personales y a</item>
+        <item>Alquiler de otra maquinaria, equipos y b</item>
+        <item>Alquiler de maquinaria y equipo de uso a</item>
+        <item>Alquiler de maquinaria y equipo para la </item>
+        <item>Alquiler de maquinaria y equipo de ofici</item>
+        <item>Alquiler de medios de navegación</item>
+        <item>Alquiler de medios de transporte aéreo</item>
+        <item>Alquiler de otra maquinaria, equipos y b</item>
+        <item>Arrendamiento de la propiedad intelectua</item>
+        <item>Arrendamiento de la propiedad intelectua</item>
+        <item>Actividades relacionadas con el empleo</item>
+        <item>Actividades de las agencias de colocació</item>
+        <item>Actividades de las agencias de colocació</item>
+        <item>Actividades de las empresas de trabajo t</item>
+        <item>Actividades de las empresas de trabajo t</item>
+        <item>Otra provisión de recursos humanos</item>
+        <item>Otra provisión de recursos humanos</item>
+        <item>Actividades de agencias de viajes, opera</item>
+        <item>Actividades de agencias de viajes y oper</item>
+        <item>Actividades de las agencias de viajes</item>
+        <item>Actividades de los operadores turísticos</item>
+        <item>Otros servicios de reservas y actividade</item>
+        <item>Otros servicios de reservas y actividade</item>
+        <item>Actividades de seguridad e investigación</item>
+        <item>Actividades de seguridad privada</item>
+        <item>Actividades de seguridad privada</item>
+        <item>Servicios de sistemas de seguridad</item>
+        <item>Servicios de sistemas de seguridad</item>
+        <item>Actividades de investigación</item>
+        <item>Actividades de investigación</item>
+        <item>Servicios integrales a edificios e insta</item>
+        <item>Limpieza general de edificios</item>
+        <item>Otras actividades de limpieza industrial</item>
+        <item>Otras actividades de limpieza</item>
+        <item>Actividades de jardinería</item>
+        <item>Actividades de jardinería</item>
+        <item>Actividades administrativas de oficina y</item>
+        <item>Actividades administrativas y auxiliares</item>
+        <item>Servicios administrativos combinados</item>
+        <item>Actividades de fotocopiado, preparación </item>
+        <item>Actividades de los centros de llamadas</item>
+        <item>Actividades de los centros de llamadas</item>
+        <item>Organización de convenciones y ferias de</item>
+        <item>Organización de convenciones y ferias de</item>
+        <item>Actividades de apoyo a las empresas n.c.</item>
+        <item>Actividades de las agencias de cobros y </item>
+        <item>Actividades de envasado y empaquetado</item>
+        <item>Otras actividades de apoyo a las empresa</item>
+        <item>Administración Pública y defensa; Seguri</item>
+        <item>Administración Pública y de la política </item>
+        <item>Actividades generales de la Administraci</item>
+        <item>Regulación de las actividades sanitarias</item>
+        <item>Regulación de la actividad económica y c</item>
+        <item>Prestación de servicios a la comunidad e</item>
+        <item>Asuntos exteriores</item>
+        <item>Defensa</item>
+        <item>Justicia</item>
+        <item>Orden público y seguridad</item>
+        <item>Protección civil</item>
+        <item>Seguridad Social obligatoria</item>
+        <item>Seguridad Social obligatoria</item>
+        <item>Educación</item>
+        <item>Educación preprimaria</item>
+        <item>Educación preprimaria</item>
+        <item>Educación primaria</item>
+        <item>Educación primaria</item>
+        <item>Educación secundaria</item>
+        <item>Educación secundaria general</item>
+        <item>Educación secundaria técnica y profesion</item>
+        <item>Educación postsecundaria</item>
+        <item>Educación postsecundaria no terciaria</item>
+        <item>Educación universitaria</item>
+        <item>Educación terciaria no universitaria</item>
+        <item>Otra educación</item>
+        <item>Educación deportiva y recreativa</item>
+        <item>Educación cultural</item>
+        <item>Actividades de las escuelas de conducció</item>
+        <item>Otra educación n.c.o.p.</item>
+        <item>Actividades auxiliares a la educación</item>
+        <item>Actividades auxiliares a la educación</item>
+        <item>Actividades sanitarias</item>
+        <item>Actividades hospitalarias</item>
+        <item>Actividades hospitalarias</item>
+        <item>Actividades médicas y odontológicas</item>
+        <item>Actividades de medicina general</item>
+        <item>Actividades de medicina especializada</item>
+        <item>Actividades odontológicas</item>
+        <item>Otras actividades sanitarias</item>
+        <item>Otras actividades sanitarias</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Asistencia en establecimientos residenci</item>
+        <item>Otras actividades de asistencia en estab</item>
+        <item>Otras actividades de asistencia en estab</item>
+        <item>Actividades de servicios sociales sin al</item>
+        <item>Actividades de servicios sociales sin al</item>
+        <item>Actividades de servicios sociales sin al</item>
+        <item>Actividades de servicios sociales sin al</item>
+        <item>Otras actividades de servicios sociales </item>
+        <item>Actividades de cuidado diurno de niños</item>
+        <item>Otras actividades de servicios sociales </item>
+        <item>Actividades de creación, artísticas y es</item>
+        <item>Actividades de creación, artísticas y es</item>
+        <item>Artes escénicas</item>
+        <item>Actividades auxiliares a las artes escén</item>
+        <item>Creación artística y literaria</item>
+        <item>Gestión de salas de espectáculos</item>
+        <item>Actividades de museos</item>
+        <item>Gestión de lugares y edificios histórico</item>
+        <item>Actividades de los jardines botánicos, p</item>
+        <item>Actividades de bibliotecas</item>
+        <item>Actividades archivos</item>
+        <item>Actividades de juegos de azar y apuestas</item>
+        <item>Actividades de juegos de azar y apuestas</item>
+        <item>Actividades de juegos de azar y apuestas</item>
+        <item>Actividades deportivas, recreativas y de</item>
+        <item>Actividades deportivas</item>
+        <item>Gestión de instalaciones deportivas</item>
+        <item>Actividades de los clubes deportivos</item>
+        <item>Actividades de los gimnasios</item>
+        <item>Otras actividades deportivas</item>
+        <item>Actividades recreativas y de entretenimi</item>
+        <item>Actividades de los parques de atraccione</item>
+        <item>Otras actividades recreativas y de entre</item>
+        <item>Actividades asociativas</item>
+        <item>Actividades de organizaciones empresaria</item>
+        <item>Actividades de organizaciones empresaria</item>
+        <item>Actividades de organizaciones profesiona</item>
+        <item>Actividades sindicales</item>
+        <item>Actividades sindicales</item>
+        <item>Otras actividades asociativas</item>
+        <item>Actividades de organizaciones religiosas</item>
+        <item>Actividades de organizaciones políticas</item>
+        <item>Otras actividades asociativas n.c.o.p.</item>
+        <item>Reparación de ordenadores, efectos perso</item>
+        <item>Reparación de ordenadores y equipos de c</item>
+        <item>Reparación de ordenadores y equipos peri</item>
+        <item>Reparación de equipos de comunicación</item>
+        <item>Reparación de efectos personales y artíc</item>
+        <item>Reparación de aparatos electrónicos de a</item>
+        <item>Reparación de aparatos electrodomésticos</item>
+        <item>Reparación de calzado y artículos de cue</item>
+        <item>Reparación de muebles y artículos de men</item>
+        <item>Reparación de relojes y joyería</item>
+        <item>Reparación de otros efectos personales y</item>
+        <item>Otros servicios personales</item>
+        <item>Otros servicios personales</item>
+        <item>Lavado y limpieza de prendas textiles y </item>
+        <item>Peluquería y otros tratamientos de belle</item>
+        <item>Pompas fúnebres y actividades relacionad</item>
+        <item>Actividades de mantenimiento físico</item>
+        <item>Otros servicios personales n.c.o.p.</item>
+        <item>Actividades de los hogares como empleado</item>
+        <item>Actividades de los hogares como empleado</item>
+        <item>Actividades de los hogares como empleado</item>
+        <item>Actividades de los hogares como producto</item>
+        <item>Actividades de los hogares como producto</item>
+        <item>Actividades de los hogares como producto</item>
+        <item>Actividades de los hogares como producto</item>
+        <item>Actividades de los hogares como producto</item>
+        <item>Actividades de organizaciones y organism</item>
+        <item>Fabricación de conservas de pescado</item>
+        <item>Procesado y conservación de frutas y hor</item>
+        <item>Procesado y conservación de patatas</item>
+        <item>Elaboración de zumos de frutas y hortali</item>
+        <item>Otro procesado y conservación de frutas </item>
+        <item>Fabricación de aceites y grasas vegetale</item>
+        <item>Fabricación de margarina y grasas comest</item>
+        <item>Fabricación de aceite de oliva</item>
+        <item>Fabricación de otros aceites y grasas</item>
+        <item>Fabricación de productos lácteos</item>
+        <item>Elaboración de helados</item>
+        <item>Fabricación de quesos</item>
+        <item>Preparación de leche y otros productos l</item>
+        <item>Fabricación de productos de molinería, a</item>
+        <item>Fabricación de productos de molinería</item>
+        <item>Fabricación de almidones y productos ami</item>
+        <item>Fabricación de productos de panadería y </item>
+        <item>Fabricación de pan y de productos fresco</item>
+        <item>Fabricación de galletas y productos de p</item>
+        <item>Fabricación de pastas alimenticias, cusc</item>
+        <item>Fabricación de otros productos alimentic</item>
+        <item>Fabricación de azúcar</item>
+        <item>Fabricación de cacao, chocolate y produc</item>
+        <item>Elaboración de café, té e infusiones</item>
+        <item>Elaboración de especias, salsas y condim</item>
+        <item>Elaboración de platos y comidas preparad</item>
+        <item>Elaboración de preparados alimenticios h</item>
+        <item>Elaboración de otros productos alimentic</item>
+        <item>Fabricación de productos para la aliment</item>
+        <item>Fabricación de productos para la aliment</item>
+        <item>Fabricación de productos para la aliment</item>
+        <item>Fabricación de bebidas</item>
+        <item>Destilación, rectificación y mezcla de b</item>
+        <item>Elaboración de vinos</item>
+        <item>Elaboración de sidra y otras bebidas fer</item>
+        <item>Elaboración de otras bebidas no destilad</item>
+        <item>Fabricación de cerveza</item>
+        <item>Fabricación de malta</item>
+        <item>Fabricación de bebidas no alcohólicas; p</item>
+        <item>Industria del tabaco</item>
+        <item>Industria del tabaco</item>
+        <item>Preparación e hilado de fibras textiles</item>
+        <item>Preparación e hilado de fibras textiles</item>
+        <item>Fabricación de tejidos textiles</item>
+        <item>Fabricación de tejidos textiles</item>
+        <item>Acabado de textiles</item>
+        <item>Acabado de textiles</item>
+        <item>Fabricación de otros productos textiles</item>
+        <item>Fabricación de tejidos de punto</item>
+        <item>Fabricación de artículos confeccionados </item>
+        <item>Fabricación de alfombras y moquetas</item>
+        <item>Fabricación de cuerdas, cordeles, braman</item>
+        <item>Fabricación de telas no tejidas y artícu</item>
+        <item>Fabricación de otros productos textiles </item>
+        <item>Fabricación de otros productos textiles </item>
+        <item>Confección de prendas de vestir de cuero</item>
+        <item>Confección de ropa de trabajo</item>
+        <item>Confección de otras prendas de vestir ex</item>
+        <item>Confección de ropa interior</item>
+        <item>Confección de otras prendas de vestir y </item>
+        <item>Fabricación de artículos de peletería</item>
+        <item>Confección de calcetería</item>
+        <item>Confección de otras prendas de vestir de</item>
+        <item>Preparación, curtido y acabado del cuero</item>
+        <item>Preparación, curtido y acabado del cuero</item>
+        <item>Fabricación de artículos de marroquinerí</item>
+        <item>Fabricación de calzado</item>
+        <item>Fabricación de calzado</item>
+        <item>Aserrado y cepillado de la madera</item>
+        <item>Fabricación de chapas y tableros de made</item>
+        <item>Fabricación de suelos de madera ensambla</item>
+        <item>Fabricación de otras estructuras de made</item>
+        <item>Fabricación de envases y embalajes de ma</item>
+        <item>Fabricación de otros productos de madera</item>
+        <item>Fabricación de pasta papelera, papel y c</item>
+        <item>Fabricación de pasta papelera</item>
+        <item>Fabricación de papel y cartón</item>
+        <item>Fabricación de artículos de papel y de c</item>
+        <item>Fabricación de papel y cartón ondulados;</item>
+        <item>Fabricación de artículos de papel y cart</item>
+        <item>Fabricación de artículos de papelería</item>
+        <item>Fabricación de papeles pintados</item>
+        <item>Fabricación de otros artículos de papel </item>
+        <item>Fabricación de tubos, tuberías, perfiles</item>
+        <item>Fabricación de otros productos de primer</item>
+        <item>Estirado en frío</item>
+        <item>Laminación en frío</item>
+        <item>Producción de perfiles en frío por confo</item>
+        <item>Trefilado en frío</item>
+        <item>Producción de metales preciosos y de otr</item>
+        <item>Producción de metales preciosos</item>
+        <item>Producción de aluminio</item>
+        <item>Producción de plomo, zinc y estaño</item>
+        <item>Producción de cobre</item>
+        <item>Producción de otros metales no férreos</item>
+        <item>Procesamiento de combustibles nucleares</item>
+        <item>Fundición de metales</item>
+        <item>Fundición de hierro</item>
+        <item>Fundición de acero</item>
+        <item>Fundición de metales ligeros</item>
+        <item>Fundición de otros metales no férreos</item>
+        <item>Fabricación de productos metálicos, exce</item>
+        <item>Fabricación de elementos metálicos para </item>
+        <item>Fabricación de estructuras metálicas y s</item>
+        <item>Fabricación de carpintería metálica</item>
+        <item>Fabricación de cisternas, grandes depósi</item>
+        <item>Fabricación de radiadores y calderas par</item>
+        <item>Fabricación de otras cisternas, grandes </item>
+        <item>Fabricación de generadores de vapor, exc</item>
+        <item>Fabricación de generadores de vapor, exc</item>
+        <item>Fabricación de armas y municiones</item>
+        <item>Fabricación de armas y municiones</item>
+        <item>Forja, estampación y embutición de metal</item>
+        <item>Forja, estampación y embutición de metal</item>
+        <item>Tratamiento y revestimiento de metales; </item>
+        <item>Tratamiento y revestimiento de metales</item>
+        <item>Ingeniería mecánica por cuenta de tercer</item>
+        <item>Fabricación de artículos de cuchillería </item>
+        <item>Fabricación de artículos de cuchillería </item>
+        <item>Fabricación de cerraduras y herrajes</item>
+        <item>Fabricación de herramientas</item>
+        <item>Fabricación de otros productos metálicos</item>
+        <item>Fabricación de bidones y toneles de hier</item>
+        <item>Fabricación de envases y embalajes metál</item>
+        <item>Fabricación de productos de alambre, cad</item>
+        <item>Fabricación de pernos y productos de tor</item>
+        <item>Fabricación de otros productos metálicos</item>
+        <item>Fabricación de productos informáticos, e</item>
+        <item>Fabricación de componentes electrónicos </item>
+        <item>Fabricación de componentes electrónicos</item>
+        <item>Fabricación de circuitos impresos ensamb</item>
+        <item>Fabricación de ordenadores y equipos per</item>
+        <item>Fabricación de ordenadores y equipos per</item>
+        <item>Fabricación de equipos de telecomunicaci</item>
+        <item>Fabricación de equipos de telecomunicaci</item>
+        <item>Fabricación de productos electrónicos de</item>
+        <item>Fabricación de productos electrónicos de</item>
+        <item>Fabricación de instrumentos y aparatos d</item>
+        <item>Fabricación de instrumentos y aparatos d</item>
+        <item>Fabricación de relojes</item>
+        <item>Fabricación de equipos de radiación, ele</item>
+        <item>Fabricación de equipos de radiación, ele</item>
+        <item>Fabricación de instrumentos de óptica y </item>
+        <item>Fabricación de instrumentos de óptica y </item>
+        <item>Fabricación de soportes magnéticos y ópt</item>
+        <item>Fabricación de soportes magnéticos y ópt</item>
+        <item>Fabricación de material y equipo eléctri</item>
+        <item>Fabricación de motores, generadores y tr</item>
+        <item>Fabricación de motores, generadores y tr</item>
+        <item>Fabricación de aparatos de distribución </item>
+        <item>Fabricación de pilas y acumuladores eléc</item>
+        <item>Fabricación de pilas y acumuladores eléc</item>
+        <item>Fabricación de cables y dispositivos de </item>
+        <item>Fabricación de cables de fibra óptica</item>
+        <item>Fabricación de otros hilos y cables elec</item>
+        <item>Fabricación de dispositivos de cableado</item>
+        <item>Fabricación de lámparas y aparatos eléct</item>
+        <item>Fabricación de lámparas y aparatos eléct</item>
+        <item>Fabricación de aparatos domésticos</item>
+        <item>Fabricación de electrodomésticos</item>
+        <item>Fabricación de aparatos domésticos no el</item>
+        <item>Fabricación de otro material y equipo el</item>
+        <item>Fabricación de otro material y equipo el</item>
+        <item>Fabricación de maquinaria y equipo n.c.o</item>
+        <item>Fabricación de motores y turbinas, excep</item>
+        <item>Fabricación de otras bombas y compresore</item>
+        <item>Fabricación de otra grifería y válvulas</item>
+        <item>Fabricación de cojinetes, engranajes y ó</item>
+        <item>Fabricación de otra maquinaria de uso ge</item>
+        <item>Fabricación de hornos y quemadores</item>
+        <item>Fabricación de maquinaria de elevación y</item>
+        <item>Fabricación de máquinas y equipos de ofi</item>
+        <item>Fabricación de herramientas eléctricas m</item>
+        <item>Fabricación de maquinaria de ventilación</item>
+        <item>Fabricación de otra maquinaria de uso ge</item>
+        <item>Fabricación de maquinaria agraria y fore</item>
+        <item>Fabricación de maquinaria agraria y fore</item>
+        <item>Fabricación de maquinas herramienta para</item>
+        <item>Fabricación de maquinas herramienta para</item>
+        <item>Fabricación de otras máquinas herramient</item>
+        <item>Fabricación de otra maquinaria para usos</item>
+        <item>Fabricación de maquinaria para la indust</item>
+        <item>Fabricación de maquinaria para las indus</item>
+        <item>Fabricación de maquinaria para la indust</item>
+        <item>Fabricación de maquinaria para las indus</item>
+        <item>Fabricación de maquinaria para la indust</item>
+        <item>Fabricación de maquinaria para las indus</item>
+        <item>Fabricación de otra maquinaria para usos</item>
+        <item>Fabricación de vehículos de motor, remol</item>
+        <item>Fabricación de vehículos de motor</item>
+        <item>Fabricación de vehículos de motor</item>
+        <item>Fabricación de carrocerías para vehículo</item>
+        <item>Fabricación de carrocerías para vehículo</item>
+        <item>Fabricación de componentes, piezas y acc</item>
+        <item>Fabricación de equipos eléctricos y elec</item>
+        <item>Fabricación de otros componentes, piezas</item>
+        <item>Fabricación de otro material de transpor</item>
+        <item>Construcción naval</item>
+        <item>Construcción de barcos y estructuras flo</item>
+        <item>Construcción de embarcaciones de recreo </item>
+        <item>Fabricación de locomotoras y material fe</item>
+        <item>Fabricación de locomotoras y material fe</item>
+        <item>Construcción aeronáutica y espacial y su</item>
+        <item>Construcción aeronáutica y espacial y su</item>
+        <item>Fabricación de vehículos militares de co</item>
+        <item>Fabricación de vehículos militares de co</item>
+        <item>Fabricación de material de transporte n.</item>
+        <item>Fabricación de motocicletas</item>
+        <item>Fabricación de bicicletas y de vehículos</item>
+        <item>Fabricación de otro material de transpor</item>
+        <item>Fabricación de muebles</item>
+        <item>Fabricación de muebles de oficina y de e</item>
+        <item>Fabricación de muebles de cocina</item>
+        <item>Fabricación de colchones</item>
+        <item>Fabricación de otros muebles</item>
+        <item>Fabricación de monedas</item>
+        <item>Fabricación de artículos de joyería y ar</item>
+        <item>Fabricación de artículos de bisutería y </item>
+        <item>Fabricación de instrumentos musicales</item>
+        <item>Fabricación de artículos de deporte</item>
+        <item>Fabricación de artículos de deporte</item>
+        <item>Fabricación de juegos y juguetes</item>
+        <item>Fabricación de juegos y juguetes</item>
+        <item>Fabricación de instrumentos y suministro</item>
+        <item>Fabricación de instrumentos y suministro</item>
+        <item>Industrias manufactureras n.c.o.p.</item>
+        <item>Fabricación de escobas, brochas y cepill</item>
+        <item>Otras industrias manufactureras n.c.o.p.</item>
+        <item>Reparación e instalación de maquinaria y</item>
+        <item>Reparación de productos metálicos, maqui</item>
+        <item>Reparación de productos metálicos</item>
+        <item>Reparación de maquinaria</item>
+        <item>Reparación de equipos electrónicos y ópt</item>
+        <item>Reparación de equipos eléctricos</item>
+        <item>Reparación y mantenimiento naval</item>
+        <item>Reparación y mantenimiento aeronáutico y</item>
+        <item>Reparación y mantenimiento de otro mater</item>
+        <item>Reparación de otros equipos</item>
+        <item>Instalación de máquinas y equipos indust</item>
+        <item>Instalación de máquinas y equipos indust</item>
+        <item>Suministro de energía eléctrica, gas, va</item>
+        <item>Producción, transporte y distribución de</item>
+        <item>Transporte de energía eléctrica</item>
+        <item>Distribución de energía eléctrica</item>
+        <item>Comercio de energía eléctrica</item>
+        <item>Producción de energía hidroeléctrica</item>
+        <item>Producción de energía eléctrica de orige</item>
+        <item>Producción de energía eléctrica de orige</item>
+        <item>Producción de energía eléctrica de orige</item>
+        <item>Producción de energía eléctrica de otros</item>
+        <item>Producción de gas; distribución por tube</item>
+        <item>Producción de gas</item>
+        <item>Distribución por tubería de combustibles</item>
+        <item>Comercio de gas por tubería</item>
+        <item>Suministro de vapor y aire acondicionado</item>
+        <item>Suministro de vapor y aire acondicionado</item>
+        <item>Captación, depuración y distribución de </item>
+        <item>Captación, depuración y distribución de </item>
+        <item>Captación, depuración y distribución de </item>
+        <item>Recogida y tratamiento de aguas residual</item>
+        <item>Recogida y tratamiento de aguas residual</item>
+        <item>Recogida y tratamiento de aguas residual</item>
+        <item>Recogida, tratamiento y eliminación de r</item>
+        <item>Recogida de residuos</item>
+        <item>Recogida de residuos no peligrosos</item>
+        <item>Recogida de residuos peligrosos</item>
+        <item>Tratamiento y eliminación de residuos</item>
+        <item>Tratamiento y eliminación de residuos no</item>
+        <item>Tratamiento y eliminación de residuos pe</item>
+        <item>Valorización</item>
+        <item>Separación y clasificación de materiales</item>
+        <item>Valorización de materiales ya clasificad</item>
+        <item>Actividades de descontaminación y otros </item>
+        <item>Actividades de descontaminación y otros </item>
+        <item>Actividades de descontaminación y otros </item>
+        <item>Construcción de edificios</item>
+        <item>Promoción inmobiliaria</item>
+        <item>Promoción inmobiliaria</item>
+        <item>Construcción de edificios</item>
+        <item>Construcción de edificios residenciales</item>
+        <item>Construcción de edificios no residencial</item>
+        <item>Ingeniería civil</item>
+        <item>Construcción de carreteras y vías férrea</item>
+        <item>Construcción de carreteras y autopistas</item>
+        <item>Construcción de vías férreas de superfic</item>
+        <item>Construcción de puentes y túneles</item>
+        <item>Construcción de redes</item>
+        <item>Construcción de redes para fluidos</item>
+        <item>Construcción de redes eléctricas y de te</item>
+        <item>Construcción de otros proyectos de ingen</item>
+        <item>Obras hidráulicas</item>
+        <item>Construcción de otros proyectos de ingen</item>
+        <item>Actividades de construcción especializad</item>
+        <item>Demolición y preparación de terrenos</item>
+        <item>Demolición</item>
+        <item>Preparación de terrenos</item>
+        <item>Perforaciones y sondeos</item>
+        <item>Instalaciones eléctricas, de fontanería </item>
+        <item>Instalaciones eléctricas</item>
+        <item>Fontanería, instalaciones de sistemas de</item>
+        <item>Otras instalaciones en obras de construc</item>
+        <item>Acabado de edificios</item>
+        <item>Revocamiento</item>
+        <item>Instalación de carpintería</item>
+        <item>Revestimiento de suelos y paredes</item>
+        <item>Pintura y acristalamiento</item>
+        <item>Otro acabado de edificios</item>
+        <item>Otras actividades de construcción especi</item>
+        <item>Construcción de cubiertas</item>
+        <item>Otras actividades de construcción especi</item>
+        <item>Venta y reparación de vehículos de motor</item>
+        <item>Venta de vehículos de motor</item>
+        <item>Venta de automóviles y vehículos de moto</item>
+        <item>Venta de otros vehículos de motor</item>
+        <item>Mantenimiento y reparación de vehículos </item>
+        <item>Mantenimiento y reparación de vehículos </item>
+        <item>Comercio de repuestos y accesorios de ve</item>
+        <item>Comercio al por mayor de repuestos y acc</item>
+        <item>Comercio al por menor de repuestos y acc</item>
+        <item>Venta, mantenimiento y reparación de mot</item>
+        <item>Venta, mantenimiento y reparación de mot</item>
+        <item>Comercio al por mayor e intermediarios d</item>
+        <item>Intermediarios del comercio</item>
+        <item>Intermediarios del comercio de materias </item>
+        <item>Intermediarios del comercio de combustib</item>
+        <item>Intermediarios del comercio de la madera</item>
+        <item>Intermediarios del comercio de maquinari</item>
+        <item>Intermediarios del comercio de muebles, </item>
+        <item>Intermediarios del comercio de textiles,</item>
+        <item>Intermediarios del comercio de productos</item>
+        <item>Intermediarios del comercio especializad</item>
+        <item>Intermediarios del comercio de productos</item>
+      </string-array>
+
+    <string-array name="form_cnae_array_values">
+        <item></item>
+        <item>1</item>
+        <item>11</item>
+        <item>111</item>
+        <item>112</item>
+        <item>113</item>
+        <item>114</item>
+        <item>115</item>
+        <item>116</item>
+        <item>119</item>
+        <item>12</item>
+        <item>121</item>
+        <item>122</item>
+        <item>123</item>
+        <item>124</item>
+        <item>125</item>
+        <item>126</item>
+        <item>127</item>
+        <item>128</item>
+        <item>129</item>
+        <item>13</item>
+        <item>130</item>
+        <item>14</item>
+        <item>141</item>
+        <item>142</item>
+        <item>143</item>
+        <item>144</item>
+        <item>145</item>
+        <item>146</item>
+        <item>147</item>
+        <item>149</item>
+        <item>15</item>
+        <item>150</item>
+        <item>16</item>
+        <item>161</item>
+        <item>162</item>
+        <item>163</item>
+        <item>164</item>
+        <item>17</item>
+        <item>170</item>
+        <item>2</item>
+        <item>21</item>
+        <item>210</item>
+        <item>22</item>
+        <item>220</item>
+        <item>23</item>
+        <item>230</item>
+        <item>24</item>
+        <item>240</item>
+        <item>3</item>
+        <item>31</item>
+        <item>311</item>
+        <item>312</item>
+        <item>32</item>
+        <item>321</item>
+        <item>322</item>
+        <item>5</item>
+        <item>51</item>
+        <item>510</item>
+        <item>52</item>
+        <item>520</item>
+        <item>6</item>
+        <item>61</item>
+        <item>610</item>
+        <item>62</item>
+        <item>620</item>
+        <item>7</item>
+        <item>71</item>
+        <item>710</item>
+        <item>72</item>
+        <item>721</item>
+        <item>729</item>
+        <item>8</item>
+        <item>81</item>
+        <item>811</item>
+        <item>812</item>
+        <item>89</item>
+        <item>891</item>
+        <item>892</item>
+        <item>893</item>
+        <item>899</item>
+        <item>9</item>
+        <item>91</item>
+        <item>910</item>
+        <item>99</item>
+        <item>990</item>
+        <item>10</item>
+        <item>101</item>
+        <item>1011</item>
+        <item>1012</item>
+        <item>1013</item>
+        <item>102</item>
+        <item>1021</item>
+        <item>18</item>
+        <item>181</item>
+        <item>1811</item>
+        <item>1812</item>
+        <item>1813</item>
+        <item>1814</item>
+        <item>182</item>
+        <item>1820</item>
+        <item>19</item>
+        <item>191</item>
+        <item>1910</item>
+        <item>192</item>
+        <item>1920</item>
+        <item>20</item>
+        <item>201</item>
+        <item>2011</item>
+        <item>2012</item>
+        <item>2013</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>202</item>
+        <item>2020</item>
+        <item>203</item>
+        <item>2030</item>
+        <item>204</item>
+        <item>2041</item>
+        <item>2042</item>
+        <item>205</item>
+        <item>2051</item>
+        <item>2052</item>
+        <item>2053</item>
+        <item>2059</item>
+        <item>206</item>
+        <item>2060</item>
+        <item>211</item>
+        <item>2110</item>
+        <item>212</item>
+        <item>2120</item>
+        <item>221</item>
+        <item>2211</item>
+        <item>2219</item>
+        <item>222</item>
+        <item>2221</item>
+        <item>2222</item>
+        <item>2223</item>
+        <item>2229</item>
+        <item>231</item>
+        <item>2311</item>
+        <item>2312</item>
+        <item>2313</item>
+        <item>2314</item>
+        <item>2319</item>
+        <item>232</item>
+        <item>2320</item>
+        <item>233</item>
+        <item>2331</item>
+        <item>2332</item>
+        <item>234</item>
+        <item>2341</item>
+        <item>2342</item>
+        <item>2343</item>
+        <item>2344</item>
+        <item>2349</item>
+        <item>235</item>
+        <item>2351</item>
+        <item>2352</item>
+        <item>236</item>
+        <item>2361</item>
+        <item>2362</item>
+        <item>2363</item>
+        <item>2364</item>
+        <item>2365</item>
+        <item>2369</item>
+        <item>237</item>
+        <item>2370</item>
+        <item>239</item>
+        <item>2391</item>
+        <item>2399</item>
+        <item>241</item>
+        <item>2410</item>
+        <item>242</item>
+        <item>281</item>
+        <item>462</item>
+        <item>4621</item>
+        <item>4622</item>
+        <item>4623</item>
+        <item>4624</item>
+        <item>463</item>
+        <item>4631</item>
+        <item>4632</item>
+        <item>4633</item>
+        <item>4634</item>
+        <item>4635</item>
+        <item>4636</item>
+        <item>4637</item>
+        <item>4638</item>
+        <item>4639</item>
+        <item>464</item>
+        <item>4641</item>
+        <item>4642</item>
+        <item>4643</item>
+        <item>4644</item>
+        <item>4645</item>
+        <item>4646</item>
+        <item>4647</item>
+        <item>4648</item>
+        <item>4649</item>
+        <item>465</item>
+        <item>4651</item>
+        <item>4652</item>
+        <item>466</item>
+        <item>4661</item>
+        <item>4662</item>
+        <item>4663</item>
+        <item>4664</item>
+        <item>4665</item>
+        <item>4666</item>
+        <item>4669</item>
+        <item>467</item>
+        <item>4671</item>
+        <item>4672</item>
+        <item>4673</item>
+        <item>4674</item>
+        <item>4675</item>
+        <item>4676</item>
+        <item>4677</item>
+        <item>469</item>
+        <item>4690</item>
+        <item>47</item>
+        <item>471</item>
+        <item>4711</item>
+        <item>4719</item>
+        <item>472</item>
+        <item>4721</item>
+        <item>4722</item>
+        <item>4723</item>
+        <item>4724</item>
+        <item>4725</item>
+        <item>4726</item>
+        <item>4729</item>
+        <item>473</item>
+        <item>4730</item>
+        <item>474</item>
+        <item>4741</item>
+        <item>4742</item>
+        <item>4743</item>
+        <item>475</item>
+        <item>4751</item>
+        <item>4752</item>
+        <item>4753</item>
+        <item>4754</item>
+        <item>4759</item>
+        <item>476</item>
+        <item>4761</item>
+        <item>4762</item>
+        <item>4763</item>
+        <item>4764</item>
+        <item>2812</item>
+        <item>4765</item>
+        <item>477</item>
+        <item>4771</item>
+        <item>4772</item>
+        <item>4773</item>
+        <item>4774</item>
+        <item>4775</item>
+        <item>4776</item>
+        <item>4777</item>
+        <item>4778</item>
+        <item>4779</item>
+        <item>478</item>
+        <item>4781</item>
+        <item>4782</item>
+        <item>4789</item>
+        <item>479</item>
+        <item>4791</item>
+        <item>4799</item>
+        <item>49</item>
+        <item>491</item>
+        <item>4910</item>
+        <item>492</item>
+        <item>4920</item>
+        <item>493</item>
+        <item>4931</item>
+        <item>4932</item>
+        <item>4939</item>
+        <item>494</item>
+        <item>4941</item>
+        <item>4942</item>
+        <item>495</item>
+        <item>4950</item>
+        <item>50</item>
+        <item>501</item>
+        <item>5010</item>
+        <item>502</item>
+        <item>5020</item>
+        <item>503</item>
+        <item>5030</item>
+        <item>504</item>
+        <item>5040</item>
+        <item>511</item>
+        <item>5110</item>
+        <item>512</item>
+        <item>5121</item>
+        <item>5122</item>
+        <item>521</item>
+        <item>5210</item>
+        <item>522</item>
+        <item>5221</item>
+        <item>5222</item>
+        <item>5223</item>
+        <item>5224</item>
+        <item>5229</item>
+        <item>53</item>
+        <item>531</item>
+        <item>5310</item>
+        <item>532</item>
+        <item>5320</item>
+        <item>55</item>
+        <item>551</item>
+        <item>5510</item>
+        <item>552</item>
+        <item>5520</item>
+        <item>553</item>
+        <item>5530</item>
+        <item>559</item>
+        <item>5590</item>
+        <item>56</item>
+        <item>561</item>
+        <item>5610</item>
+        <item>562</item>
+        <item>5621</item>
+        <item>5629</item>
+        <item>563</item>
+        <item>5630</item>
+        <item>58</item>
+        <item>581</item>
+        <item>5811</item>
+        <item>5812</item>
+        <item>5813</item>
+        <item>5814</item>
+        <item>5819</item>
+        <item>582</item>
+        <item>5821</item>
+        <item>5829</item>
+        <item>59</item>
+        <item>591</item>
+        <item>5912</item>
+        <item>5914</item>
+        <item>5915</item>
+        <item>5916</item>
+        <item>5917</item>
+        <item>5918</item>
+        <item>592</item>
+        <item>5920</item>
+        <item>60</item>
+        <item>601</item>
+        <item>6010</item>
+        <item>602</item>
+        <item>6020</item>
+        <item>611</item>
+        <item>6110</item>
+        <item>612</item>
+        <item>6120</item>
+        <item>613</item>
+        <item>6130</item>
+        <item>619</item>
+        <item>6190</item>
+        <item>6201</item>
+        <item>6202</item>
+        <item>6203</item>
+        <item>6209</item>
+        <item>63</item>
+        <item>631</item>
+        <item>6311</item>
+        <item>6312</item>
+        <item>639</item>
+        <item>6391</item>
+        <item>6399</item>
+        <item>64</item>
+        <item>641</item>
+        <item>6411</item>
+        <item>6419</item>
+        <item>642</item>
+        <item>6420</item>
+        <item>643</item>
+        <item>6430</item>
+        <item>649</item>
+        <item>6491</item>
+        <item>6492</item>
+        <item>6499</item>
+        <item>65</item>
+        <item>651</item>
+        <item>6511</item>
+        <item>6512</item>
+        <item>652</item>
+        <item>6520</item>
+        <item>653</item>
+        <item>6530</item>
+        <item>66</item>
+        <item>661</item>
+        <item>6611</item>
+        <item>6612</item>
+        <item>6619</item>
+        <item>662</item>
+        <item>6621</item>
+        <item>6622</item>
+        <item>6629</item>
+        <item>663</item>
+        <item>6630</item>
+        <item>68</item>
+        <item>681</item>
+        <item>6810</item>
+        <item>682</item>
+        <item>6820</item>
+        <item>683</item>
+        <item>6831</item>
+        <item>6832</item>
+        <item>69</item>
+        <item>691</item>
+        <item>6910</item>
+        <item>692</item>
+        <item>6920</item>
+        <item>70</item>
+        <item>701</item>
+        <item>7010</item>
+        <item>702</item>
+        <item>7021</item>
+        <item>7022</item>
+        <item>711</item>
+        <item>7111</item>
+        <item>7112</item>
+        <item>712</item>
+        <item>7120</item>
+        <item>7211</item>
+        <item>7219</item>
+        <item>722</item>
+        <item>7220</item>
+        <item>73</item>
+        <item>731</item>
+        <item>7311</item>
+        <item>7312</item>
+        <item>732</item>
+        <item>7320</item>
+        <item>74</item>
+        <item>741</item>
+        <item>7410</item>
+        <item>742</item>
+        <item>7420</item>
+        <item>743</item>
+        <item>7430</item>
+        <item>749</item>
+        <item>7490</item>
+        <item>75</item>
+        <item>750</item>
+        <item>7500</item>
+        <item>77</item>
+        <item>771</item>
+        <item>7711</item>
+        <item>7712</item>
+        <item>772</item>
+        <item>7721</item>
+        <item>7722</item>
+        <item>7729</item>
+        <item>773</item>
+        <item>7731</item>
+        <item>7732</item>
+        <item>7733</item>
+        <item>7734</item>
+        <item>7735</item>
+        <item>7739</item>
+        <item>774</item>
+        <item>7740</item>
+        <item>78</item>
+        <item>781</item>
+        <item>7810</item>
+        <item>782</item>
+        <item>7820</item>
+        <item>783</item>
+        <item>7830</item>
+        <item>79</item>
+        <item>791</item>
+        <item>7911</item>
+        <item>7912</item>
+        <item>799</item>
+        <item>7990</item>
+        <item>80</item>
+        <item>801</item>
+        <item>8010</item>
+        <item>802</item>
+        <item>8020</item>
+        <item>803</item>
+        <item>8030</item>
+        <item>8110</item>
+        <item>8121</item>
+        <item>8122</item>
+        <item>8129</item>
+        <item>813</item>
+        <item>8130</item>
+        <item>82</item>
+        <item>821</item>
+        <item>8211</item>
+        <item>8219</item>
+        <item>822</item>
+        <item>8220</item>
+        <item>823</item>
+        <item>8230</item>
+        <item>829</item>
+        <item>8291</item>
+        <item>8292</item>
+        <item>8299</item>
+        <item>84</item>
+        <item>841</item>
+        <item>8411</item>
+        <item>8412</item>
+        <item>8413</item>
+        <item>842</item>
+        <item>8421</item>
+        <item>8422</item>
+        <item>8423</item>
+        <item>8424</item>
+        <item>8425</item>
+        <item>843</item>
+        <item>8430</item>
+        <item>85</item>
+        <item>851</item>
+        <item>8510</item>
+        <item>852</item>
+        <item>8520</item>
+        <item>853</item>
+        <item>8531</item>
+        <item>8532</item>
+        <item>854</item>
+        <item>8541</item>
+        <item>8543</item>
+        <item>8544</item>
+        <item>855</item>
+        <item>8551</item>
+        <item>8552</item>
+        <item>8553</item>
+        <item>8559</item>
+        <item>856</item>
+        <item>8560</item>
+        <item>86</item>
+        <item>861</item>
+        <item>8610</item>
+        <item>862</item>
+        <item>8621</item>
+        <item>8622</item>
+        <item>8623</item>
+        <item>869</item>
+        <item>8690</item>
+        <item>87</item>
+        <item>871</item>
+        <item>8710</item>
+        <item>872</item>
+        <item>8720</item>
+        <item>873</item>
+        <item>8731</item>
+        <item>8732</item>
+        <item>879</item>
+        <item>8790</item>
+        <item>88</item>
+        <item>881</item>
+        <item>8811</item>
+        <item>8812</item>
+        <item>889</item>
+        <item>8891</item>
+        <item>8899</item>
+        <item>90</item>
+        <item>900</item>
+        <item>9001</item>
+        <item>9002</item>
+        <item>9003</item>
+        <item>9004</item>
+        <item>9102</item>
+        <item>9103</item>
+        <item>9104</item>
+        <item>9105</item>
+        <item>9106</item>
+        <item>92</item>
+        <item>920</item>
+        <item>9200</item>
+        <item>93</item>
+        <item>931</item>
+        <item>9311</item>
+        <item>9312</item>
+        <item>9313</item>
+        <item>9319</item>
+        <item>932</item>
+        <item>9321</item>
+        <item>9329</item>
+        <item>94</item>
+        <item>941</item>
+        <item>9411</item>
+        <item>9412</item>
+        <item>942</item>
+        <item>9420</item>
+        <item>949</item>
+        <item>9491</item>
+        <item>9492</item>
+        <item>9499</item>
+        <item>95</item>
+        <item>951</item>
+        <item>9511</item>
+        <item>9512</item>
+        <item>952</item>
+        <item>9521</item>
+        <item>9522</item>
+        <item>9523</item>
+        <item>9524</item>
+        <item>9525</item>
+        <item>9529</item>
+        <item>96</item>
+        <item>960</item>
+        <item>9601</item>
+        <item>9602</item>
+        <item>9603</item>
+        <item>9604</item>
+        <item>9609</item>
+        <item>97</item>
+        <item>970</item>
+        <item>9700</item>
+        <item>98</item>
+        <item>981</item>
+        <item>9810</item>
+        <item>982</item>
+        <item>9820</item>
+        <item>9900</item>
+        <item>1022</item>
+        <item>103</item>
+        <item>1031</item>
+        <item>1032</item>
+        <item>1039</item>
+        <item>104</item>
+        <item>1042</item>
+        <item>1043</item>
+        <item>1044</item>
+        <item>105</item>
+        <item>1052</item>
+        <item>1053</item>
+        <item>1054</item>
+        <item>106</item>
+        <item>1061</item>
+        <item>1062</item>
+        <item>107</item>
+        <item>1071</item>
+        <item>1072</item>
+        <item>1073</item>
+        <item>108</item>
+        <item>1081</item>
+        <item>1082</item>
+        <item>1083</item>
+        <item>1084</item>
+        <item>1085</item>
+        <item>1086</item>
+        <item>1089</item>
+        <item>109</item>
+        <item>1091</item>
+        <item>1092</item>
+        <item>110</item>
+        <item>1101</item>
+        <item>1102</item>
+        <item>1103</item>
+        <item>1104</item>
+        <item>1105</item>
+        <item>1106</item>
+        <item>1107</item>
+        <item>120</item>
+        <item>1200</item>
+        <item>131</item>
+        <item>1310</item>
+        <item>132</item>
+        <item>1320</item>
+        <item>133</item>
+        <item>1330</item>
+        <item>139</item>
+        <item>1391</item>
+        <item>1392</item>
+        <item>1393</item>
+        <item>1394</item>
+        <item>1395</item>
+        <item>1396</item>
+        <item>1399</item>
+        <item>1411</item>
+        <item>1412</item>
+        <item>1413</item>
+        <item>1414</item>
+        <item>1419</item>
+        <item>1420</item>
+        <item>1431</item>
+        <item>1439</item>
+        <item>151</item>
+        <item>1511</item>
+        <item>1512</item>
+        <item>152</item>
+        <item>1520</item>
+        <item>1610</item>
+        <item>1621</item>
+        <item>1622</item>
+        <item>1623</item>
+        <item>1624</item>
+        <item>1629</item>
+        <item>171</item>
+        <item>1711</item>
+        <item>1712</item>
+        <item>172</item>
+        <item>1721</item>
+        <item>1722</item>
+        <item>1723</item>
+        <item>1724</item>
+        <item>1729</item>
+        <item>2420</item>
+        <item>243</item>
+        <item>2431</item>
+        <item>2432</item>
+        <item>2433</item>
+        <item>2434</item>
+        <item>244</item>
+        <item>2441</item>
+        <item>2442</item>
+        <item>2443</item>
+        <item>2444</item>
+        <item>2445</item>
+        <item>2446</item>
+        <item>245</item>
+        <item>2451</item>
+        <item>2452</item>
+        <item>2453</item>
+        <item>2454</item>
+        <item>25</item>
+        <item>251</item>
+        <item>2511</item>
+        <item>2512</item>
+        <item>252</item>
+        <item>2521</item>
+        <item>2529</item>
+        <item>253</item>
+        <item>2530</item>
+        <item>254</item>
+        <item>2540</item>
+        <item>255</item>
+        <item>2550</item>
+        <item>256</item>
+        <item>2561</item>
+        <item>2562</item>
+        <item>257</item>
+        <item>2571</item>
+        <item>2572</item>
+        <item>2573</item>
+        <item>259</item>
+        <item>2591</item>
+        <item>2592</item>
+        <item>2593</item>
+        <item>2594</item>
+        <item>2599</item>
+        <item>26</item>
+        <item>261</item>
+        <item>2611</item>
+        <item>2612</item>
+        <item>262</item>
+        <item>2620</item>
+        <item>263</item>
+        <item>2630</item>
+        <item>264</item>
+        <item>2640</item>
+        <item>265</item>
+        <item>2651</item>
+        <item>2652</item>
+        <item>266</item>
+        <item>2660</item>
+        <item>267</item>
+        <item>2670</item>
+        <item>268</item>
+        <item>2680</item>
+        <item>27</item>
+        <item>271</item>
+        <item>2711</item>
+        <item>2712</item>
+        <item>272</item>
+        <item>2720</item>
+        <item>273</item>
+        <item>2731</item>
+        <item>2732</item>
+        <item>2733</item>
+        <item>274</item>
+        <item>2740</item>
+        <item>275</item>
+        <item>2751</item>
+        <item>2752</item>
+        <item>279</item>
+        <item>2790</item>
+        <item>28</item>
+        <item>2811</item>
+        <item>2813</item>
+        <item>2814</item>
+        <item>2815</item>
+        <item>282</item>
+        <item>2821</item>
+        <item>2822</item>
+        <item>2823</item>
+        <item>2824</item>
+        <item>2825</item>
+        <item>2829</item>
+        <item>283</item>
+        <item>2830</item>
+        <item>284</item>
+        <item>2841</item>
+        <item>2849</item>
+        <item>289</item>
+        <item>2891</item>
+        <item>2892</item>
+        <item>2893</item>
+        <item>2894</item>
+        <item>2895</item>
+        <item>2896</item>
+        <item>2899</item>
+        <item>29</item>
+        <item>291</item>
+        <item>2910</item>
+        <item>292</item>
+        <item>2920</item>
+        <item>293</item>
+        <item>2931</item>
+        <item>2932</item>
+        <item>30</item>
+        <item>301</item>
+        <item>3011</item>
+        <item>3012</item>
+        <item>302</item>
+        <item>3020</item>
+        <item>303</item>
+        <item>3030</item>
+        <item>304</item>
+        <item>3040</item>
+        <item>309</item>
+        <item>3091</item>
+        <item>3092</item>
+        <item>3099</item>
+        <item>310</item>
+        <item>3101</item>
+        <item>3102</item>
+        <item>3103</item>
+        <item>3109</item>
+        <item>3211</item>
+        <item>3212</item>
+        <item>3213</item>
+        <item>3220</item>
+        <item>323</item>
+        <item>3230</item>
+        <item>324</item>
+        <item>3240</item>
+        <item>325</item>
+        <item>3250</item>
+        <item>329</item>
+        <item>3291</item>
+        <item>3299</item>
+        <item>33</item>
+        <item>331</item>
+        <item>3311</item>
+        <item>3312</item>
+        <item>3313</item>
+        <item>3314</item>
+        <item>3315</item>
+        <item>3316</item>
+        <item>3317</item>
+        <item>3319</item>
+        <item>332</item>
+        <item>3320</item>
+        <item>35</item>
+        <item>351</item>
+        <item>3512</item>
+        <item>3513</item>
+        <item>3514</item>
+        <item>3515</item>
+        <item>3516</item>
+        <item>3517</item>
+        <item>3518</item>
+        <item>3519</item>
+        <item>352</item>
+        <item>3521</item>
+        <item>3522</item>
+        <item>3523</item>
+        <item>353</item>
+        <item>3530</item>
+        <item>36</item>
+        <item>360</item>
+        <item>3600</item>
+        <item>37</item>
+        <item>370</item>
+        <item>3700</item>
+        <item>38</item>
+        <item>381</item>
+        <item>3811</item>
+        <item>3812</item>
+        <item>382</item>
+        <item>3821</item>
+        <item>3822</item>
+        <item>383</item>
+        <item>3831</item>
+        <item>3832</item>
+        <item>39</item>
+        <item>390</item>
+        <item>3900</item>
+        <item>41</item>
+        <item>411</item>
+        <item>4110</item>
+        <item>412</item>
+        <item>4121</item>
+        <item>4122</item>
+        <item>42</item>
+        <item>421</item>
+        <item>4211</item>
+        <item>4212</item>
+        <item>4213</item>
+        <item>422</item>
+        <item>4221</item>
+        <item>4222</item>
+        <item>429</item>
+        <item>4291</item>
+        <item>4299</item>
+        <item>43</item>
+        <item>431</item>
+        <item>4311</item>
+        <item>4312</item>
+        <item>4313</item>
+        <item>432</item>
+        <item>4321</item>
+        <item>4322</item>
+        <item>4329</item>
+        <item>433</item>
+        <item>4331</item>
+        <item>4332</item>
+        <item>4333</item>
+        <item>4334</item>
+        <item>4339</item>
+        <item>439</item>
+        <item>4391</item>
+        <item>4399</item>
+        <item>45</item>
+        <item>451</item>
+        <item>4511</item>
+        <item>4519</item>
+        <item>452</item>
+        <item>4520</item>
+        <item>453</item>
+        <item>4531</item>
+        <item>4532</item>
+        <item>454</item>
+        <item>4540</item>
+        <item>46</item>
+        <item>461</item>
+        <item>4611</item>
+        <item>4612</item>
+        <item>4613</item>
+        <item>4614</item>
+        <item>4615</item>
+        <item>4616</item>
+        <item>4617</item>
+        <item>4618</item>
+        <item>4619</item>
+    </string-array>
+
+
+
+
+</resources>

@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId "com.fish.fishapp"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    /*
+    lintOptions {
+        abortOnError false
+    }
+
+    productFlavors {
+    }
+    */
+    productFlavors {
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //compile project(':facebook')
+    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
+    compile 'com.parse:parsefacebookutils-v4-android:1.10.3@aar'
+
+    compile 'com.android.support:support-v4:21.+'
+    //compile fileTree(dir: 'libs', include: ['*.jar'])
+    //compile files('libs/Parse-1.8.3.jar')
+    compile 'com.parse:parse-android:1.10.+'
+    compile 'com.parse.bolts:bolts-android:1.+'
+    compile 'com.makeramen:roundedimageview:2.0.1'
+    // Control per visualitzar les imatges amb les cantonades arrodonides
+    compile 'com.squareup:android-times-square:1.5.0@aar'
+    // Control per visualitzar un calendari i poder seleccionar múltiples dates
+    compile 'org.igniterealtime.smack:smack-android-extensions:4.1.0'
+    // Per establir el chat o compile "org.igniterealtime.smack:smack-android:4.1.0"
+    compile 'org.igniterealtime.smack:smack-tcp:4.1.0'
+    // Per establir el chat
+    compile 'com.google.code.gson:gson:2.3'
+    // És una llibreria Java per treballar amb JSON dins Android
+}

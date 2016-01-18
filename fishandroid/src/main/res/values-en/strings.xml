@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">fish</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_bubbles">Hello bubbles!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search_settings">Settings</string>
+    <string name="app_id">666151743449496</string>
+    <string name="connect_with_facebook">Join with Facebook</string>
+    <string name="title_activity_accept_eula">Accept EULA</string>
+    <string name="welcome_to_fish">Human Talent Network</string>
+    <string name="welcome_fish">Welcome to fish</string>
+    <string name="accept">Accept</string>
+    <string name="aceptar_condiciones">By clicking "Accept" you are agreeing to our</string>
+    <string name="condiciones_de_uso">Terms &amp; Conditions</string>
+    <string name="title_activity_eula">EULA</string>
+    <string name="title_activity_home">fish</string>
+    <string name="title_activity_main">fish</string>
+    <string name="title_activity_edit_profile">edit profile</string>
+    <string name="currency_prompt">Currency</string>
+    <string name="work_type_prompt">Work Type</string>
+    <string name="distance_prompt">Distance</string>
+    <string name="saved">Saved</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="refresh">Refresh</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_search">Search</string>
+    <string name="share">Share</string>
+    <string name="star">Star</string>
+    <string name="settings">Settings</string>
+    <string name="be_happy">* be happy *</string>
+    <string name="jobs">jobs</string>
+    <string name="shopping">shopping</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="getting_your_position">Getting your position</string>
+    <string name="retry">Retry</string>
+    <string name="allow_get_position">Fish requires to get your position.  Review your settings and click Retry</string>
+    <string name="action_work">Work</string>
+    <string name="action_hire">Hire</string>
+    <string name="photo">Photo</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="search_hint">Search</string>
+    <string name="server_error">Server connectivity error</string>
+    <string name="contact">Contact</string>
+    <string name="chat_conditions">You are going to contact the user. For security reasons we will not provide any contact information. You will now start a chat with the user.</string>
+    <string name="chat_cost">The price of this service is 1€. Once paid you will be able to chat for unlimited time with the user.</string>
+    <string name="send">Send</string>
+    <string name="chat">Chat</string>
+    <string name="working">Please wait...</string>
+    <string name="downloading">Downloading Data&#8230;</string>
+    <string name="uploading">Updating data...</string>
+    <string name="no_ratings">no ratings</string>
+    <string name="no_results">There are no results</string>
+    <string name="image_view">image view</string>
+    <string name="go_back">go back</string>
+    <string name="fake_age">00</string>
+    <string name="fake_distance">10Km</string>
+    <string name="fake_tags">Relaciones públicas - Recursos Humanos - Marketing</string>
+    <string name="fake_price">35</string>
+    <string name="fake_coin">€/h</string>
+    <string name="fake_description">Descripción de texto</string>
+    <string name="city">City</string>
+    <string name="lt_lt">&lt;&lt;</string>
+    <string name="gt_gt">&gt;&gt;</string>
+    <string name="chat_with">Chat with XX</string>
+
+    <string name="text_add_new">Add a tag</string>
+    <string name="text_gender">Gender</string>
+    <string name="text_large">Large Text</string>
+    <string name="text_medium">Medium Text</string>
+    <string name="text_small">Small Text</string>
+    <string name="text_price_hour">Price/h</string>
+    <string name="text_requisites">Requisites</string>
+    <string name="text_to_search">Search</string>
+
+    <string name="button_add">Add</string>
+    <string name="button_back">Back</string>
+    <string name="button_edit">Edit</string>
+    <string name="button_reset">Reset</string>
+
+    <string name="title_activity_jobs">Jobs</string>
+    <string name="title_activity_get_location">get location</string>
+    <string name="title_activity_worker_profiles">worker profiles</string>
+    <string name="title_activity_edit_worker_profile">edit worker profile</string>
+    <string name="action_add_worker_profile">Add worker profile</string>
+    <string name="title_activity_edit_calendar_worker_profile">edit calendar</string>
+    <string name="hello">Open calendar</string>
+
+    <color name="text_color">#31D1F1</color>
+    <color name="white">#ffffff</color>
+
+    <string name="open">Open</string>
+    <string name="title_activity_job_detail">Job detail</string>
+    <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_first_contact">First Contact</string>
+    <string name="title_activity_chat">Chat</string>
+
+    <string-array name="list_of_currencies">
+        <item>€ EUR</item>
+        <item>$ USD</item>
+    </string-array>
+
+    <string-array name="list_of_genders">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="list_of_genders_both">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Any</item>
+    </string-array>
+
+    <string-array name="list_of_work_types">
+        <item>Presential</item>
+        <item>Remote</item>
+        <item>Word wide</item>
+        <item>Any</item>
+    </string-array>
+
+    <string-array name="list_of_distances">
+        <item>1 Km</item>
+        <item>2 Km</item>
+        <item>3 Km</item>
+        <item>5 Km</item>
+        <item>8 Km</item>
+        <item>10 Km</item>
+        <item>15 Km</item>
+        <item>20 Km</item>
+        <item>30 Km</item>
+        <item>50 Km</item>
+        <item>+50 Km</item>
+    </string-array>
+
+    <string-array name="colorList">
+        <item>Black</item>
+        <item>White</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Brown</item>
+        <item>Pink</item>
+        <item>Orange</item>
+        <item>Purple</item>
+    </string-array>
+
+    <string name="title_activity_jobs_searchable">JobsSearchableActivity</string>
+    <string name="title_activity_chat_list">ChatListActivity</string>
+    <string name="registro_fb_nota">Create your account using details from your Facebook</string>
+    <string name="surname">Surname</string>
+    <string name="phone">Phone</string>
+    <string name="position">Position</string>
+    <string name="update_location">Update location</string>
+    <string name="action_chats">Chats</string>
+    <string name="action_favoritos">Favourits</string>
+    <string name="action_notificaciones">Notifications</string>
+    <string name="action_trabajos">Works</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_perfil">Profile</string>
+    <string name="title_login">fish</string>
+    <string name="title_activity_presentacion">fish</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="com_facebook_tooltip_default">New! Select which information would you like to share with this application.</string>
+    <string name="text_price_day">Price/day</string>
+    <string name="text_price_week">Price/week</string>
+    <string name="text_prices">Prices</string>
+    <string name="text_availability">Availability</string>
+    <string name="text_tags">Tags</string>
+    <string name="location">Location</string>
+    <string name="prices_in">Prices in</string>
+    <string name="action_pagar">Pay</string>
+    <string name="action_contacto">Contact</string>
+    <string name="title_activity_pagament">Payment</string>
+    <string name="title_activity_formulari_contracte">Contract</string>
+    <string name="contracte_data_inici">Start date</string>
+    <string name="contracte_data_fi">End date</string>
+    <string name="contracte_preu_hora">Price hour</string>
+    <string name="contracte_tipus_Feina_Ofertada">Job offered</string>
+    <string name="feina_cnae">CNAE</string>
+    <string name="feina_conveni">Agreement</string>
+    <string name="feina_cotitzacio_ss">Social Security Number</string>
+    <string name="fiscal_adreca">Fiscal address</string>
+    <string name="fiscal_ciutat">Town</string>
+    <string name="fiscal_cp">Postal code</string>
+    <string name="fiscal_email">Email</string>
+    <string name="fiscal_localitat">Locality</string>
+    <string name="fiscal_pais">Country</string>
+    <string name="fiscal_provincia">Province</string>
+    <string name="fiscal_telefon">Phone</string>
+    <string name="fiscal_web">Web</string>
+    <string name="identificacio_document">Number</string>
+    <string name="identificacio_empresa">Company</string>
+    <string name="identificacio_tipus_document">Type</string>
+    <string name="responsable_carrec">Position</string>
+    <string name="responsable_document">Number</string>
+    <string name="responsable_email">Email</string>
+    <string name="responsable_telefon">Phone</string>
+    <string name="responsable_tipus_document">Type</string>
+
+
+
+</resources>

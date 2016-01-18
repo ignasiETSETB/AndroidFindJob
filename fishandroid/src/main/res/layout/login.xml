@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fish.fishapp.Login_Activity"
+    tools:ignore="MergeRootFrame">
+<!--
+    <ImageView
+        android:layout_width="158dp"
+        android:layout_height="179dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_inici"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="Imatge principal" />
+-->
+    <TextView
+        android:id="@+id/textViewWelcomeFish"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_weight="0.1"
+        android:gravity="center|bottom"
+        android:text="@string/title_login"
+        android:textSize="75sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewBeHappy"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="center_horizontal"
+        android:text="@string/be_happy"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <Button
+            android:id="@+id/buttonConnectWithFacebook"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="facebookLogin"
+            android:text="@string/connect_with_facebook"
+            android:singleLine="true"
+            android:enabled="true"
+            android:layout_margin="10dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/registro_fb_nota"
+        android:layout_marginBottom="30sp" />
+
+    <TextView
+        android:id="@+id/textViewWelcome"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".25"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/welcome_to_fish"
+        android:textSize="25sp" />
+
+</LinearLayout>

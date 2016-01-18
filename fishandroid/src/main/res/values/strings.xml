@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aceptar_condiciones">Pulsando en \"Aceptar\" confirmas que estás de acuerdo con nuestros</string>
+    <string name="action_add_worker_profile">Añadir perfil de trabajador</string>
+    <string name="action_work">Trabajo</string>
+    <string name="allow_get_position">Fish necesita obtener tu posición. Revisa tus ajustes y reinténtalo.</string>
+    <string name="be_happy">* be happy *</string>
+    <string name="button_add">Añadir</string>
+    <string name="button_back">Atrás</string>
+    <string name="button_edit">Editar</string>
+    <string name="button_reset">Reiniciar</string>
+    <string name="chat_conditions">"Vas a contactar con el usuario. Por razones de seguridad, no enviaremos ninguna información de contacto. Ahora se iniciará el chat con el usuario. "</string>
+    <string name="chat_cost">El precio de este servicio es de 1€. Una vez pagado, podrás contactar con el usuario, mediante chat, por tiempo ilimitado.</string>
+    <string name="chat_with">Chat con XX</string>
+    <string name="city">Ciudad</string>
+    <string name="com_facebook_tooltip_default">¡Nuevo! Selecciona qué información quieres compartir con esta aplicación.</string>
+    <string name="contact">Contacto</string>
+    <string name="downloading">Descargando datos...</string>
+    <string name="fake_distance">10 Km.</string>
+    <string name="fake_tags">Relaciones públicas - Recursos humanos - Marketing</string>
+    <string name="getting_your_position">Obteniendo tu posición...</string>
+    <string name="go_back">Atrás</string>
+    <string name="hello">Abrir calendario</string>
+    <string name="name">Nombre</string>
+    <string name="no_ratings">Sin valoración</string>
+    <string name="no_results">No existen resultados</string>
+    <string name="open">Abrir</string>
+    <string name="photo">Foto</string>
+    <string name="retry">Reintentar</string>
+    <string name="search_hint">Buscar</string>
+    <string name="send">Enviar</string>
+    <string name="server_error">Error de conexión con el servidor</string>
+    <string name="text_add_new">Añadir etiqueta</string>
+    <string name="text_gender">Género</string>
+    <string name="text_large">Texto largo</string>
+    <string name="text_medium">Texto medio</string>
+    <string name="text_price_hour">Precio/h</string>
+    <string name="text_requisites">Requisitos</string>
+    <string name="text_small">Texto pequeño</string>
+    <string name="text_to_search">Buscar</string>
+    <string name="title_activity_calendar">Calendario</string>
+    <string name="title_activity_edit_calendar_worker_profile">Editar calendario</string>
+    <string name="title_activity_edit_worker_profile">Editar perfil trabajador</string>
+    <string name="title_activity_first_contact">Primer contacto</string>
+    <string name="title_activity_get_location">Obtener localización</string>
+    <string name="title_activity_job_detail">Detalle del trabajo</string>
+    <string name="title_activity_jobs">Trabajos</string>
+    <string name="title_activity_worker_profiles">Perfiles de los trabajadores</string>
+    <string name="uploading">Actualizando datos...</string>
+    <string name="working">Por favor, espera...</string>
+    <string name="connect_with_facebook">Únete con Facebook</string>
+    <string name="accept">Aceptar</string>
+    <string name="app_name">fish</string>
+    <string name="chat">Chat</string>
+    <string name="action_search_settings">Ajustes</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="action_search">Buscar</string>
+    <string name="action_refresh">Actualizar</string>
+    <string name="currency_prompt">Moneda</string>
+    <string name="delete">Borrar</string>
+    <string name="distance_prompt">Distancia</string>
+    <string name="fake_description">Descripción del texto </string>
+    <string name="refresh">Actualizar</string>
+    <string name="save">Guardar</string>
+    <string name="saved">Guardado</string>
+    <string name="settings">Ajustes</string>
+    <string name="share">Compartir</string>
+    <string name="star">Estrella</string>
+    <string name="title_activity_accept_eula">Aceptar EULA</string>
+    <string name="title_activity_chat">Chat</string>
+    <string name="title_activity_edit_profile">Editar perfil</string>
+    <string name="title_activity_eula">EULA</string>
+    <string name="title_activity_home">fish</string>
+    <string name="title_activity_main">fish</string>
+    <string name="title_activity_pagament">Pago</string>
+    <string name="title_activity_formulari_contracte">Contrato</string>
+    <string name="welcome_fish">Bienvenido a fish</string>
+    <string name="welcome_to_fish">Red de Talento Humano</string>
+    <string name="registro_fb_nota">Crea tu cuenta usando los datos de tu Facebook</string>
+    <string name="surname">Apellidos</string>
+    <string name="phone">Teléfono</string>
+    <string name="position">Posición</string>
+    <string name="update_location">Actualizar posición</string>
+
+    <string-array name="list_of_currencies">
+        <item>€ EUR</item>
+        <item>$ USD</item>
+    </string-array>
+
+    <string-array name="list_of_genders">
+        <item>Hombre</item>
+        <item>Mujer</item>
+    </string-array>
+
+    <string-array name="list_of_genders_both">
+        <item>Hombre</item>
+        <item>Mujer</item>
+        <item>Cualquiera</item>
+    </string-array>
+
+    <string-array name="list_of_work_types">
+        <item>Presencial</item>
+        <item>Remoto</item>
+        <item>Mundial</item>
+        <item>Cualquiera</item>
+    </string-array>
+
+    <string-array name="list_of_distances">
+        <item>1 Km</item>
+        <item>2 Km</item>
+        <item>3 Km</item>
+        <item>5 Km</item>
+        <item>8 Km</item>
+        <item>10 Km</item>
+        <item>15 Km</item>
+        <item>20 Km</item>
+        <item>30 Km</item>
+        <item>50 Km</item>
+        <item>+50 Km</item>
+    </string-array>
+
+    <string-array name="colorList">
+        <item>Negro</item>
+        <item>Blanco</item>
+        <item>Rojo</item>
+        <item>Azul</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Marrón</item>
+        <item>Rosa</item>
+        <item>Naranja</item>
+        <item>Púrpura</item>
+    </string-array>
+    <string name="action_chats">Chats</string>
+    <string name="action_favoritos">Favoritos</string>
+    <string name="action_notificaciones">Notificaciones</string>
+    <string name="action_trabajos">Trabajos</string>
+    <string name="app_id">666151743449496</string>
+    <string name="barcelona">Barcelona</string>
+    <string name="action_hire">Contratar</string>
+    <string name="email">Email</string>
+    <string name="fake_age">00</string>
+    <string name="fake_coin">€/h</string>
+    <string name="work_type_prompt">Tipo de trabajo</string>
+    <string name="shopping">Compras</string>
+    <string name="lt_lt">&lt;&lt;</string>
+    <string name="jobs">Trabajos</string>
+    <string name="gt_gt">&gt;&gt;</string>
+    <string name="fake_price">35</string>
+    <string name="condiciones_de_uso">Términos y condiciones</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_perfil">Perfil</string>
+    <string name="title_login">fish</string>
+    <string name="title_activity_jobs_searchable">JobsSearchableActivity</string>
+    <string name="title_activity_chat_list">ChatListActivity</string>
+    <string name="title_activity_presentacion">fish</string>
+    <string name="image_view">ver imagen</string>
+    <string name="hello_world">¡Hola mundo!</string>
+    <string name="hello_bubbles">¡Hola burbujas!</string>
+    <string name="submit">Enviar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="text_price_day">Precio/día</string>
+    <string name="text_price_week">Precio/semana</string>
+    <string name="text_prices">Precios</string>
+    <string name="text_availability">Disponibilidad</string>
+    <string name="text_tags">Etiquetas</string>
+    <string name="location">Localización</string>
+    <string name="prices_in">Precios en</string>
+    <string name="action_pagar">Pagar</string>
+    <string name="action_contacto">Contactar</string>
+    <string name="contracte_data_inici">Fecha de inicio</string>
+    <string name="contracte_data_fi">Fecha final</string>
+    <string name="contracte_tipus_Feina_Ofertada">Empleo ofertado</string>
+    <string name="contracte_preu_hora">Precio hora</string>
+    <string name="fiscal_email">Email</string>
+    <string name="fiscal_adreca">Dirección fiscal</string>
+    <string name="fiscal_pais">País</string>
+    <string name="fiscal_provincia">Provincia</string>
+    <string name="fiscal_cp">C.P.</string>
+    <string name="fiscal_localitat">Localidad</string>
+    <string name="fiscal_ciutat">Ciudad</string>
+    <string name="fiscal_telefon">Teléfono</string>
+    <string name="fiscal_web">Web</string>
+    <string name="identificacio_empresa">Empresa</string>
+    <string name="identificacio_tipus_document">Tipo</string>
+    <string name="identificacio_document">Número</string>
+    <string name="responsable_tipus_document">Tipo</string>
+    <string name="responsable_document">Número</string>
+    <string name="responsable_email">Email</string>
+    <string name="responsable_telefon">Teléfono</string>
+    <string name="responsable_carrec">Cargo</string>
+    <string name="feina_cnae">CNAE</string>
+    <string name="feina_conveni">Convenio</string>
+    <string name="feina_cotitzacio_ss">Número Seguridad Social</string>
+
+
+    <string name="form_rao_social">Razón social</string>
+    <string name="form_tipus_identificacio">Tipo identificación</string>
+
+
+    <string-array name="form_tipus_identificacio_array">
+        <item>Selecciona tipo</item>
+        <item>DNI</item>
+        <item>Pasaporte</item>
+        <item>Tarjeta residente co</item>
+        <item>Permiso residencia</item>
+        <item>NIE</item>
+        <item>CIF</item>
+    </string-array>
+
+    <string-array name="form_tipus_identificacio_array_values">
+        <item></item>
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>06</item>
+        <item>09</item>
+    </string-array>
+
+
+    <string name="form_label_dades_fiscals">Datos fiscales</string>
+    <string name="form_label_identificacio">Identificación</string>
+    <string name="form_label_signant">Persona firmante</string>
+    <string name="form_label_lloc_treball">Lugar de trabajo</string>
+    <string name="form_label_treballador">Trabajador</string>
+
+
+    <string name="form_cif">CIF</string>
+    <string name="form_nom_comercial">Nombre comercial</string>
+    <string name="form_adreca_fiscal">Dirección fiscal</string>
+    <string name="form_localitat">Localidad</string>
+    <string name="form_codi_postal">Código postal</string>
+    <string name="form_municipi">Municipio</string>
+    <string name="form_provincia">Provincia</string>
+    <string name="form_pais">País</string>
+    <string name="form_telefon">Teléfono</string>
+    <string name="form_web">Web</string>
+    <string name="form_email">Correo electrónico</string>
+
+    <string name="form_companyName">Razón social</string>
+    <string name="form_tradeName">Nombre comercial</string>
+    <string name="form_document">Documento</string>
+
+
+    <string name="form_cotitzacio_ss">Cuenta cotización SS</string>
+    <string name="form_adreca_centre_treball">Dirección centro trabajo</string>
+    <string name="form_cnae">CNAE</string>
+    <string name="form_conveni_client">Convenio cliente</string>
+
+    <string name="form_persona_signa_contracte">Persona firma contrato</string>
+    <string name="form_nom">Nombre</string>
+    <string name="form_cognom1">Apellido 1</string>
+    <string name="form_cognom2">Apellido 2</string>
+    <string name="form_carrec_empresa">Cargo en la empresa</string>
+    <string name="form_persona_contacte">Persona de contacto</string>
+    <string name="form_carrec">Cargo</string>
+    <string name="form_sigla">Sigla</string>
+    <string name="form_carrer">Calle</string>
+    <string name="form_numero">Número</string>
+    <string name="form_porta">Puerta</string>
+    <string name="form_data_naixement">Fecha nacimiento</string>
+    <string name="form_sexe">Sexo</string>
+    <string name="form_nivell_formatiu">Nivel formativo</string>
+    <string name="form_iban">IBAN</string>
+    <string name="form_swift">SWIFT/BIC</string>
+    <string name="form_nacionalitat">Nacionalitat</string>
+
+
+</resources>

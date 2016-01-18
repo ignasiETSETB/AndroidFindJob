@@ -1,0 +1,192 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".feines.FeinesLlistat_Activity"
+    tools:ignore="MergeRootFrame" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textViewNoHayResultados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/no_results"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/scrollViewSearch">
+            
+        <LinearLayout
+            android:id="@+id/linearLayoutSearchSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView03"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_to_search" />
+
+                <EditText
+                    android:id="@+id/editTextSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:ems="10"
+                    android:inputType="text">
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent" >
+                <!--
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content" />
+                -->
+                <LinearLayout
+                    android:id="@+id/linearLayoutSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView01"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_price_hour" />
+
+                <EditText
+                    android:id="@+id/editTextPriceSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/TextView02"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_gender"
+                    android:layout_gravity="center_vertical" />
+
+                <Spinner
+                    android:id="@+id/spinnerGenderSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/list_of_genders_both" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/text_requisites"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:id="@+id/linearLayoutWorkerProfileTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/editTextNewTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="@string/text_add_new" />
+
+                <Button
+                    android:id="@+id/afegir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="clickAddTag"
+                    android:text="+"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:singleLine="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_reset"
+                    android:id="@+id/reiniciar"
+                    android:onClick="clickReset"
+                    android:paddingLeft="30sp"
+                    android:paddingRight="30sp"
+                    android:layout_gravity="center_horizontal"
+                    android:singleLine="true"
+                    android:layout_margin="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+		</ScrollView>
+
+        <View
+            android:id="@+id/View1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp" />
+
+        <ListView
+            android:id="@+id/listViewJobs"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:dividerHeight="20dp"
+            android:divider="@drawable/separador_llista"
+            android:fastScrollEnabled="true">
+        </ListView>
+
+    </LinearLayout>
+
+</FrameLayout>
