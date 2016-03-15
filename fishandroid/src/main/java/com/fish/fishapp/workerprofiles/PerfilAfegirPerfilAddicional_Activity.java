@@ -474,7 +474,6 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		workerProfile.priceHour = Utils.parseInt(editTextWorkerProfilePriceHour.getText().toString());
 
 		if (editTextWorkerProfilePriceHour.getText().toString().trim().equals("")){
-
 			editTextWorkerProfilePriceHour.setError( "Price Hour is required!" );
 			res = false;
 		}
