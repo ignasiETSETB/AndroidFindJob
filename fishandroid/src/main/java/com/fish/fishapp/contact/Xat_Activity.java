@@ -15,19 +15,24 @@ import com.fish.fishapp.R;
 import com.fish.fishapp.Usuari;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.parse.FunctionCallback;
+import com.parse.ParseCloud;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 
 import org.jivesoftware.smack.AbstractXMPPConnection;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.SmackException;
+import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.chat.Chat;
 import org.jivesoftware.smack.chat.ChatManager;
 import org.jivesoftware.smack.chat.ChatManagerListener;
 import org.jivesoftware.smack.chat.ChatMessageListener;
 import org.jivesoftware.smack.packet.Message;
-import org.jivesoftware.smack.tcp.XMPPTCPConnection;
 import org.jivesoftware.smack.tcp.XMPPTCPConnectionConfiguration;
 import org.jivesoftware.smackx.iqregister.AccountManager;
+import org.json.JSONArray;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -47,7 +52,6 @@ public class Xat_Activity extends Activity {
 
     XMPPTCPConnectionConfiguration.Builder configBuilder;
 
-    AbstractXMPPConnection connection;
 
     ScheduledExecutorService scheduler;
     ScheduledFuture<?> result;
@@ -55,9 +59,13 @@ public class Xat_Activity extends Activity {
     SharedPreferences prefs;
 
     ArrayList<Xat_Missatge> arrayMissatges;
+    ArrayList<Xat_Contacte> arrayContactes;
 
     private ChatManager chatManager;
     private ChatMessageListener messageListener;
+    private ChatManagerListener chatManagerListener;
+
+    private String usuariDesti_Nom, usuariDesti_Compte, usuariDesti_ObjectId;
 
     private boolean finalitzar = false;
 
@@ -69,18 +77,6 @@ public class Xat_Activity extends Activity {
 
     private Xat_Missatge_Adapter_Activity adapter;
 
-    // Variables configuració
-
-    String servidor_Host = "82.223.74.138";
-    String servidor_Nom = "localhost";
-
-    String usuariOrigen_Compte;     // Usuari propietari de la conversa
-    String usuariOrigen_Nom;        // Nom que es visualitzarà dins la conversa
-    String usuariOrigen_Email;      // Email del propietari de la conversa
-    String usuariOrigen_Password;   // Password del propietari de la conversa
-
-    String usuariDesti_Compte;      // Usuari per connectar al xat
-    String usuariDesti_Nom;         // Nom que es visualitzarà dins la conversa
 
     // Habilitem la reconexió amb el servidor_Host XMPP pel xat
 
@@ -99,20 +95,20 @@ public class Xat_Activity extends Activity {
     @Override
     protected void onDestroy() {
 
-        App.getInstance().log("Desconnectant l'usuari '" + usuariOrigen_Compte + "' del xat...");
+        App.getInstance().log("Desconnectant l'usuari '" + App.getInstance().usuariOrigen_Compte + "' del xat...");
 
         finalitzar = true;
 
-        connection.disconnect();
+        chatManager.removeChatListener(chatManagerListener);
 
         // Guardem els missatges del xat
 
         guardarMissatgesSharedPreferences();
 
-        if (!connection.isConnected()) {
+        //if (!connection.isConnected()) {
 
-            App.getInstance().log("Usuari '" + usuariOrigen_Compte + "' desconnectat del xat.");
-        }
+        //    App.getInstance().log("Usuari '" + usuariOrigen_Compte + "' desconnectat del xat.");
+        //}
 
         // Tanquem el temporitzador
 
@@ -144,257 +140,219 @@ public class Xat_Activity extends Activity {
 
         // Obtenim les dades de contacte del propietari de la conversa
 
-        Usuari myuser = App.getInstance().usuari;
+        if (App.getInstance().connection == null || !App.getInstance().connection.isConnected()){
+            App.getInstance().connectarXMPP();
+        }
 
-        usuariOrigen_Nom = (myuser.profileFirstName.trim() + " " + myuser.profileLastName).trim();
-        usuariOrigen_Email = myuser.profileEmail.trim();
-        usuariOrigen_Compte = myuser.id.toLowerCase();
-        usuariOrigen_Password = myuser.id.toLowerCase();
-
-        //usuariOrigen_Compte = "test";
-        //usuariOrigen_Password = "test";
+        App.getInstance().usuariOrigen_Nom = ParseUser.getCurrentUser().getString("profileFirstName").trim() + " " + ParseUser.getCurrentUser().getString("profileLastName").trim();
+        try {
+            App.getInstance().usuariOrigen_Email = ParseUser.getCurrentUser().getString("profileEmail").trim();
+        } catch (Exception e) {
+            App.getInstance().usuariOrigen_Email = "No facilitado";
+        }
+        App.getInstance().usuariOrigen_Compte = ParseUser.getCurrentUser().getObjectId().toLowerCase();
+        App.getInstance().usuariOrigen_Password = ParseUser.getCurrentUser().getObjectId();
 
         // Obtenim les dades de l'usuari destí, per iniciar el xat i recuperar la conversa anterior, si existeix
 
         usuariDesti_Nom = getIntent().getStringExtra("nom_contacte");
-        usuariDesti_Compte = getIntent().getStringExtra("usuari_contacte") + "@" + servidor_Nom;
+        usuariDesti_ObjectId = getIntent().getStringExtra("worker_id");
+        usuariDesti_Compte = getIntent().getStringExtra("usuari_contacte").toLowerCase() + "@" + App.getInstance().servidor_Nom;
 
         //usuariDesti_Compte = "test" + "@" + servidor_Nom;
         //usuariDesti_Compte = "fishapp" + "@" + servidor_Nom;
 
         // Informem dels usuaris a connectar a la conversa
 
-        App.getInstance().log("*");
         App.getInstance().log("************************************************************************************");
         App.getInstance().log("*                  Dades dels usuaris que participen a la conversa                 *");
         App.getInstance().log("************************************************************************************");
-        App.getInstance().log("* Remitent    - Nom usuari:       " + usuariOrigen_Nom);
-        App.getInstance().log("* Remitent    - Email usuari:     " + usuariOrigen_Email);
-        App.getInstance().log("* Remitent    - Compte usuari:    " + usuariOrigen_Compte);
-        App.getInstance().log("* Remitent    - Paswword usuari:  " + usuariOrigen_Password);
+        App.getInstance().log("* Remitent    - Nom usuari:       " + App.getInstance().usuariOrigen_Nom);
+        App.getInstance().log("* Remitent    - Email usuari:     " + App.getInstance().usuariOrigen_Email);
+        App.getInstance().log("* Remitent    - Compte usuari:    " + App.getInstance().usuariOrigen_Compte);
+        App.getInstance().log("* Remitent    - Paswword usuari:  " + App.getInstance().usuariOrigen_Password);
         App.getInstance().log("************************************************************************************");
         App.getInstance().log("* Destinatari - Nom usuari:       " + usuariDesti_Nom);
         App.getInstance().log("* Destinatari - Compte usuari:    " + usuariDesti_Compte);
         App.getInstance().log("************************************************************************************");
-        App.getInstance().log("*");
 
         // Configurem la presentació dels elements de la vista
 
-        botoEnviar = (Button)findViewById(R.id.boto_enviar);
+        afegirContacte(usuariDesti_Compte, usuariDesti_Nom, usuariDesti_ObjectId);
 
-        llistaMissatges = (ListView)findViewById(R.id.llista_missatges);
-
-        textEnviar = (TextView)findViewById(R.id.text_enviar);
-
-        botoEnviar.setEnabled(false);
+        botoEnviar = (Button) findViewById(R.id.boto_enviar);
+        llistaMissatges = (ListView) findViewById(R.id.llista_missatges);
+        textEnviar = (TextView) findViewById(R.id.text_enviar);
 
         llistaMissatges.setDivider(null);
-
         llistaMissatges.setDividerHeight(0);
 
         // Carreguem els missatges guardats en una matriu
-
         carregarMissatgesSharedPreferences();
 
         // Carreguem la matriu amb els missatges, a la llista
-
         adapter = new Xat_Missatge_Adapter_Activity(this, arrayMissatges);
-
         llistaMissatges.setAdapter(adapter);
-
         adapter.notifyDataSetChanged();
-
         llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
 
-        // Configurem la connexió XMPP
 
-        configBuilder = XMPPTCPConnectionConfiguration.builder();
+        if (!App.getInstance().connection.isConnected()) {
+            //botoEnviar.setEnabled(false);
+            App.getInstance().connectarXMPP();
+        }
 
-        configBuilder.setUsernameAndPassword(usuariOrigen_Compte, usuariOrigen_Password);
-        configBuilder.setServiceName(servidor_Nom);
-        configBuilder.setHost(servidor_Host);
-        configBuilder.setDebuggerEnabled(true);
-        configBuilder.setSecurityMode(ConnectionConfiguration.SecurityMode.disabled);
-
-        App.getInstance().log("*");
-        App.getInstance().log("************************************************************************************");
-        App.getInstance().log("*                 Configuració de la connexió amb el servidor XMPP                 *");
-        App.getInstance().log("************************************************************************************");
-        App.getInstance().log("*        Usuari:         " + usuariOrigen_Compte);
-        App.getInstance().log("*        Password:       " + usuariOrigen_Password);
-        App.getInstance().log("*        Nom del servei: " + servidor_Nom);
-        App.getInstance().log("*        Host:           " + servidor_Host);
-        App.getInstance().log("************************************************************************************");
-        App.getInstance().log("*");
-
-        // Creem la connexió XMPP
-
-        connection = new XMPPTCPConnection(configBuilder.build());
-
-        connection.setPacketReplyTimeout(1000);
-
-        // Iniciem la connexió amb el xat
-
-        connectarXMPP();
+        createChatManager();
 
         // Comprovem la connexió al servidor cada 5 segons
-
         scheduler = Executors.newSingleThreadScheduledExecutor();
-
-        /*
-        result = scheduler.scheduleAtFixedRate (new Runnable() {
-
-                    public void run() {
-
-                        if (!connection.isConnected() && !finalitzar){
-
-                            App.getInstance().log("Usuari '" + usuariOrigen_Compte + "' no connectat amb el xat. Intentant establir la connexió...");
-
-                            try {
-
-                                connection.connect();
-
-                                connection.login();
-
-                            } catch (SmackException e) {
-
-                                App.getInstance().log("Error: " + e.getMessage());
-
-                            } catch (IOException e) {
-
-                                App.getInstance().log("Error: " + e.getMessage());
-
-                            } catch (XMPPException e) {
-
-                                App.getInstance().log("Error: " + e.getMessage());
-                            }
-                        } else {
-
-                            App.getInstance().log("Usuari '" + usuariOrigen_Compte + "' connectat al xat.");
-                        }
-                    }
-                }, 0, 5, TimeUnit.SECONDS);
-                */
 
 
         // Enviem el missatge escrit per l'usuari, al premer el botó "Enviar"
-
-        botoEnviar.setOnClickListener(
-
-                new View.OnClickListener() {
+        botoEnviar.setOnClickListener( new View.OnClickListener() {
 
                     public void onClick(View v) {
 
-                        Thread thread = new Thread(new Runnable() {
+                        if (App.getInstance().connection.isConnected()) {
 
-                            @Override
-                            public void run() {
+                            Thread thread = new Thread(new Runnable() {
 
-                                if (!connection.isConnected()) {
+                                @Override
+                                public void run() {
 
-                                    try {
+                                    if (!App.getInstance().connection.isConnected()) {
+                                        try {
+                                            App.getInstance().connection.disconnect();
+                                            App.getInstance().log("Connectant amb el servidor '" + App.getInstance().servidor_Host + "'...");
+                                            App.getInstance().connection.connect();
 
-                                        connection.disconnect();
-
-                                        App.getInstance().log("Connectant amb el servidor '" +  servidor_Host + "'...");
-
-                                        connection.connect();
-
-                                    } catch (XMPPException e) {
-
-                                        App.getInstance().log("Error: " + e.getMessage());
-
-                                    } catch (SmackException e) {
-
-                                        App.getInstance().log("Error: " + e.getMessage());
-
-                                    } catch (IOException e) {
-
-                                        App.getInstance().log("Error: " + e.getMessage());
+                                        } catch (XMPPException e) {
+                                            App.getInstance().log("Error: " + e.getMessage());
+                                        } catch (SmackException e) {
+                                            App.getInstance().log("Error: " + e.getMessage());
+                                        } catch (IOException e) {
+                                            App.getInstance().log("Error: " + e.getMessage());
+                                        }
                                     }
-                                }
 
-                                // Comprovem si s'ha escrit un text, abans d'enviar-lo
+                                    // Comprovem si s'ha escrit un text, abans d'enviar-lo
 
-                                if (textEnviar.getText().length() > 0) {
+                                    if (textEnviar.getText().length() > 0) {
 
-                                    try {
+                                        try {
 
-                                        // Creem el missatge i el configurem
+                                            // Creem el missatge i el configurem
 
-                                        Message message = new Message();
+                                            Message message = new Message();
+                                            message.setFrom(App.getInstance().connection.getUser());
+                                            message.setSubject(App.getInstance().usuariOrigen_Nom);
+                                            message.setBody(textEnviar.getText().toString());
+                                            App.getInstance().log("Missatge enviat a '" + usuariDesti_Nom + "', a les " + new Date() + ": " + textEnviar.getText().toString());
+                                            Chat chat = chatManager.createChat(usuariDesti_Compte, messageListener);
 
-                                        message.setFrom(connection.getUser());
-
-                                        message.setBody(textEnviar.getText().toString());
-
-                                        App.getInstance().log("Missatge enviat a '" + usuariDesti_Nom + "', a les " + new Date() + ": " + textEnviar.getText().toString());
-
-                                        Chat chat = chatManager.createChat(usuariDesti_Compte, messageListener);
-
-                                        // Enviem el missatge
-
-                                        chat.sendMessage(message);
-
-                                        runOnUiThread(new Runnable() {
-
-                                            @Override
-                                            public void run() {
-
-                                                textEnviar.setText("");
-                                            }
-                                        });
-
-                                        if (message.getBody() != null) {
-
-                                            final String missatgeRebut = message.getBody();
-
-                                            // Muntem el missatge per presentar-lo
-
-                                            Xat_Missatge auxMss = new Xat_Missatge();
-
-                                            auxMss.setRemitent(usuariOrigen_Compte);
-                                            auxMss.setBody(missatgeRebut);
-                                            auxMss.setData(new Date());
-                                            auxMss.setEnviat(true);
-
-                                            // Actualitzem la matriu amb els missatges
-
-                                            arrayMissatges.add(auxMss);
-
-                                            // Actualitzem la llista
-
+                                            // Enviem el missatge
+                                            chat.sendMessage(message);
                                             runOnUiThread(new Runnable() {
 
                                                 @Override
                                                 public void run() {
-
-                                                    llistaMissatges.setAdapter(adapter);
-
-                                                    adapter.notifyDataSetChanged();
-
-                                                    llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
+                                                    textEnviar.setText("");
                                                 }
                                             });
+
+                                            if (message.getBody() != null) {
+                                                final String missatgeRebut = message.getBody();
+
+                                                // Muntem el missatge per presentar-lo
+                                                Xat_Missatge auxMss = new Xat_Missatge();
+
+                                                auxMss.setRemitent(App.getInstance().usuariOrigen_Compte);
+                                                auxMss.setBody(missatgeRebut);
+                                                auxMss.setData(new Date());
+                                                auxMss.setEnviat(true);
+
+                                                // Actualitzem la matriu amb els missatges
+
+                                                arrayMissatges.add(auxMss);
+
+                                                // Actualitzem la llista
+                                                runOnUiThread(new Runnable() {
+
+                                                    @Override
+                                                    public void run() {
+
+                                                        llistaMissatges.setAdapter(adapter);
+                                                        adapter.notifyDataSetChanged();
+                                                        llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
+                                                    }
+                                                });
+
+                                                // Enviar notificació Push al destinatari
+                                                Map<String, Object> hm = new HashMap<>();
+
+                                                ArrayList<String> destinataries = new ArrayList<>();
+                                                destinataries.add(usuariDesti_ObjectId);
+
+                                                JSONArray destJS = new JSONArray();
+                                                destJS.put(usuariDesti_ObjectId);
+
+                                                App.getInstance().log("DESTINATARIES: " + destinataries.get(0));
+
+
+                                                hm.put("message", "Nuevo mensaje");
+                                                hm.put("from", ParseUser.getCurrentUser().getObjectId());
+                                                hm.put("destinataries", destinataries);
+                                                hm.put("expDate", "2016-12-17T00:00:00.000Z");
+                                                //hm.put("jobHiring", fe.getObjectId());
+                                                //hm.put("hirerData", fe.get("hirerData"));
+                                                //hm.put("dateFinish", fEmpresa.getDataFiContracte().toString());
+                                                //hm.put("dateStart", fEmpresa.getDataIniciContracte().toString());
+                                                //hm.put("jobOffered", prepareForParse(fEmpresa.getJobOffered()));
+                                                //hm.put("priceHour", prepareForParse(fEmpresa.getPriceHour()));
+
+
+                                                try {
+                                                    ParseCloud.callFunctionInBackground("Notifications_sendPushAndroid", hm, new FunctionCallback<Object>() {
+
+                                                        @Override
+                                                        public void done(Object object, ParseException e) {
+                                                            if (e == null) {
+                                                                App.getInstance().log("sol·licitud sendPush OK");
+                                                            } else {
+                                                                App.getInstance().log("sol·licitud sendPush ERROR: " + e.toString());
+                                                            }
+
+                                                        }
+                                                    });
+
+                                                } catch (Exception ex) {
+                                                    ex.printStackTrace();
+                                                }
+
+
+                                            }
+
+                                        } catch (SmackException.NotConnectedException e) {
+
+                                            App.getInstance().connection.disconnect();
+
+                                            //App.getInstance().missatgeEnPantalla("Mensaje no enviado (Sin conexión)");
+                                            e.printStackTrace();
                                         }
-
-                                    } catch (SmackException.NotConnectedException e) {
-
-                                        connection.disconnect();
-
-                                        //App.getInstance().missatgeEnPantalla("Mensaje no enviado (Sin conexión)");
-
-                                        e.printStackTrace();
                                     }
                                 }
-                            }
-                        });
+                            });
 
-                        thread.start();
+                            thread.start();
+                        } else {
+                            App.getInstance().missatgeEnPantalla("No estás conectado prueba en unos segundos");
+                        }
                     }
                 }
-        );
-    }
+            );
+        }
+
+
 
     /**
      * Carrega a arrayMissatges els missatges del xat, guardats a SharedPreferences
@@ -404,27 +362,22 @@ public class Xat_Activity extends Activity {
         this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         // Matriu amb els missatges
-
         Gson gsonMissatges = new Gson();
-
         String jsonMissatges = this.prefs.getString(usuariDesti_Compte, "");
-
         Type typeMissatges = new TypeToken<ArrayList<Xat_Missatge>>() {}.getType();
 
         ArrayList<Xat_Missatge> arrayListMissatges = gsonMissatges.fromJson(jsonMissatges, typeMissatges);
 
         if (arrayListMissatges != null) {
-
             arrayMissatges = arrayListMissatges;
-
         } else {
-
             arrayMissatges = new ArrayList<>();
-
         }
 
         App.getInstance().log("Missatges a la conversa amb l'usuari de destí '" + usuariDesti_Compte + "' = " + arrayMissatges);
     }
+
+
 
     /**
      * Guardem els missatges de arrayMissatges a les SharedPreferences
@@ -432,7 +385,6 @@ public class Xat_Activity extends Activity {
     void guardarMissatgesSharedPreferences(){
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-
         SharedPreferences.Editor editor = sharedPrefs.edit();
 
         // Matriu amb els missatges del xat
@@ -446,245 +398,123 @@ public class Xat_Activity extends Activity {
         editor.commit();
     }
 
-    public void connectarXMPP (){
 
-        Thread thread = new Thread(new Runnable(){
+    /**
+     * Guardem els missatges de arrayMissatges a les SharedPreferences
+     */
+    void guardarContactesSharedPreferences(){
+
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+
+        Gson gson = new Gson();
+        String jsonArrayContactes = gson.toJson(arrayContactes);
+        editor.putString("contactes", jsonArrayContactes);
+        App.getInstance().log("Guardats Contactes de l'usuari = " + jsonArrayContactes);
+
+        editor.commit();
+    }
+
+    /**
+     * Carrega a arrayContactes els contactes, guardats a SharedPreferences
+     */
+    void carregarContactesSharedPreferences(){
+
+        this.prefs = PreferenceManager.getDefaultSharedPreferences(this);
+
+        // Matriu amb els missatges
+        Gson gsonContactes = new Gson();
+        String jsonContactes = this.prefs.getString("contactes", "");
+        Type typeContactes = new TypeToken<ArrayList<Xat_Contacte>>() {}.getType();
+
+        ArrayList<Xat_Contacte> arrayListContactes = gsonContactes.fromJson(jsonContactes, typeContactes);
+
+        if (arrayListContactes != null) {
+            arrayContactes = arrayListContactes;
+        } else {
+            arrayContactes = new ArrayList<>();
+        }
+
+        App.getInstance().log("Carregats Contactes de l'usuari = " + arrayContactes);
+    }
+
+    void afegirContacte(String usuari, String nom, String objectId){
+        carregarContactesSharedPreferences();
+        boolean existeix = false;
+        Xat_Contacte contacte = new Xat_Contacte();
+        contacte.setNomContacte(nom);
+        contacte.setUsuari(usuari);
+        contacte.setObjectId(objectId);
+
+        for (Xat_Contacte contacteLlista:arrayContactes) {
+            if (contacte.getUsuari().equals(contacteLlista.getUsuari())){
+                existeix = true;
+            }
+        }
+
+        if (!existeix){
+            arrayContactes.add(contacte);
+            guardarContactesSharedPreferences();
+        }
+    }
+
+
+
+
+    private void createChatManager(){
+        chatManager = ChatManager.getInstanceFor(App.getInstance().connection);
+        chatManagerListener =  new ChatManagerListener() {
 
             @Override
-            public void run() {
+            public void chatCreated(Chat chat, boolean createdLocally) {
 
-                if (!connection.isConnected()){
-
-                    try{
-
-                        // Ens connectem amb el servidor
-
-                        App.getInstance().log("Connectant amb el servidor '" +  servidor_Host + "'...");
-
-                        connection.connect();
-
-                        App.getInstance().log("Connexió amb el servidor '" + servidor_Host + "' establerta.");
-
-                    } catch (SmackException e) {
-
-                        App.getInstance().log("Error al connectar amb el servidor (SmackException): " + e.getMessage());
-
-                    } catch (IOException e) {
-
-                        App.getInstance().log("Error al connectar amb el servidor (IOException): " + e.getMessage());
-
-                    } catch (XMPPException e) {
-
-                        App.getInstance().log("Error al connectar amb el servidor (XMPPException): " + e.getMessage());
-                    }
-                }
-
-                // Ens loguegem
-
-                if (connection.isConnected()) {
-
-                    if (!loginXMPP()) {
-
-                        // Creem un temporitzador de 3 segons (3000 ms). Al finalitzar, torna a intentar loguejar a l'usuari.
-                        // És per donar temps a haver-se creat l'usuari, si no estava donat d'alta previament
-                        // Això només passaria en el cas d'usuaris anteriors a la incorporació del xat a l'App
-
-                        App.getInstance().log("Esperem 3 segons, abans de tornar a intentar loguejar a l'usuari");
-
-                        TimerTask comptador = new TimerTask() {
-
-                            @Override
-                            public void run() {
-
-                                if(!loginXMPP()) {
-
-                                    App.getInstance().log("Usuari no loguejat, desprès del segon intent.");
-
-                                    return;
-                                }
-                            }
-                        };
-
-                        Timer timer = new Timer();
-
-                        timer.schedule(comptador, 3000);
-                    }
-
-                } else {
-
-                    return;
-                }
-
-                // Gestionem el Listener dels missatges, pels missatges rebuts
-
-                chatManager = ChatManager.getInstanceFor(connection);
-
-                chatManager.addChatListener(new ChatManagerListener() {
+                chat.addMessageListener(new ChatMessageListener() {
 
                     @Override
-                    public void chatCreated(Chat chat, boolean createdLocally) {
+                    public void processMessage(Chat chat, Message message) {
 
-                        chat.addMessageListener(new ChatMessageListener() {
+                        App.getInstance().log("Missatge rebut: " + message.getBody());
 
-                            @Override
-                            public void processMessage(Chat chat, Message message) {
+                        // Comprovem si el missatge està buit
 
-                                App.getInstance().log("Missatge rebut: " + message.getBody());
+                        if (message.getBody() != null) {
 
-                                // Comprovem si el missatge està buit
+                            final String missatgeRebut = message.getBody();
 
-                                if (message.getBody() != null) {
+                            final String remitent = message.getFrom();
 
-                                    final String missatgeRebut = message.getBody();
+                            Xat_Missatge auxMss = new Xat_Missatge();
 
-                                    final String remitent = message.getFrom();
+                            auxMss.setRemitent(usuariDesti_Nom);
+                            auxMss.setBody(missatgeRebut);
+                            auxMss.setData(new Date());
+                            auxMss.setEnviat(false);
 
-                                    Xat_Missatge auxMss = new Xat_Missatge();
+                            arrayMissatges.add(auxMss);
 
-                                    auxMss.setRemitent(usuariDesti_Nom);
-                                    auxMss.setBody(missatgeRebut);
-                                    auxMss.setData(new Date());
-                                    auxMss.setEnviat(false);
+                            // Actualitzem la llista dels missatges del xat
 
-                                    arrayMissatges.add(auxMss);
+                            runOnUiThread(new Runnable() {
 
-                                    // Actualitzem la llista dels missatges del xat
+                                @Override
+                                public void run() {
 
-                                    runOnUiThread(new Runnable() {
+                                    llistaMissatges.setAdapter(adapter);
 
-                                        @Override
-                                        public void run() {
+                                    adapter.notifyDataSetChanged();
 
-                                            llistaMissatges.setAdapter(adapter);
-
-                                            adapter.notifyDataSetChanged();
-
-                                            llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
-                                        }
-                                    });
+                                    llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
                                 }
-                            }
-                        });
-                    }
-                });
-
-                // Activem el botó "Enviar"
-
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-
-                        botoEnviar.setEnabled(true);
+                            });
+                        }
                     }
                 });
             }
-        });
+        };
 
-        thread.start();
+        chatManager.addChatListener(chatManagerListener);
+
     }
 
-    /**
-     *
-     * Ens loguegem
-     */
-    public boolean loginXMPP (){
 
-        Boolean resultat = false;
-
-        // Ens loguegem
-
-        try {
-
-            App.getInstance().log("Loguejant a l'usuari '" + usuariOrigen_Compte + "'...");
-
-            connection.login();
-
-            resultat = true;
-
-        } catch (SmackException e) {
-
-            App.getInstance().log("Error al identificar a l'usuari (SmackException): " + e.getMessage());
-
-        } catch (IOException e) {
-
-            App.getInstance().log("Error al identificar a l'usuari (IOException): " + e.getMessage());
-
-        } catch (XMPPException e) {
-
-            App.getInstance().log("Error al identificar a l'usuari (XMPPException): " + e.getMessage());
-        }
-
-        // Creem el compte de l'usuari
-
-        if (!resultat) {
-
-            resultat = crearUsuariXMPP();
-        }
-
-        // Comprovem si ens hem loguejat
-
-        if (resultat) {
-
-            App.getInstance().log("Usuari '" + usuariOrigen_Compte + "' loguejat.");
-
-        }else{
-
-            App.getInstance().log("L'usuari '" + usuariOrigen_Compte + "' no s'ha pogut loguejar.");
-        }
-
-        return resultat;
-    }
-
-    /**
-     * Si arribem aquí, és que l'usuari que inicia la conversa no està donat d'alta. Creem l'usuari.
-     */
-    public boolean crearUsuariXMPP() {
-
-        Boolean resultat = false;
-
-        AccountManager manager = AccountManager.getInstance(connection);
-
-        Map<String, String> atributs = new HashMap<String, String>();
-
-        atributs.put("name", usuariOrigen_Nom);
-        atributs.put("email", usuariOrigen_Email);
-
-        try {
-
-            manager.createAccount(usuariOrigen_Compte, usuariOrigen_Password, atributs);
-
-            App.getInstance().log("*");
-            App.getInstance().log("************************************************************************************");
-            App.getInstance().log("*    Usuari 'Origen' donat d'alta:");
-            App.getInstance().log("************************************************************************************");
-            App.getInstance().log("*        Nom:      " + usuariOrigen_Nom);
-            App.getInstance().log("*        Email:    " + usuariOrigen_Email);
-            App.getInstance().log("*        Compte:   " + usuariOrigen_Compte);
-            App.getInstance().log("*        Password: " + usuariOrigen_Password);
-            App.getInstance().log("************************************************************************************");
-            App.getInstance().log("*");
-
-            resultat = true;
-
-        } catch (SmackException.NoResponseException e) {
-
-            App.getInstance().log("Error al crear un nou compte SmackException.NoResponseException: " + e.getMessage());
-
-        } catch (XMPPException.XMPPErrorException e) {
-
-            App.getInstance().log("Error al crear un nou compte XMPPException.XMPPErrorException: " + e.getMessage());
-
-        } catch (SmackException.NotConnectedException e) {
-
-            App.getInstance().log("Error al crear un nou compte SmackException.NotConnectedException: " + e.getMessage());
-        }
-
-        if (!resultat) {
-
-            App.getInstance().log("No s'ha pogut crear el compte '" + usuariOrigen_Compte + "'");
-        }
-
-        return resultat;
-    }
 }

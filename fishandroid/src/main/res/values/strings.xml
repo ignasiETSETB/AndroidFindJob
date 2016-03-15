@@ -100,8 +100,7 @@
 
     <string-array name="list_of_work_types">
         <item>Presencial</item>
-        <item>Remoto</item>
-        <item>Mundial</item>
+        <item>A distancia</item>
         <item>Cualquiera</item>
     </string-array>
 
@@ -265,6 +264,10 @@
     <string name="form_iban">IBAN</string>
     <string name="form_swift">SWIFT/BIC</string>
     <string name="form_nacionalitat">Nacionalitat</string>
+    <string name="press_again_to_exit">Pulsa otra vez para salir</string>
+    <string name="form_condiciones">Condiciones de contratación</string>
+    <string name="action_condiciones">Condiciones</string>
+    <string name="action_ayuda">Ayuda</string>
 
 
 </resources>

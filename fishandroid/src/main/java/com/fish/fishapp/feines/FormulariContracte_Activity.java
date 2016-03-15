@@ -42,13 +42,14 @@ public class FormulariContracte_Activity extends Activity {
 
     private static EditText dataIniciContracte;
     private static EditText dataFiContracte;
+    private static EditText preuHora;
 
     // ADREÇA FISCAL
     private static EditText fiscalAdressPhoneNumber;
     private static EditText fiscalAdressEmail;
     private static EditText fiscalAdressAdress;
-    private static Spinner fiscalAdressCountry;
-    private static String fiscalAdressCountryString;
+    //private static Spinner fiscalAdressCountry;
+    //private static String fiscalAdressCountryString;
     private static EditText fiscalAdressLocalityName;
     private static EditText fiscalAdressPostalCode;
     private static Spinner fiscalAdressProvince;
@@ -164,12 +165,14 @@ public class FormulariContracte_Activity extends Activity {
 
         });
 
+        preuHora = (EditText) findViewById(R.id.form_preu_hora);
+
         // FISCAL
         fiscalAdressEmail = (EditText) findViewById(R.id.emailFiscal);
         // ADRESS
         fiscalAdressPhoneNumber = (EditText) findViewById(R.id.fiscalAddress_phoneNumber);
         fiscalAdressAdress = (EditText) findViewById(R.id.fiscalAddress_address);
-        fiscalAdressCountry = (Spinner) findViewById(R.id.fiscalAddress_country);
+        //fiscalAdressCountry = (Spinner) findViewById(R.id.fiscalAddress_country);
         fiscalAdressProvince = (Spinner) findViewById(R.id.fiscalAddress_province);
         fiscalAdressTownName = (Spinner) findViewById(R.id.fiscalAddress_townName);
         fiscalAdressLocalityName = (EditText) findViewById(R.id.fiscalAddress_localityName);
@@ -271,6 +274,7 @@ public class FormulariContracte_Activity extends Activity {
         });
 
         // SPINNER PAIS
+        /*
         ArrayAdapter<CharSequence> adapterPais = ArrayAdapter.createFromResource(
                 this, R.array.form_paisos_array,
                 android.R.layout.simple_spinner_item);
@@ -287,7 +291,7 @@ public class FormulariContracte_Activity extends Activity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
+        */
 
         // SPINNER CNAE
         ArrayAdapter<CharSequence> adapterCNAE = ArrayAdapter.createFromResource(
@@ -515,7 +519,7 @@ public class FormulariContracte_Activity extends Activity {
                         FormulariEmpresa fe = new FormulariEmpresa();
 
                         fe.setJobOffered(jobOffered);
-                        fe.setPriceHour(priceHour);
+                        fe.setPriceHour(Integer.parseInt(preuHora.getText().toString()));
 
                         fe.setDataIniciContracte(dataIniciContracte.getText().toString());
                         fe.setDataFiContracte(dataFiContracte.getText().toString());
@@ -524,7 +528,7 @@ public class FormulariContracte_Activity extends Activity {
 
                         // FISCAL ADRESS
                         fe.setAdrecaFiscal(fiscalAdressAdress.getText().toString());
-                        fe.setPaisFiscal(fiscalAdressCountryString);
+                        //fe.setPaisFiscal(fiscalAdressCountryString);
                         fe.setProvinciaFiscal(fiscalAdressProvinceString);
                         fe.setLocalitatFiscal(fiscalAdressLocalityName.getText().toString());
                         fe.setMunicipiFiscal(fiscalAdressTownNameString);

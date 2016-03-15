@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.fish.fishapp.App;
 import com.fish.fishapp.R;
+import com.fish.fishapp.utils.Server;
 import com.parse.FunctionCallback;
 import com.parse.ParseCloud;
 import com.parse.ParseException;
@@ -107,14 +108,19 @@ public class InfoContracteActivity extends Activity {
      */
     public void clickRebutjarContracte(View v){
 
+        // Marcar el formulari com rebutjat
+        try {
+            Server.marcarFormulariRebutjat(idJobsHiring);
+        } catch (Exception e){
+            App.getInstance().log("ERROR: " + e.toString());
+        }
+
+
         // Enviar notificacio PUSH de Rebuig a la Empresa
         Map<String, Object> hm = new HashMap<>();
-
         ArrayList<String> destinataries = new ArrayList<>();
         destinataries.add(fromUser);
-
         App.getInstance().log("DESTINATARIES: " + destinataries.get(0));
-
 
         hm.put("message", ParseUser.getCurrentUser().get("profileFirstName") + " rechazó la oferta '" + jobOffered + "'" );
         hm.put("from", ParseUser.getCurrentUser().getObjectId());

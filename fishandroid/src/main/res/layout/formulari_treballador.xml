@@ -3,7 +3,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".feines.FormulariTreballador_Activity">
+    tools:context=".feines.FormulariTreballador_Activity"
+    android:padding="4dp">
+
     <LinearLayout
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -23,15 +25,10 @@
             android:orientation="vertical" >
 
             <!-- NOM TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_nom"
@@ -41,20 +38,13 @@
                     android:id="@+id/nom_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_nom"
                     android:padding="10dip" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_cognom1"
@@ -64,20 +54,13 @@
                     android:id="@+id/cognom1_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_cognom1"
                     android:padding="10dip" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_cognom2"
@@ -87,48 +70,28 @@
                     android:id="@+id/cognom2_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_cognom2"
                     android:padding="10dip" />
-            </LinearLayout>
 
-
-
-            <!-- TIPUS IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_tipus_identificacio"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tipus_identificacio_treballador"
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
 
-            </LinearLayout>
-
-            <!-- NUMERO IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_document"
@@ -138,13 +101,12 @@
                     android:id="@+id/identificacio_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_document"
                     android:padding="10dip" />
-            </LinearLayout>
 
             <!-- NACIONALITAT TREBALLADOR -->
+            <!--
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -167,7 +129,6 @@
                     android:spinnerMode="dropdown" />
             </LinearLayout>
 
-            <!-- SIGLA -->
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -186,22 +147,15 @@
                     android:id="@+id/sigla_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_sigla"
                     android:padding="10dip" />
             </LinearLayout>
+            -->
 
-            <!-- CARRER -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_carrer"
@@ -211,22 +165,12 @@
                     android:id="@+id/carrer_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_carrer"
                     android:padding="10dip" />
-            </LinearLayout>
-
-            <!-- NÚMERO -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_numero"
@@ -236,26 +180,17 @@
                     android:id="@+id/numero_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_numero"
                     android:maxLength="5"
                     android:maxLines="1"
                     android:padding="10dip"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
-            </LinearLayout>
 
-            <!-- PUERTA -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_porta"
@@ -265,26 +200,16 @@
                     android:id="@+id/porta_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_porta"
                     android:maxLength="4"
                     android:maxLines="1"
                     android:padding="10dip"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
-            </LinearLayout>
-
-            <!-- CP TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_codi_postal"
@@ -294,8 +219,7 @@
                     android:id="@+id/codi_postal_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_codi_postal"
                     android:maxLength="5"
                     android:maxLines="1"
@@ -303,18 +227,9 @@
                     android:inputType="number"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
-            </LinearLayout>
-
-            <!-- POBLACIÓ TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_localitat"
@@ -324,8 +239,7 @@
                     android:id="@+id/poblacio_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_municipi"
                     android:maxLength="50"
                     android:maxLines="1"
@@ -333,60 +247,40 @@
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
 
-            </LinearLayout>
-
-
-
-            <!-- MUNICIPI TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_municipi"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/municipi_treballador"
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
 
 
-            </LinearLayout>
-
-            <!-- PROVINCIA TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_provincia"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/provincia_treballador"
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
 
-            </LinearLayout>
 
             <!-- PAIS TREBALLADOR -->
+            <!--
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -408,17 +302,11 @@
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
             </LinearLayout>
-
+            -->
             <!-- TELEFON TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_telefon"
@@ -428,24 +316,14 @@
                     android:id="@+id/telefon_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/phone"
                     android:inputType="phone"
                     android:maxLength="13"
                     android:padding="10dip" />
-            </LinearLayout>
-
-            <!-- COMPTA COTITZACIO -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_cotitzacio_ss"
@@ -455,24 +333,15 @@
                     android:id="@+id/cotitzacio_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:maxLength="9"
                     android:inputType="number"
-                    android:background="@android:drawable/editbox_background_normal"
                     android:hint="@string/form_cotitzacio_ss"
                     android:padding="10dip" />
-            </LinearLayout>
 
-            <!-- EMAIL TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_email"
@@ -482,23 +351,13 @@
                     android:id="@+id/email_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- DATA NAIXEMENT -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_data_naixement"
@@ -507,72 +366,46 @@
                     android:id="@+id/data_naixement_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_data_naixement"
                     android:inputType="date"
                     android:padding="10dip"
                     android:layout_weight="0.5"
                     />
-            </LinearLayout>
-
-            <!-- SEXE TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_sexe"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/sexe_treballador"
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
-            </LinearLayout>
 
-            <!-- NIVELL FORMATIU TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_nivell_formatiu"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/nivell_formatiu_treballador"
                     android:layout_weight="1"
                     android:spinnerMode="dropdown" />
 
-            </LinearLayout>
 
-
-            <!-- IBAN TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_iban"
@@ -582,26 +415,17 @@
                     android:id="@+id/iban_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_iban"
                     android:maxLength="34"
                     android:maxLines="1"
                     android:padding="10dip"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
-            </LinearLayout>
 
-            <!-- SWIFT TREBALLADOR -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:text="@string/form_swift"
@@ -611,32 +435,20 @@
                     android:id="@+id/swift_treballador"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_swift"
                     android:maxLength="11"
                     android:maxLines="1"
                     android:padding="10dip"
                     android:descendantFocusability="beforeDescendants"
                     android:focusableInTouchMode="true"/>
-            </LinearLayout>
 
-
-
-            <!-- BOTONS -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/btnSubmit"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:layout_weight="1"
                     android:onClick="clickAcceptar"
                     android:text="@string/submit" />
@@ -645,13 +457,12 @@
                     android:id="@+id/btnCancel"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:layout_weight="1"
                     android:onClick="clickCancelar"
                     android:text="@string/cancel" />
             </LinearLayout>
 
-        </LinearLayout>
 
     </ScrollView>
 

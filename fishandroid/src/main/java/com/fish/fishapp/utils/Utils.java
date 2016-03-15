@@ -1,12 +1,19 @@
 package com.fish.fishapp.utils;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.location.Location;
+import android.preference.PreferenceManager;
 
 import com.fish.fishapp.App;
 import com.fish.fishapp.R;
+import com.fish.fishapp.contact.Xat_Contacte;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONObject;
 
+import java.lang.reflect.Type;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -184,13 +191,12 @@ public class Utils {
 		case 1:
 			res = workTypes[0]; //"Presential"
 			break;
-		case 2: 
+		case 2:
 			res = workTypes[1]; //"Remote";
 			break;
-		case 4:
-			res = workTypes[2]; //"World Wide";
 		case 255:
-			res= workTypes[3]; //"Any";
+			res= workTypes[2]; //"Any";
+
 		}
 		
 		return res;
@@ -204,9 +210,7 @@ public class Utils {
 			res=1;
 		} else if (string.equals(workTypes[1])){ //"Remote"
 			res=2;
-		} else if (string.equals(workTypes[2])){ //"World Wide"
-			res =4;
-		} else if (string.equals(workTypes[3])){ //"Any"
+		} else if (string.equals(workTypes[2])){ //"Any"
 			res = 255;
 		}
 		return res;
@@ -394,7 +398,7 @@ public class Utils {
 	}
 
 	/**
-	 * Converteix un String dd/mm/yyyy en una data stardar de JSON
+	 * Converteix un String dd/mm/yyyy en una data estardar de JSON
 	 * @param data
 	 * @return
 	 */
@@ -411,5 +415,99 @@ public class Utils {
 
 		return ret;
 	}
+
+	/**
+	 * Converteix un String dd/mm/yyyy en una data estardar de JSON
+	 * @param data
+	 * @return
+	 */
+	public static String JSONDate2String (String data){
+		String ret = "";
+
+		try {
+			ret = data.substring(6,10) + "-" + data.substring(3,5) + "-" + data.substring(0,2) + "T00:00:00,000Z";
+		} catch (Exception e) {
+			ret = "0000-00-00T00:00:00,000Z";
+		}
+
+		App.getInstance().log("StringTOJSONDate: " + ret);
+
+		return ret;
+	}
+
+
+
+
+
+	/**
+	 * Guarda els contactes a les SharedPreferences
+	 */
+	public static void guardarContactesSharedPreferences(ArrayList<Xat_Contacte> contactes, Context context){
+
+		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
+		SharedPreferences.Editor editor = sharedPrefs.edit();
+
+		Gson gson = new Gson();
+		String jsonArrayContactes = gson.toJson(contactes);
+		editor.putString("contactes", jsonArrayContactes);
+		App.getInstance().log("Guardats Contactes de l'usuari = " + jsonArrayContactes);
+
+		editor.commit();
+	}
+
+	/**
+	 * Carrega a arrayContactes els contactes, guardats a SharedPreferences
+	 */
+	public static ArrayList<Xat_Contacte> carregarContactesSharedPreferences(Context context){
+
+		ArrayList<Xat_Contacte> contactes = new ArrayList<>();
+
+		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+		// Matriu amb els missatges
+		Gson gsonContactes = new Gson();
+		String jsonContactes = prefs.getString("contactes", "");
+		Type typeContactes = new TypeToken<ArrayList<Xat_Contacte>>() {}.getType();
+
+		ArrayList<Xat_Contacte> arrayListContactes = gsonContactes.fromJson(jsonContactes, typeContactes);
+
+		if (arrayListContactes != null) {
+			contactes = arrayListContactes;
+		} else {
+			contactes = new ArrayList<>();
+		}
+
+		App.getInstance().log("Carregats Contactes de l'usuari = " + contactes);
+
+		return contactes;
+
+	}
+
+
+
+
+	public static ArrayList<Xat_Contacte> afegirContacte(ArrayList<Xat_Contacte> contactes, Xat_Contacte contacte, Context context){
+		carregarContactesSharedPreferences(context);
+		boolean existeix = false;
+
+		for (Xat_Contacte contacteLlista:contactes) {
+			if (contacte.getUsuari().equals(contacteLlista.getUsuari())){
+				existeix = true;
+				if (contacte.getMissatgePendent().length() > 0){
+					contacteLlista.setMissatgePendent("1");
+				}
+			}
+		}
+
+		if (!existeix){
+			contactes.add(contacte);
+		}
+
+		guardarContactesSharedPreferences(contactes, context);
+
+		return contactes;
+
+	}
+
 
 }

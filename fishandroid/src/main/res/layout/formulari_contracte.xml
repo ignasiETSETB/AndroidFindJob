@@ -3,12 +3,9 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    tools:context=".feines.FormulariContracte_Activity">
-    <LinearLayout
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_width="0px"
-        android:layout_height="0px"/>
+    tools:context=".feines.FormulariContracte_Activity"
+    android:padding="4dp">
+
 
     <ScrollView
         android:id="@+id/scrollForm"
@@ -22,59 +19,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <!-- DATA INICI / FI -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dip"
-                android:orientation="horizontal" >
 
-                <EditText
-                    android:id="@+id/dataIniciContracte"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:hint="@string/contracte_data_inici"
-                    android:inputType="date"
-                    android:padding="10dip"
-                    android:layout_weight="0.5"
-                    />
-
-                <EditText
-                    android:id="@+id/dataFiContracte"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:hint="@string/contracte_data_fi"
-                    android:inputType="date"
-                    android:padding="10dip"
-                    android:layout_weight="0.5"
-                    />
-            </LinearLayout>
 
 
 
             <!-- IDENTIFICACIÓ -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dip"
-                android:ems="5"
+                android:layout_margin="10dip"
                 android:textSize="24sp"
                 android:text="@string/form_label_identificacio" />
 
-            <!-- NOM EMPRESA / RAZÓN SOCIAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_companyName"
                     android:layout_gravity="center_vertical" />
 
@@ -82,48 +42,34 @@
                     android:id="@+id/identification_companyName"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_companyName"
-                    android:padding="10dip" />
-            </LinearLayout>
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
-            <!-- TIPUS IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_tipus_identificacio"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/identification_type"
                     android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
+                    android:spinnerMode="dropdown"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
-            </LinearLayout>
-
-            <!-- NUMERO IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_document"
                     android:layout_gravity="center_vertical" />
 
@@ -131,24 +77,17 @@
                     android:id="@+id/identification_number"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_document"
-                    android:padding="10dip" />
-            </LinearLayout>
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
-            <!-- NOM COMERCIAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_tradeName"
                     android:layout_gravity="center_vertical" />
 
@@ -156,200 +95,144 @@
                     android:id="@+id/identification_tradeName"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_tradeName"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
 
             <!-- DADES FISCALS -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dip"
-                android:ems="5"
+                android:layout_margin="10dip"
                 android:textSize="24sp"
                 android:text="@string/form_label_dades_fiscals" />
 
-            <!-- ADREÇA FISCAL -->
-            <LinearLayout
+
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                android:text="@string/form_adreca_fiscal"
+                android:layout_gravity="center_vertical" />
 
+            <EditText
+                android:id="@+id/fiscalAddress_address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/form_adreca_fiscal"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:padding="10dip"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/form_provincia"
+                android:layout_gravity="center_vertical" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fiscalAddress_province"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/form_municipi"
+                android:layout_gravity="center_vertical" />
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/fiscalAddress_townName"
+                android:layout_weight="1"
+                android:spinnerMode="dropdown"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/form_localitat"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/fiscalAddress_localityName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/form_municipi"
+                android:maxLength="50"
+                android:maxLines="1"
+                android:padding="10dip"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/form_codi_postal"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/fiscalAddress_postalCode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/form_codi_postal"
+                android:maxLength="5"
+                android:maxLines="1"
+                android:padding="10dip"
+                android:inputType="number"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
+               <!--
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
-                    android:text="@string/form_adreca_fiscal"
-                    android:layout_gravity="center_vertical" />
-
-                <EditText
-                    android:id="@+id/fiscalAddress_address"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
-                    android:hint="@string/form_adreca_fiscal"
-                    android:maxLength="100"
-                    android:maxLines="1"
-                    android:padding="10dip"
-                    android:descendantFocusability="beforeDescendants"
-                    android:focusableInTouchMode="true"/>
-            </LinearLayout>
-
-            <!-- LOCALITAT FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
-                    android:text="@string/form_localitat"
-                    android:layout_gravity="center_vertical" />
-
-                <EditText
-                    android:id="@+id/fiscalAddress_localityName"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
-                    android:hint="@string/form_municipi"
-                    android:maxLength="50"
-                    android:maxLines="1"
-                    android:padding="10dip"
-                    android:descendantFocusability="beforeDescendants"
-                    android:focusableInTouchMode="true"/>
-
-            </LinearLayout>
-
-            <!-- CP FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
-                    android:text="@string/form_codi_postal"
-                    android:layout_gravity="center_vertical" />
-
-                <EditText
-                    android:id="@+id/fiscalAddress_postalCode"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
-                    android:hint="@string/form_codi_postal"
-                    android:maxLength="5"
-                    android:maxLines="1"
-                    android:padding="10dip"
-                    android:inputType="number"
-                    android:descendantFocusability="beforeDescendants"
-                    android:focusableInTouchMode="true"/>
-            </LinearLayout>
-
-            <!-- MUNICIPI FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
-                    android:text="@string/form_municipi"
-                    android:layout_gravity="center_vertical" />
-
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fiscalAddress_townName"
-                    android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
-
-
-            </LinearLayout>
-
-            <!-- PROVINCIA FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
-                    android:text="@string/form_provincia"
-                    android:layout_gravity="center_vertical" />
-
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fiscalAddress_province"
-                    android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
-
-            </LinearLayout>
-
-            <!-- PAIS FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_pais"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/fiscalAddress_country"
                     android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
-            </LinearLayout>
-
-
-
-
-            <!-- TELEFON FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:spinnerMode="dropdown"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
+            -->
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_telefon"
                     android:layout_gravity="center_vertical" />
 
@@ -357,27 +240,18 @@
                     android:id="@+id/fiscalAddress_phoneNumber"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/phone"
                     android:inputType="phone"
                     android:maxLength="13"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- WEB FISCAL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_web"
                     android:layout_gravity="center_vertical" />
 
@@ -385,29 +259,21 @@
                     android:id="@+id/fiscalAddress_web"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_web"
                     android:maxLength="50"
                     android:maxLines="1"
                     android:padding="10dip"
                     android:inputType="textUri"
                     android:descendantFocusability="beforeDescendants"
-                    android:focusableInTouchMode="true"/>
-            </LinearLayout>
-
-            <!-- EMAIL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:focusableInTouchMode="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_email"
                     android:layout_gravity="center_vertical" />
 
@@ -415,26 +281,17 @@
                     android:id="@+id/emailFiscal"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- COMPTA COTITZACIO -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_cotitzacio_ss"
                     android:layout_gravity="center_vertical" />
 
@@ -442,49 +299,34 @@
                     android:id="@+id/workingPlace_cotitzacio"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:maxLength="9"
                     android:inputType="number"
-                    android:background="@android:drawable/editbox_background_normal"
                     android:hint="@string/form_cotitzacio_ss"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-            <!-- CNAE -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_cnae"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/workingPlace_cnae"
                     android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
-            </LinearLayout>
-
-            <!-- CONVENI CLIENT -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:spinnerMode="dropdown"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_conveni_client"
                     android:layout_gravity="center_vertical" />
 
@@ -492,37 +334,29 @@
                     android:id="@+id/workingPlace_conveniClient"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_conveni_client"
-                    android:padding="10dip" />
-            </LinearLayout>
-
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
 
 
 
             <!-- SIGNANT -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dip"
-                android:ems="5"
+                android:layout_margin="10dip"
                 android:textSize="24sp"
                 android:text="@string/form_label_signant" />
 
-            <!-- NOM SIGNANT -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_nom"
                     android:layout_gravity="center_vertical" />
 
@@ -530,24 +364,16 @@
                     android:id="@+id/signing_name"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_nom"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-            <!-- CARREC SIGNANT -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_carrec"
                     android:layout_gravity="center_vertical" />
 
@@ -555,48 +381,30 @@
                     android:id="@+id/signing_position"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_carrec"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- TIPUS IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_tipus_identificacio"
                     android:layout_gravity="center_vertical" />
 
                 <Spinner
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/signing_identification_type"
                     android:layout_weight="1"
-                    android:spinnerMode="dropdown" />
-            </LinearLayout>
-
-            <!-- NUMERO IDENTIFICACIÓ -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
-
+                    android:spinnerMode="dropdown"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_document"
                     android:layout_gravity="center_vertical" />
 
@@ -604,25 +412,16 @@
                     android:id="@+id/signing_identification_number"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_document"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- TELEFON SIGNANT -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_telefon"
                     android:layout_gravity="center_vertical" />
 
@@ -630,27 +429,18 @@
                     android:id="@+id/signing_phone_number"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/phone"
                     android:inputType="phone"
                     android:maxLength="13"
-                    android:padding="10dip" />
-            </LinearLayout>
-
-
-            <!-- EMAIL -->
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:orientation="horizontal" >
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:ems="5"
                     android:text="@string/form_email"
                     android:layout_gravity="center_vertical" />
 
@@ -658,30 +448,84 @@
                     android:id="@+id/signing_email"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:background="@android:drawable/editbox_background_normal"
+                    android:layout_margin="10dip"
                     android:hint="@string/form_email"
-                    android:padding="10dip" />
-            </LinearLayout>
+                    android:padding="10dip"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp" />
 
 
-
-
-
-            <!-- BOTONS -->
-            <LinearLayout
+            <!-- CONDICIONS -->
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:layout_margin="10dip"
+                android:textSize="24sp"
+                android:text="@string/form_condiciones" />
+
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contracte_data_inici"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/dataIniciContracte"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/contracte_data_inici"
+                android:inputType="date"
+                android:padding="10dip"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contracte_data_fi"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/dataFiContracte"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/contracte_data_fi"
+                android:inputType="date"
+                android:padding="10dip"
+                android:layout_weight="0.5"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/contracte_preu_hora"
+                android:layout_gravity="center_vertical" />
+
+            <EditText
+                android:id="@+id/form_preu_hora"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:hint="@string/contracte_preu_hora"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:padding="10dip"
+                android:inputType="numberDecimal"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp" />
+
 
                 <Button
                     android:id="@+id/btnSubmit"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:layout_weight="1"
                     android:onClick="clickAcceptar"
                     android:text="@string/submit" />
@@ -690,13 +534,12 @@
                     android:id="@+id/btnCancel"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_margin="10dip"
                     android:layout_weight="1"
                     android:onClick="clickCancelar"
                     android:text="@string/cancel" />
             </LinearLayout>
 
-        </LinearLayout>
 
     </ScrollView>
 

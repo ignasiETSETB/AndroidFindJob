@@ -16,7 +16,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.fish.fishapp.feines.FeinesLlistat_Activity;
 import com.fish.fishapp.utils.Utils;
+import com.parse.ParseFacebookUtils;
+import com.parse.ParseInstallation;
+import com.parse.ParseUser;
 
 public class PerfilEditar_Activity extends Activity {
 
@@ -194,10 +198,10 @@ public class PerfilEditar_Activity extends Activity {
 
 			case R.id.action_save:
 
+				App.getInstance().log("--Guardar Perfil");
+
 				// Presentem la barra de progrés
-
 				ringProgressDialog = ProgressDialog.show(this, "", App.getInstance().getStringResource(R.string.uploading), true, false);
-
 				ringProgressDialog.setCancelable(true);
 
 				// Guardem les dades actualitzades del perfil de l'usuari
@@ -209,6 +213,7 @@ public class PerfilEditar_Activity extends Activity {
 
 						try {
 
+							App.getInstance().log("--Thread Guardar Perfil");
 							Usuari usr = App.getInstance().usuari;
 
 							usr.profileFirstName = editTextProfileName.getText().toString();
@@ -237,13 +242,44 @@ public class PerfilEditar_Activity extends Activity {
 							finish();
 
 						} catch (Exception e) {
-
+							App.getInstance().log("--ERROR Guardar Perfil: " + e.toString());
 						}
 
 						ringProgressDialog.dismiss();
 					}
 
 				}).start();
+
+				return true;
+			case R.id.action_logout:
+
+				App.getInstance().log("Opció sortir seleccionada");
+
+				App.getInstance().usuari.setLocation(null, null, null);
+				App.getInstance().usuari.EULA_No_Aceptado();
+				App.getInstance().usuari.logout();
+				ParseInstallation parseInstallation = ParseInstallation.getCurrentInstallation();
+				parseInstallation.remove("user");
+				parseInstallation.saveInBackground();
+
+				if (ParseUser.getCurrentUser() != null) {
+					ParseFacebookUtils.unlinkInBackground(ParseUser.getCurrentUser());
+				}
+
+				try {
+					// clearing app data
+					Runtime runtime = Runtime.getRuntime();
+					runtime.exec("pm clear com.fish.fishapp");
+
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				Intent intent = new Intent(App.getInstance().appContext, FeinesLlistat_Activity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				intent.putExtra("EXIT", true);
+				startActivity(intent);
+
 
 				return true;
 

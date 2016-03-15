@@ -44,8 +44,8 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	String workerProfileId;
 	ImageView imageViewWorkerProfilePicture;
 	Spinner spinnerWorkerProfileWorkType;
-	TextView textViewWorkerProfileLocationName;
-	Spinner spinnerWorkerProfileDistance;
+	//TextView textViewWorkerProfileLocationName;
+	//Spinner spinnerWorkerProfileDistance;
 	WebView webMap;
 	LinearLayout linearLayoutWorkerProfileTags;
 	ArrayList<String> tagList;
@@ -182,21 +182,17 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		spinnerWorkerProfileWorkType.setSelection(spinnerPosition);
 		
-		textViewWorkerProfileLocationName = (TextView) this.findViewById(R.id.textViewWorkerProfileLocationName);
-
-		textViewWorkerProfileLocationName.setText(workerProfile.locationName);
+		//textViewWorkerProfileLocationName = (TextView) this.findViewById(R.id.textViewWorkerProfileLocationName);
+		//textViewWorkerProfileLocationName.setText(workerProfile.locationName);
 		
-		spinnerWorkerProfileDistance =(Spinner) this.findViewById(R.id.spinnerWorkerProfileDistance);
+		//spinnerWorkerProfileDistance =(Spinner) this.findViewById(R.id.spinnerWorkerProfileDistance);
 
 		String myString2 = workerProfile.distance + " Km";
 
-		ArrayAdapter myAdap2 = (ArrayAdapter) spinnerWorkerProfileDistance.getAdapter();
-
-		int spinnerPosition2 = myAdap2.getPosition(myString2);
-
-		spinnerWorkerProfileDistance.setSelection(spinnerPosition2);
-
-		spinnerWorkerProfileDistance.setOnItemSelectedListener(new OnDistanceChangedListener());
+		//ArrayAdapter myAdap2 = (ArrayAdapter) spinnerWorkerProfileDistance.getAdapter();
+		//int spinnerPosition2 = myAdap2.getPosition(myString2);
+		//spinnerWorkerProfileDistance.setSelection(spinnerPosition2);
+		//spinnerWorkerProfileDistance.setOnItemSelectedListener(new OnDistanceChangedListener());
 		
 		webMap = (WebView) this.findViewById(R.id.webViewWorkerProfileMap);
 		
@@ -334,7 +330,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		TextView valor;
 
-		ImageButton botoEliminar;
+		Button botoEliminar;
 
 		Integer i;
 
@@ -352,7 +348,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 				valor.setText(tagList.get(i));
 
-				botoEliminar = (ImageButton) tagLine.findViewById(R.id.imageButton1);
+				botoEliminar = (Button) tagLine.findViewById(R.id.imageButton1);
 
 				botoEliminar.setTag(i);
 
@@ -454,7 +450,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		Boolean res = true;
 
-		workerProfile.picture = ((BitmapDrawable)imageViewWorkerProfilePicture.getDrawable()).getBitmap();
+		//workerProfile.picture = ((BitmapDrawable)imageViewWorkerProfilePicture.getDrawable()).getBitmap();
 
 		workerProfile.workType = Utils.getWorkTypeCode(spinnerWorkerProfileWorkType.getSelectedItem().toString());
 
@@ -464,11 +460,11 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		//workerProfile.workerProfileLocationName;
 		//workerProfile.workerProfileCurrency;
 
-		workerProfile.distance = spinnerWorkerProfileDistance.getSelectedItem().toString();
+		//workerProfile.distance = spinnerWorkerProfileDistance.getSelectedItem().toString();
 
 		workerProfile.tags = tagList;
 
-		if(tagList.size() == 0){
+		if (tagList == null || tagList.size() == 0){
 
 			editTextNewTag.setError("Se requiere una etiqueta, como mínimo.");
 
@@ -477,19 +473,14 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		workerProfile.priceHour = Utils.parseInt(editTextWorkerProfilePriceHour.getText().toString());
 
-		if(editTextWorkerProfilePriceHour.getText().toString().trim().equals("")){
+		if (editTextWorkerProfilePriceHour.getText().toString().trim().equals("")){
 
 			editTextWorkerProfilePriceHour.setError( "Price Hour is required!" );
-
-		   //You can Toast a message here that the Username is Empty
-
 			res = false;
 		}
 		
 		workerProfile.priceDay = Utils.parseInt(editTextWorkerProfilePriceDay.getText().toString());
-
 		workerProfile.priceWeek = Utils.parseInt(editTextWorkerProfilePriceWeek.getText().toString());
-
 		workerProfile.availabilityCalendar = datesList;
 		
 		return res;
@@ -524,9 +515,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 
 		// Carreguem el menú
-
 		getMenuInflater().inflate(R.menu.edit_worker_profile, menu);
-
 		return true;
 	}
 

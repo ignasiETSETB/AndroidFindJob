@@ -44,10 +44,23 @@
         android:showAsAction="never"/>
 
     <item
+        android:id="@+id/action_ayuda"
+        android:orderInCategory="7"
+        android:title="@string/action_ayuda"
+        android:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_condiciones"
+        android:orderInCategory="8"
+        android:title="@string/action_condiciones"
+        android:showAsAction="never"/>
+<!--
+    <item
         android:id="@+id/action_logout"
         android:orderInCategory="7"
         android:title="@string/action_logout"
         android:showAsAction="never"/>
+        -->
 <!--
     <item
         android:id="@+id/action_settings"

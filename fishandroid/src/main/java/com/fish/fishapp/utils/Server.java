@@ -81,7 +81,12 @@ public class Server {
 
         ParseFile fileObject = (ParseFile) user.get("profilePicture");
 
-        myuser.profilePictureURL = fileObject.getUrl();                     // Foto del perfil
+        // Foto del perfil
+        try {
+            myuser.profilePictureURL = fileObject.getUrl();
+        } catch (Exception e){
+
+        }
 
         myuser.profileBirthDay = user.getDate("profileBirthDay");           // Data del aniversari
         myuser.eulaAccepted = user.getBoolean("eulaAccepted");              // EULA: '1', '0' o nulo
@@ -182,6 +187,7 @@ public class Server {
         });
     }
 
+
     public static ArrayList<Job> queryJobs(QueryJobsParameters queryJobsParameters, String objectId) throws ServerException{
 
         final ArrayList<Job> res = new ArrayList<>();
@@ -274,6 +280,7 @@ public class Server {
 
         // Llencem la cerca de feines amb els criteris establerts
 
+        jobs = null;
         try {
 
             jobs = query.find();
@@ -283,6 +290,8 @@ public class Server {
             App.getInstance().log("Error al executar la cerca: " + e2.getMessage());
 
             throw new ServerException();
+        } catch (Exception e){
+            App.getInstance().log("Error: " + e.toString());
         }
 
         // Si tenim resultats de la cerca, els tractem per separat
@@ -384,6 +393,7 @@ public class Server {
 
                 // Presentem la feina obtinguda
 
+                /*
                 App.getInstance().log("************************************************************************************");
                 App.getInstance().log("*                               Detall de la feina " + (j + 1) + "                               *");
                 App.getInstance().log("************************************************************************************");
@@ -412,7 +422,7 @@ public class Server {
 
                     App.getInstance().log("----------------- Localització:      " + "No disponible");
                 }
-
+*/
                 j++;
             }
         }
@@ -420,6 +430,295 @@ public class Server {
         App.getInstance().log("************************************************************************************");
 
         // Tornem la matriu amb totes les feines obtingudes
+
+        return res;
+    }
+
+
+
+
+
+    public static ArrayList<Job> queryJobsFavorits(QueryJobsParameters queryJobsParameters, String objectId) throws ServerException{
+
+        App.getInstance().log("---QUERY Favorits");
+
+        final ArrayList<Job> res = new ArrayList<>();
+        ArrayList<String> llistaFavoritsArray = new ArrayList<>();
+        List<ParseObject> jobs;
+        JSONArray llistaFavorits = new JSONArray();
+        boolean teFavorits = false;
+
+        // Comprovar si l'usuari ja té una llista de favorits
+        ParseQuery<ParseObject> queryFav = ParseQuery.getQuery("JobsFavorites");
+        queryFav.whereEqualTo("user", ParseUser.getCurrentUser());
+
+        try {
+            ParseObject favorits = new ParseObject("JobsFavorites");
+
+
+
+            // Té llista de favorits
+            if (queryFav.find().size() > 0) {
+                teFavorits = true;
+                favorits = queryFav.find().get(0);
+                App.getInstance().log("---Favorits: " + favorits.getJSONArray("profiles").toString());
+                llistaFavorits = favorits.getJSONArray("profiles");
+
+                for (int i = 0; i < llistaFavorits.length(); i++){
+
+                    try {
+                        llistaFavoritsArray.add(llistaFavorits.getString(i));
+                    } catch (Exception e){
+
+                    }
+
+                }
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            App.getInstance().log("ERROR: " + e.toString());
+        }
+
+
+
+        if (teFavorits) {
+
+            App.getInstance().log("---HI HA Favorits");
+
+            ParseQuery<ParseObject> query = new ParseQuery<>("JobsWorkerProfileVw");
+
+            //query.whereDoesNotExist("deletedAt");
+            query.whereContainedIn("objectId", llistaFavoritsArray);
+
+            if (objectId != null) {
+
+                App.getInstance().log("Cerquem la feina per Id = " + objectId);
+                query.whereEqualTo("objectId", objectId);
+
+            } else {
+
+                App.getInstance().log("Cerquem les feines pels paràmetres donats = " + queryJobsParameters.texto);
+
+                // Obtenim les paraules per la cerca
+                ArrayList<String> palabras = new ArrayList<>();
+
+                if (queryJobsParameters.texto != null) {
+
+                    String[] splitStr = queryJobsParameters.texto.split(" ");
+
+                    for (int i = 0; i < splitStr.length; i++) {
+
+                        String str = Utils.removeDiacritics(splitStr[i].toLowerCase());
+
+                        if (str.length() > 0) {
+
+                            palabras.add(str);
+                        }
+                    }
+                }
+
+                // Obtenim els requisits per la cerca, és a dir, les etiquetes o paraules clau
+
+                if (queryJobsParameters.requisitos.size() > 0) {
+
+                    for (int i = 0; i < queryJobsParameters.requisitos.size(); i++) {
+
+                        String[] splitStr = queryJobsParameters.requisitos.get(i).split(" ");
+
+                        palabras.add(Utils.removeDiacritics(splitStr[i].toLowerCase()));
+                    }
+                }
+
+                // Afegim les paraules al criteri de cerca
+
+                if (palabras.size() > 0) {
+
+                    query.whereContainsAll("tagsSearch", palabras);
+                }
+
+                // Acotem la cerca al preu igual o menor que el seleccionat
+
+                if (queryJobsParameters.precioHora > 0) {
+
+                    query.whereLessThanOrEqualTo("priceHour", queryJobsParameters.precioHora);
+                }
+
+                // Comprovem si s'ha especificat el sexe per la cerca
+
+                if (queryJobsParameters.sexo != null) {
+
+                    // Acotem la cerca per sexe: Home = 1, Dona = 2 i Qualsevol = 3
+
+                    if (queryJobsParameters.sexo == 1 || queryJobsParameters.sexo == 2) {
+
+                        query.whereEqualTo("gender", queryJobsParameters.sexo);
+                    }
+                }
+
+                // Si tenim la geolocalització de l'usuari, l'afegim al criteri de cerca
+
+                Location myLocation = App.getInstance().usuari.profileLocation;
+
+                if (myLocation != null) {
+
+                    query.whereGreaterThanOrEqualTo("locationMaxLatitude", myLocation.getLatitude());
+                    query.whereLessThanOrEqualTo("locationMinLatitude", myLocation.getLatitude());
+                    query.whereGreaterThanOrEqualTo("locationMaxLongitude", myLocation.getLongitude());
+                    query.whereLessThanOrEqualTo("locationMinLongitude", myLocation.getLongitude());
+                }
+            }
+
+            // Llencem la cerca de feines amb els criteris establerts
+
+            try {
+
+                jobs = query.find();
+
+            } catch (ParseException e2) {
+
+                App.getInstance().log("Error al executar la cerca: " + e2.getMessage());
+
+                throw new ServerException();
+            }
+
+            // Si tenim resultats de la cerca, els tractem per separat
+
+            if (jobs != null) {
+
+                App.getInstance().log("Llista amb " + jobs.size() + " feines obtingudes de la cerca llençada: " + jobs.toString());
+
+                int j = 0;
+
+                while (j < jobs.size()) {
+
+                    ParseObject po = jobs.get(j);
+
+                    Job job = new Job();
+
+                    job.ObjectId = po.getObjectId();
+
+                    ParseObject wp = (ParseObject) po.get("workerProfile");
+
+                    job.workerProfileId = wp.getObjectId();
+
+                    job.workerUser = (ParseUser) po.get("user");
+
+                    job.nombre = po.getString("firstName");
+
+                    job.edad = Utils.getEdad(po.getDate("birthday"));
+
+                    job.sexe = po.getInt("gender");
+
+                    //TODO: get user pointer objectid:    job.userId = po.getString("user");
+
+                    ParseFile fileObject = (ParseFile) po.get("pictureThumbnail");
+
+                    job.fotoURL = fileObject.getUrl();
+
+                    /*
+                    try {
+                        byte[] byteArray;
+                        byteArray = fileObject.getData();
+                        Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+                        //job.setFotoURL(fileObject.getUrl());
+                        job.foto=bmp;
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    */
+
+                    job.precioHora = po.getInt("priceHour");
+
+                    String tags = null;
+
+                    ArrayList<String> listaTags;
+
+                    listaTags = (ArrayList<String>) po.get("tags");
+
+                    if (listaTags != null) {
+
+                        for (String s : listaTags) {
+
+                            if (tags == null) {
+
+                                tags = s;
+
+                            } else {
+
+                                tags = tags + " · " + s;
+                            }
+                        }
+                    }
+
+                    job.tags = tags;
+
+                    ParseGeoPoint point = (ParseGeoPoint) po.get("location");
+
+                    if (point != null) {
+
+                        Location loc = new Location("dummyprovider");
+
+                        loc.setLatitude(point.getLatitude());
+
+                        loc.setLongitude(point.getLongitude());
+
+                        job.distancia = Utils.distancia(loc, App.getInstance().usuari.profileLocation);
+
+                    } else {
+
+                        job.distancia = "?";
+                    }
+
+
+                    job.ciudad = po.getString("locationName");
+
+                    job.moneda = Utils.getCurrencySymbolString(po.getString("currency"));
+
+                    job.availabilityCalendar = (List<Date>) po.get("workDays");
+
+                    res.add(job);
+
+                    // Presentem la feina obtinguda
+
+                    /*
+                    App.getInstance().log("************************************************************************************");
+                    App.getInstance().log("*                               Detall de la feina " + (j + 1) + "                               *");
+                    App.getInstance().log("************************************************************************************");
+
+                    App.getInstance().log("----------------- Id Feina:          " + job.ObjectId);
+                    App.getInstance().log("----------------- Id Perfil Usuari:  " + job.workerProfileId);
+                    App.getInstance().log("----------------- Id Usuari:         " + job.workerUser.getObjectId());
+                    App.getInstance().log("----------------- Nom:               " + job.nombre);
+                    App.getInstance().log("----------------- Edat:              " + job.edad);
+                    App.getInstance().log("----------------- Sexe:              " + Utils.ObtenirSexeNom(job.sexe) + " (" + job.sexe + ")");
+                    App.getInstance().log("----------------- Foto:              " + job.fotoURL);
+                    App.getInstance().log("----------------- Preu/hora:         " + job.precioHora);
+                    App.getInstance().log("----------------- Moneda:            " + job.moneda);
+                    App.getInstance().log("----------------- Etiquetes:         " + listaTags.toString());
+                    App.getInstance().log("----------------- Distància:         " + job.distancia);
+
+                    App.getInstance().log("----------------- Localitat:         " + job.ciudad);
+                    App.getInstance().log("----------------- Disponibilitat:    " + job.availabilityCalendar.toString());
+
+                    if (point != null) {
+
+                        App.getInstance().log("----------------- Latitud:           " + point.getLatitude());
+                        App.getInstance().log("----------------- Longitud:          " + point.getLongitude());
+
+                    } else {
+
+                        App.getInstance().log("----------------- Localització:      " + "No disponible");
+                    }
+*/
+                    j++;
+                }
+            }
+
+            App.getInstance().log("************************************************************************************");
+
+            // Tornem la matriu amb totes les feines obtingudes
+        }
 
         return res;
     }
@@ -467,29 +766,175 @@ public class Server {
                 notificacio.setObjectId(po.getObjectId());
                 notificacio.setHiredUSer((ParseUser) po.get("hiredUser"));
                 notificacio.setHirerUSer((ParseUser) po.get("hirerUser"));
-                notificacio.setHiredData(po.getJSONObject("hiredData"));
+                notificacio.setHirerData(po.getJSONObject("hirerData"));
                 notificacio.setHiredData(po.getJSONObject("hiredData"));
                 notificacio.setStatus(po.getInt("contractStatus"));
+                try {
+                    notificacio.setOfferedJob(notificacio.getHirerData().getJSONObject("contractData").getString("jobOffered"));
+                } catch (Exception e){
+                    notificacio.setOfferedJob("No especificado");
+                }
+
+                try {
+                    notificacio.setPriceHour(notificacio.getHirerData().getJSONObject("contractData").getString("priceHour"));
+                } catch (Exception e){
+                    notificacio.setPriceHour("0");
+                }
+
+                try {
+                    App.getInstance().log(notificacio.getHirerData().getJSONObject("contractData").getJSONObject("dateStart").getString("iso"));
+                    notificacio.setDateStart(notificacio.getHirerData().getJSONObject("contractData").getJSONObject("dateStart").getString("iso").substring(0, 10));
+                } catch (Exception e){
+                    App.getInstance().log(e.toString());
+                    notificacio.setDateStart("No especificada");
+                }
+
+                try {
+                    notificacio.setDateEnd(notificacio.getHirerData().getJSONObject("contractData").getJSONObject("dateFinish").getString("iso").substring(0, 10));
+                    App.getInstance().log(notificacio.getHirerData().getJSONObject("contractData").getJSONObject("dateStart").getString("iso"));
+
+                } catch (Exception e){
+                    App.getInstance().log(e.toString());
+                    notificacio.setDateEnd("No especificada");
+                }
 
 
                 App.getInstance().log("*  Detall de la notificacio: ");
                 App.getInstance().log("*  Empresa       : " + notificacio.getHirerUSer().getObjectId());
                 App.getInstance().log("*  Treballador   : " + notificacio.getHiredUSer().getObjectId());
+                App.getInstance().log("*  Feina         : " + notificacio.getOfferedJob());
 
+                res.add(notificacio);
                 j++;
             }
         }
 
         App.getInstance().log("************************************************************************************");
 
-        // Tornem la matriu amb totes les feines obtingudes
 
         return res;
     }
 
 
+    /**
+     * Afegeix o treu un perfil de la llista de favorits
+     * @param profileObjectId
+     * @param add
+     */
+    public static void addFavorite(String profileObjectId, boolean add){
+
+        // Comprovar si l'usuari ja té una llista de favorits
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("JobsFavorites");
+        query.whereEqualTo("user", ParseUser.getCurrentUser());
+
+        // Si s'ha d'afegir el favorit
+        if (add) {
+            try {
+                ParseObject favorits = new ParseObject("JobsFavorites");
+
+                // Té llista de favorits
+                if (query.find().size() > 0) {
+                    favorits = query.find().get(0);
+                    App.getInstance().log("---Favorits: " + favorits.getJSONArray("profiles").toString());
+                    favorits.put("profiles", favorits.getJSONArray("profiles").put(profileObjectId));
+
+                // No té llista de favorits
+                } else {
+                    favorits.put("user", ParseUser.getCurrentUser());
+                    favorits.put("profiles", new JSONArray().put(profileObjectId));
+                }
+
+                favorits.save();
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+                App.getInstance().log("ERROR: " + e.toString());
+            }
+
+        // Si s'ha de treure el favorit
+        } else {
+            try {
+
+                ParseObject favorits = new ParseObject("JobsFavorites");
+
+                if (query.find().size() > 0) {
+                    favorits = query.find().get(0);
+                    App.getInstance().log("---Favorits: " + favorits.getJSONArray("profiles").toString());
+                    JSONArray llistaFavorits = favorits.getJSONArray("profiles");
+                    JSONArray novaLlistaFavorits = new JSONArray();
+
+                    for (int i = 0; i < llistaFavorits.length(); i++){
+                        String auxProfile = "";
+                        try {
+                            auxProfile = llistaFavorits.getString(i);
+                        } catch (Exception e){
+
+                        }
+
+                        if (!profileObjectId.equals(auxProfile)){
+                            novaLlistaFavorits.put(auxProfile);
+                        }
+                    }
+
+                    favorits.put("profiles", novaLlistaFavorits);
+                    favorits.save();
+
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+                App.getInstance().log("ERROR: " + e.toString());
+            }
+
+        }
 
 
+
+    }
+
+
+    /**
+     * Comprovar si el perfil és part dels favorits de l'usuari
+     * @param profileObjectId
+     */
+    public static boolean esFavorit(String profileObjectId) {
+
+        boolean ret = false;
+        // Comprovar si l'usuari ja té una llista de favorits
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("JobsFavorites");
+        query.whereEqualTo("user", ParseUser.getCurrentUser());
+
+        try {
+            ParseObject favorits = new ParseObject("JobsFavorites");
+
+            // Té llista de favorits
+            if (query.find().size() > 0) {
+                favorits = query.find().get(0);
+                App.getInstance().log("---Favorits: " + favorits.getJSONArray("profiles").toString());
+                JSONArray llistaFavorits = favorits.getJSONArray("profiles");
+
+                for (int i = 0; i < llistaFavorits.length(); i++){
+                    String auxProfile = "";
+                    try {
+                        auxProfile = llistaFavorits.getString(i);
+                    } catch (Exception e){
+
+                    }
+
+                    if (profileObjectId.equals(auxProfile)){
+                        App.getInstance().log("ES Favorit!");
+                        ret = true;
+                    }
+                }
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            App.getInstance().log("ERROR: " + e.toString());
+        }
+
+        return ret;
+
+    }
 
 
 
@@ -517,23 +962,15 @@ public class Server {
         if (pictureChanged){
 
             Bitmap picture = usuari.profilePicture;
-
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
-
             picture.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-
             byte[] bytearray= stream.toByteArray();
-
             final ParseFile file = new ParseFile("profilePicture.jpg",bytearray);
 
             try {
-
                 file.save();
-
             } catch (ParseException e1) {
-
                 e1.printStackTrace();
-
                 throw new ServerException();
             }
 
@@ -619,7 +1056,7 @@ public class Server {
                         // address
                         JSONObject fiscalAddress = new JSONObject();
                         fiscalAddress.put("address", prepareForParse(fEmpresa.getAdrecaFiscal()));
-                        fiscalAddress.put("country", prepareForParse(fEmpresa.getPaisFiscal()));
+                        fiscalAddress.put("country", "ES");
                         fiscalAddress.put("localityName", prepareForParse(fEmpresa.getLocalitatFiscal()));
                         fiscalAddress.put("postalCode", prepareForParse(fEmpresa.getCpFiscal()));
                         fiscalAddress.put("province", prepareForParse(fEmpresa.getProvinciaFiscal()));
@@ -831,6 +1268,46 @@ public class Server {
 
 
 
+    /**
+     * Marca el formulari com rebutjat
+     * @param objectIdFormulari
+     * @throws ServerException
+     */
+    public static void marcarFormulariRebutjat(String objectIdFormulari) throws ServerException {
+
+        App.getInstance().log("saveFormulariTreballador()...");
+
+        ParseObject formulariFeina = null;
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("JobsHiring");
+        query.whereEqualTo("objectId", objectIdFormulari);
+        try {
+            formulariFeina = query.find().get(0);
+            App.getInstance().log("idJobsHiring: " + objectIdFormulari);
+            App.getInstance().log("return: " + formulariFeina.getObjectId());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            App.getInstance().log("" + e.toString());
+        }
+
+        if (formulariFeina != null){
+
+            App.getInstance().log("Formulari Feina OK");
+            formulariFeina.put("contractStatus", 4);
+
+            //Save
+            try {
+                formulariFeina.save();
+            } catch (ParseException e) {
+                App.getInstance().log("ERROR : " + e.toString());
+                e.printStackTrace();
+            }
+        } else {
+            App.getInstance().log("Formulari Feina es NULL");
+
+        }
+    }
 
 
 
@@ -866,7 +1343,9 @@ public class Server {
 		return null;
 		
 	}
-	
+
+
+
 	public static void getLocalizedString(String key, final MyCallback myCallback ){
 		
 		HashMap<String, Object> hm = new HashMap<String, Object>();
@@ -888,7 +1367,8 @@ public class Server {
         });
 	}
 
-	
+
+
 	public static void logout() {
         ParseInstallation parseInstallation = ParseInstallation.getCurrentInstallation();
         parseInstallation.remove("user");
@@ -896,6 +1376,8 @@ public class Server {
 		ParseUser.getCurrentUser().logOut();
 		
 	}
+
+
 
 	public static void saveWorkerProfile(WorkerProfile workerProfile, Boolean pictureChanged) throws ServerException {
 		ParseObject jwp=null;
@@ -907,7 +1389,6 @@ public class Server {
 			try {
 				jwp = query.get(workerProfile.workerProfileObjectId);
 			} catch (ParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 				throw new ServerException();
 			}
@@ -928,7 +1409,6 @@ public class Server {
 						try {
 							file.save();
 						} catch (ParseException e1) {
-							// TODO Auto-generated catch block
 							e1.printStackTrace();
 							throw new ServerException();
 						}
@@ -983,6 +1463,8 @@ public class Server {
 			}
 		}
 	}
+
+
 	
 	public static WorkerProfile readWorkerProfile(String objectId) throws ServerException{
 		
@@ -1011,19 +1493,6 @@ public class Server {
             App.getInstance().log("readWorkerProfile null pictureURL    ");
             wp.pictureURL = "";
         }
-    	/*
-		try {
-			byte[] byteArray;
-			byteArray = fileObject.getData();
-			Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-    		//job.setFotoURL(fileObject.getUrl());
-    		wp.picture=bmp;
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			throw new ServerException();
-		}
-		*/
     	
 		wp.workType=jwp.getInt("workType");
 		
@@ -1048,6 +1517,9 @@ public class Server {
 		App.getInstance().inEditionAvailabylity = wp.availabilityCalendar;
 		return wp;
 	}
+
+
+
 	public static Object prepareForParse(Object obj){
 		Object res;
 		if (obj==null){
@@ -1057,7 +1529,9 @@ public class Server {
 		}
 		return res;
 	}
-	
+
+
+
 	public static ArrayList<WorkerProfile> queryWorkerProfiles(String string) throws ServerException {
 		final ArrayList<WorkerProfile> res=new ArrayList<WorkerProfile>();
 		List<ParseObject> workerProfiles = null;
@@ -1073,7 +1547,6 @@ public class Server {
 		try {
 			workerProfiles=query.find();
 		} catch (ParseException e2) {
-			// TODO Auto-generated catch block
 			e2.printStackTrace();
 			throw new ServerException();
 		}
@@ -1092,6 +1565,8 @@ public class Server {
     	
 		return res;
 	}
+
+
 
 	public static Chat JobsWorkerProfile_contact(String worker_id) {
 		Chat chat = new Chat();
@@ -1119,6 +1594,8 @@ public class Server {
 		return null;
 	}
 
+
+
 	public static ArrayList<Chat> Chat_list() {
 		App.getInstance().log("getting chat list");
 		HashMap<String, Object> params= new HashMap<String, Object>();
@@ -1143,6 +1620,8 @@ public class Server {
 		return null;
 	}
 
+
+
 	public static void Chat_sendMessage(String chat_id, String content) {
 		HashMap<String, Object> params= new HashMap<String, Object>();
 		params.put("chat_id", chat_id);
@@ -1154,6 +1633,8 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
+
+
 
 	public static ArrayList<ChatMessage> Chat_listMessages(String chat_id) {
 		
@@ -1181,5 +1662,36 @@ public class Server {
 		return null;
 	}
 
-	
+
+    public static String getObjectIdByXMPPUser(String XMPPUser){
+
+        String ret = "";
+
+        // Comprovar si l'usuari ja té una llista de favorits
+        ParseQuery<ParseUser> queryFav = ParseUser.getQuery();
+        //queryFav.whereEqualTo("objectId", "sCmqIX6yWe" );
+        queryFav.whereMatches("objectId", "(" + XMPPUser + ")", "i");
+
+        App.getInstance().log("----OBJECTID(XMPP) : " + XMPPUser);
+        try {
+            List<ParseUser> usuaris = queryFav.find();
+            // Té llista de favorits
+            if (usuaris != null && usuaris.size() > 0) {
+                ret = usuaris.get(0).getObjectId();
+                App.getInstance().log("----OBJECTID: " + ret);
+            } else {
+                App.getInstance().log("---NO-OBJECTID ");
+
+            }
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            App.getInstance().log("ERROR: " + e.toString());
+        }
+
+    return ret;
+
+    }
+
+
 }

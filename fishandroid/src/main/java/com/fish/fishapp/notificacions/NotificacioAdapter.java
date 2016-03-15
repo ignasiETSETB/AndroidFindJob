@@ -1,87 +1,61 @@
 package com.fish.fishapp.notificacions;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Typeface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.fish.fishapp.App;
 import com.fish.fishapp.R;
-import com.fish.fishapp.feines.Job;
-import com.fish.fishapp.feines.JobHolder;
 
-public class NotificacioAdapter extends ArrayAdapter<Job>{
-	Context context;
-    int layoutResourceId;
-    Job data[] = null;
+import java.util.ArrayList;
 
-    public NotificacioAdapter(Context context, int layoutResourceId, Job[] data) {
-        super(context, layoutResourceId, data);
-        this.layoutResourceId = layoutResourceId;
+
+public class NotificacioAdapter extends ArrayAdapter<Notificacio> {
+
+    ArrayList<Notificacio> notificacions;
+    Context context;
+
+    public NotificacioAdapter(Context context, ArrayList<Notificacio> notificacions) {
+        super(context, 0, notificacions);
         this.context = context;
-        this.data = data;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-    	App.getInstance().log("getView from JobAdapter position:" + position);
-        View row = convertView;
-        JobHolder holder = null;
-        
-        if(row == null)
-        {
-            LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-            row = inflater.inflate(layoutResourceId, parent, false);
-            
-            holder = new JobHolder();
-            
-            holder.nombre = (TextView)row.findViewById(R.id.textViewNombre);
-            
-            Typeface type = Typeface.createFromAsset(context.getAssets(),"fonts/courbd.ttf"); 
-    		
-            holder.nombre.setTypeface(type);
-            
-            holder.edad = (TextView)row.findViewById(R.id.textViewEdad);
-            holder.foto = (ImageView) row.findViewById(R.id.imageViewWorkerProfiles);
-	        holder.precioHora = (TextView)row.findViewById(R.id.textViewPrecioHora);
-	        holder.tags =  (TextView)row.findViewById(R.id.textViewTags);
-	        holder.distancia = (TextView)row.findViewById(R.id.textViewDistancia);
-	        holder.locationName = (TextView)row.findViewById(R.id.textViewLocationName);
-	        holder.moneda = (TextView)row.findViewById(R.id.textViewMoneda);
-	            
-            row.setTag(holder);
+        Notificacio notificacio = getItem(position);
+        if (convertView == null) {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.llista_notificacions_item, parent, false);
         }
-        else
-        {
-            holder = (JobHolder)row.getTag();
-        }
-        
-        Job job = data[position];
-        holder.nombre.setText(job.nombre);
-        holder.edad.setText(job.edad);
-        holder.locationName.setText(job.ciudad+", ");
-        holder.distancia.setText(job.distancia);
-        holder.tags.setText(job.tags);
-        //holder.foto.setImageResource(0);
-        holder.precioHora.setText(job.precioHora.toString());
-        holder.moneda.setText(job.moneda+"/h");
-        App.getInstance().imageCache.loadBitmap(job.fotoURL, holder.foto, job.foto);
-        /*
-        if (job.foto==null) {
-        	//todavía no ha terminado de cargarse
-        	//new DownloadImageTask(holder.foto, job.getFoto()).execute(job.getFotoURL());
-        	//no hago nada 
+        TextView jobOffered = (TextView) convertView.findViewById(R.id.text_item_job_offered);
+        TextView dateStart = (TextView) convertView.findViewById(R.id.text_item_date_start);
+        TextView dateEnd = (TextView) convertView.findViewById(R.id.text_item_date_end);
+        TextView status = (TextView) convertView.findViewById(R.id.text_item_status);
+        LinearLayout layoutStatus = (LinearLayout) convertView.findViewById(R.id.layout_item_estado);
+
+        jobOffered.setText(notificacio.getOfferedJob());
+        dateStart.setText(notificacio.getDateStart());
+        dateEnd.setText(notificacio.getDateEnd());
+
+        if (notificacio.getStatus() == 1){
+            status.setText("Pendiente");
+            layoutStatus.setBackgroundColor(Color.rgb(200, 200, 200));
+        } else if (notificacio.getStatus() == 2){
+            status.setText("Aceptado");
+            layoutStatus.setBackgroundColor(Color.rgb(200, 250, 200));
+        }else if (notificacio.getStatus() == 4){
+            status.setText("Rechazado");
+            layoutStatus.setBackgroundColor(Color.rgb(250, 200, 200));
         } else {
-        	//ya la tengo cargada
-        	holder.foto.setImageBitmap(job.foto);
+            status.setText("No especificado");
         }
-        */
-       
-        return row;
+
+
+
+
+        return convertView;
     }
 }

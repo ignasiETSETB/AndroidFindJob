@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="aceptar_condiciones">Pulsando en \"Aceptar\" confirmas que estás de acuerdo con nuestros</string>
-    <string name="action_add_worker_profile">Añadir perfil de trabajador</string>
+    <string name="action_add_worker_profile">Añadir trabajo</string>
     <string name="action_work">Trabajo</string>
     <string name="allow_get_position">Fish necesita obtener tu posición. Revisa tus ajustes y reinténtalo.</string>
     <string name="be_happy">* be happy *</string>
@@ -40,12 +40,12 @@
     <string name="text_to_search">Buscar</string>
     <string name="title_activity_calendar">Calendario</string>
     <string name="title_activity_edit_calendar_worker_profile">Editar calendario</string>
-    <string name="title_activity_edit_worker_profile">Editar perfil trabajador</string>
+    <string name="title_activity_edit_worker_profile">Perfil profesional</string>
     <string name="title_activity_first_contact">Primer contacto</string>
     <string name="title_activity_get_location">Obtener localización</string>
-    <string name="title_activity_job_detail">Detalle del trabajo</string>
+    <string name="title_activity_job_detail">Profesional</string>
     <string name="title_activity_jobs">Trabajos</string>
-    <string name="title_activity_worker_profiles">Perfiles de los trabajadores</string>
+    <string name="title_activity_worker_profiles">Trabajos</string>
     <string name="uploading">Actualizando datos...</string>
     <string name="working">Por favor, espera...</string>
     <string name="connect_with_facebook">Únete con Facebook</string>
@@ -98,8 +98,7 @@
 
     <string-array name="list_of_work_types">
         <item>Presencial</item>
-        <item>Remoto</item>
-        <item>Mundial</item>
+        <item>A distancia</item>
         <item>Cualquiera</item>
     </string-array>
 
@@ -132,7 +131,7 @@
     <string name="action_chats">Chats</string>
     <string name="action_favoritos">Favoritos</string>
     <string name="action_notificaciones">Notificaciones</string>
-    <string name="action_trabajos">Trabajos</string>
+    <string name="action_trabajos">Trabajar</string>
     <string name="app_id">666151743449496</string>
     <string name="barcelona">Barcelona</string>
     <string name="action_hire">Contratar</string>
@@ -147,7 +146,7 @@
     <string name="fake_price">35</string>
     <string name="condiciones_de_uso">Términos y condiciones</string>
     <string name="action_logout">Logout</string>
-    <string name="action_perfil">Perfil</string>
+    <string name="action_perfil">Cuenta</string>
     <string name="title_login">fish</string>
     <string name="title_activity_jobs_searchable">JobsSearchableActivity</string>
     <string name="title_activity_chat_list">ChatListActivity</string>
@@ -159,7 +158,7 @@
     <string name="cancel">Cancelar</string>
     <string name="text_price_day">Precio/día</string>
     <string name="text_price_week">Precio/semana</string>
-    <string name="text_prices">Precios</string>
+    <string name="text_prices">Precios en Euros</string>
     <string name="text_availability">Disponibilidad</string>
     <string name="text_tags">Etiquetas</string>
     <string name="location">Localización</string>
@@ -237,8 +236,10 @@
     <string name="form_carrec_empresa">Cargo en la empresa</string>
     <string name="form_persona_contacte">Persona de contacto</string>
     <string name="form_carrec">Cargo</string>
-
-
+    <string name="press_again_to_exit">Pulsa otra vez para salir</string>
+    <string name="form_condiciones">Condiciones de contratación</string>
+    <string name="action_condiciones">Condiciones</string>
+    <string name="action_ayuda">Ayuda</string>
 
 
 </resources>

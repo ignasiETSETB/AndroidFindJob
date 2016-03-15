@@ -50,8 +50,8 @@ public class FormulariTreballador_Activity extends Activity {
     private static Spinner tipusIdentificacio;
     private static String tipusIdentificacioString;
     private static EditText document;
-    private static Spinner nacionalitat;
-    private static String nacionalitatString;
+    //private static Spinner nacionalitat;
+    //private static String nacionalitatString;
     private static EditText sigla;
     private static EditText carrer;
     private static EditText numero;
@@ -62,8 +62,8 @@ public class FormulariTreballador_Activity extends Activity {
     private static String municipiString;
     private static Spinner provincia;
     private static String provinciaString;
-    private static Spinner pais;
-    private static String paisString;
+    //private static Spinner pais;
+    //private static String paisString;
     private static EditText  telefon;
     private static EditText  numeroSS;
     private static EditText  email;
@@ -165,8 +165,8 @@ public class FormulariTreballador_Activity extends Activity {
         cognom2 = (EditText) findViewById(R.id.cognom2_treballador);
         tipusIdentificacio = (Spinner) findViewById(R.id.tipus_identificacio_treballador);
         document = (EditText) findViewById(R.id.identificacio_treballador);
-        nacionalitat = (Spinner) findViewById(R.id.nacionalitat_treballador);
-        sigla = (EditText) findViewById(R.id.sigla_treballador);
+        //nacionalitat = (Spinner) findViewById(R.id.nacionalitat_treballador);
+        //sigla = (EditText) findViewById(R.id.sigla_treballador);
         carrer = (EditText) findViewById(R.id.carrer_treballador);
         numero = (EditText) findViewById(R.id.numero_treballador);
         porta = (EditText) findViewById(R.id.porta_treballador);
@@ -174,7 +174,7 @@ public class FormulariTreballador_Activity extends Activity {
         poblacio = (EditText) findViewById(R.id.poblacio_treballador);
         municipi = (Spinner) findViewById(R.id.municipi_treballador);
         provincia = (Spinner) findViewById(R.id.provincia_treballador);
-        pais = (Spinner) findViewById(R.id.pais_treballador);
+        //pais = (Spinner) findViewById(R.id.pais_treballador);
         telefon = (EditText) findViewById(R.id.telefon_treballador);
         numeroSS = (EditText) findViewById(R.id.cotitzacio_treballador);
         email = (EditText) findViewById(R.id.email_treballador);
@@ -257,6 +257,7 @@ public class FormulariTreballador_Activity extends Activity {
         });
 
         // SPINNER PAIS
+        /*
         ArrayAdapter<CharSequence> adapterPais = ArrayAdapter.createFromResource(
                 this, R.array.form_paisos_array,
                 android.R.layout.simple_spinner_item);
@@ -287,7 +288,7 @@ public class FormulariTreballador_Activity extends Activity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
+*/
         // SPINNER SEXE
         ArrayAdapter<CharSequence> adapterSexe = ArrayAdapter.createFromResource(
                 this, R.array.list_of_genders,
@@ -387,7 +388,7 @@ public class FormulariTreballador_Activity extends Activity {
             document.setBackground(originalDrawable);
         }
 
-
+/*
         if (nacionalitatString.length() == 0){
             campsCorrectes = false;
             nacionalitat.setBackground(getResources().getDrawable(R.drawable.border_error_formulari));
@@ -395,7 +396,7 @@ public class FormulariTreballador_Activity extends Activity {
         } else {
             nacionalitat.setBackground(originalDrawable);
         }
-
+*/
 
         if (sigla.getText().length() == 0){
             campsCorrectes = false;
@@ -461,6 +462,7 @@ public class FormulariTreballador_Activity extends Activity {
             provincia.setBackground(originalDrawable);
         }
 
+        /*
         if (paisString.length() == 0){
             campsCorrectes = false;
             pais.setBackground(getResources().getDrawable(R.drawable.border_error_formulari));
@@ -468,7 +470,7 @@ public class FormulariTreballador_Activity extends Activity {
         } else {
             pais.setBackground(originalDrawable);
         }
-
+*/
         if (telefon.getText().length() == 0){
             campsCorrectes = false;
             telefon.setBackground(getResources().getDrawable(R.drawable.border_error_formulari));
@@ -561,7 +563,7 @@ public class FormulariTreballador_Activity extends Activity {
                         ft.setCognom1(cognom1.getText().toString());
                         ft.setCognom2(cognom2.getText().toString());
                         ft.setTipusIdentificacio(tipusIdentificacioString);
-                        ft.setNacionalitat(nacionalitatString);
+                        //ft.setNacionalitat(nacionalitatString);
                         ft.setSigla(sigla.getText().toString());
                         ft.setCarrer(carrer.getText().toString());
                         ft.setNumero(numero.getText().toString());
@@ -570,7 +572,7 @@ public class FormulariTreballador_Activity extends Activity {
                         ft.setPoblacio(poblacio.getText().toString());
                         ft.setMunicipi(municipiString);
                         ft.setProvincia(provinciaString);
-                        ft.setPais(paisString);
+                        //ft.setPais(paisString);
                         ft.setTelefon(telefon.getText().toString());
                         ft.setNumeroSS(numeroSS.getText().toString());
                         ft.setEmail(email.getText().toString());

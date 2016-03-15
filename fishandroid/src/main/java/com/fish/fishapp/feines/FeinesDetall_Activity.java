@@ -7,6 +7,7 @@ import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -16,8 +17,10 @@ import com.fish.fishapp.App;
 import com.fish.fishapp.R;
 import com.fish.fishapp.contact.FeinesContacte_Activity;
 import com.fish.fishapp.contact.Pagament_Activity;
+import com.fish.fishapp.contact.Xat_Activity;
 import com.fish.fishapp.utils.Server;
 import com.fish.fishapp.utils.ServerException;
+import com.parse.ParseUser;
 import com.squareup.timessquare.CalendarPickerView;
 
 import java.util.ArrayList;
@@ -39,6 +42,8 @@ public class FeinesDetall_Activity extends Activity {
 	TextView textViewTags;
 	TextView textViewRatings;
 
+    Button botoFavorit;
+
     RatingBar ratingBar;
 
     GridView gridviewTarifa;
@@ -46,6 +51,8 @@ public class FeinesDetall_Activity extends Activity {
     ImageView imageViewPicture;
 
     CalendarPickerView calendari;
+
+    boolean esFavorit = false;
 
     @Override
     public void onResume(){
@@ -83,11 +90,11 @@ public class FeinesDetall_Activity extends Activity {
         setContentView(R.layout.feines_detall);
 
         // Habilitem el botó per retrocedir de pantalla
-
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
-        // Obtenim el ID de la feina seleccionada
 
+
+        // Obtenim el ID de la feina seleccionada
 		if (getIntent() != null && getIntent().getExtras() != null){ //retorna el primer Intent quan mor i resuccita es null
 
 			Bundle b = getIntent().getExtras();
@@ -99,6 +106,10 @@ public class FeinesDetall_Activity extends Activity {
             App.getInstance().log("ID JOB:      " + jobId);
             App.getInstance().log("JOB OFFERED: " + jobOffered);
             App.getInstance().log("PRICE HOUR:  " + priceHour);
+
+            botoFavorit = (Button) findViewById(R.id.btnFavorits);
+            esFavorit = Server.esFavorit(jobId);
+            actualitzaBotoFavorit();
 
 		} else {
 
@@ -184,8 +195,9 @@ public class FeinesDetall_Activity extends Activity {
 			textViewRatings.setText(job.ratings);
 
 		} else {
-
+            ratingBar.setVisibility(View.INVISIBLE);
 			textViewRatings.setText(App.getInstance().getStringResource(R.string.no_ratings));
+            textViewRatings.setVisibility(View.INVISIBLE);
 		}
 /*
 		// Configuramos y añadimos el calendario
@@ -225,12 +237,13 @@ public class FeinesDetall_Activity extends Activity {
         calendari = (CalendarPickerView) findViewById(R.id.calendar_view);
 
         calendari.init(dataInicial.getTime(), dataFinal.getTime())
-                .withSelectedDate(dataInicial.getTime())
-                .inMode(CalendarPickerView.SelectionMode.MULTIPLE);
+                .withSelectedDate(dataInicial.getTime()).displayOnly();
+                //.inMode(CalendarPickerView.SelectionMode.MULTIPLE);
 
         // Marquem les dates disponibles del treballador
 
         calendari.highlightDates(diesSeleccionats());
+        //calendari.setEnabled(false);
     }
 
     private ArrayList<Date> diesSeleccionats(){
@@ -333,7 +346,7 @@ public class FeinesDetall_Activity extends Activity {
 
         // Iniciem el contacte amb la persona seleccionada
 
-        Intent intent = new Intent(App.getInstance().appContext, FeinesContacte_Activity.class);
+        Intent intent = new Intent(App.getInstance().appContext, Xat_Activity.class);
 
 		//Bundle b = new Bundle();
 
@@ -342,8 +355,13 @@ public class FeinesDetall_Activity extends Activity {
 		App.getInstance().goingToContactJob = job;
 
 		//intent.putExtras(b);
+        App.getInstance().log("----------------------------------------");
+        App.getInstance().log(job.workerUser.toString());
+        App.getInstance().log(job.workerUser.getObjectId());
 
-        intent.putExtra("worker_id", job.workerProfileId);
+        intent.putExtra("worker_id", job.workerUser.getObjectId());
+        intent.putExtra("nom_contacte", job.nombre);
+        intent.putExtra("usuari_contacte", job.workerUser.getObjectId().toLowerCase());
 
         startActivity(intent);
 
@@ -375,6 +393,25 @@ public class FeinesDetall_Activity extends Activity {
     }
 
 
+    public void clickFavorit(View view){
+        App.getInstance().log("Click a Favorit");
+
+        // Si és favorit, eliminar de favorits
+        if (esFavorit) {
+            esFavorit = false;
+            Server.addFavorite(jobId, false);
+
+        // Si no és favorit, afegir a favorits
+        }else {
+            esFavorit = true;
+            Server.addFavorite(jobId, true);
+        }
+
+        actualitzaBotoFavorit();
+
+    }
+
+
     public void clickPagament(View view){
 
         App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.id);
@@ -382,15 +419,21 @@ public class FeinesDetall_Activity extends Activity {
         App.getInstance().log("Id de l'usuari seleccionat: " + job.workerProfileId);
 
         // Iniciem el formulari de pagament
-
         Intent intent = new Intent(App.getInstance().appContext, Pagament_Activity.class);
-
         intent.putExtra("id_Emissor", App.getInstance().usuari.id);
-
         intent.putExtra("id_Receptor", job.workerProfileId);
-
         startActivity(intent);
 
         finish();
+    }
+
+    private void actualitzaBotoFavorit(){
+
+        if (esFavorit){
+            botoFavorit.setText("Quitar favorito");
+        } else {
+            botoFavorit.setText("Añadir favorito");
+        }
+
     }
 }

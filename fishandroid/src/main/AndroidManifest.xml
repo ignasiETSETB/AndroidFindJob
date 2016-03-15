@@ -13,6 +13,8 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="com.fish.fishapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <permission
         android:name="com.fish.fishapp.permission.C2D_MESSAGE"
@@ -77,7 +79,7 @@
         <activity
             android:name=".feines.FeinesLlistat_Activity"
             android:label="@string/title_activity_jobs"
-            android:launchMode="singleTop"
+            android:launchMode="standard"
             android:screenOrientation="portrait" />
         <activity
             android:name=".PerfilEditar_Activity"
@@ -120,7 +122,13 @@
         <activity
             android:name=".contact.Xat_Activity"
             android:label="@string/title_activity_chat"
-            android:parentActivityName=".feines.FeinesLlistat_Activity" />
+            android:parentActivityName=".feines.FeinesLlistat_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".contact.Xat_Llista_Activity"
+            android:label="@string/title_activity_chat"
+            android:parentActivityName=".feines.FeinesLlistat_Activity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".contact.Pagament_Activity"
             android:label="@string/title_activity_pagament"
@@ -198,7 +206,11 @@
         </receiver>
 
         <activity android:name=".feines.InfoContracteActivity" />
-        <activity android:name=".notificacions.LlistaNotificacions_Activity"></activity>
+        <activity
+            android:name=".notificacions.LlistaNotificacions_Activity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Condicions_Activity" />
+        <activity android:name=".Ajuda_Activity"></activity>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@
 		android:scaleType="centerCrop"
 		android:clickable="true"
 		android:onClick="clickImage"
-		app:riv_corner_radius="10dp"
+		app:riv_corner_radius="0dp"
 		app:riv_border_width="1dp"
 		app:riv_border_color="#333333"
 		app:riv_mutate_background="false"
@@ -95,6 +95,7 @@
 		style="?android:attr/listSeparatorTextViewStyle" />
 		-->
 
+	<!--
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" >
@@ -112,7 +113,7 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="10dp" />
 
-		<!--
+
 		<TextView
 		    android:id="@+id/textView2"
 		    android:layout_width="100dp"
@@ -127,9 +128,11 @@
 		    android:hint="Location"
 		    android:textAppearance="?android:attr/textAppearanceMedium" />
 		    -->
-
+<!--
 	</LinearLayout>
+-->
 
+	<!--
 	<LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content" >
@@ -149,25 +152,11 @@
 			android:prompt="@string/distance_prompt"
 			android:layout_margin="10dp" />
 
-		<!--
-		<TextView
-		    android:id="@+id/textView3"
-		    android:layout_width="100dp"
-		    android:layout_height="wrap_content"
-		    android:text="Distance"
-		    android:textAppearance="?android:attr/textAppearanceMedium" />
 
-		<Spinner
-		    android:id="@+id/spinnerWorkerProfileDistance"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="1"
-		    android:entries="@array/list_of_distances"
-		    android:prompt="@string/distance_prompt" />
-		    -->
+
 
 	</LinearLayout>
-
+-->
 	<WebView
 	    android:id="@+id/webViewWorkerProfileMap"
 	    android:layout_width="match_parent"
@@ -211,16 +200,11 @@
 
 		<Button
 			android:id="@+id/button1"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
+			android:layout_width="40dp"
+			android:layout_height="40dp"
 			android:onClick="clickAddTag"
-			android:text="+"
-			android:paddingLeft="20dp"
-			android:paddingRight="20dp"
-			android:singleLine="true"
-			android:layout_marginLeft="10dp"
-			android:layout_marginRight="10dp"
-			android:layout_marginBottom="10dp" />
+			android:background="@android:drawable/ic_input_add"
+			android:singleLine="true" />
 
 		<!--
 		<EditText

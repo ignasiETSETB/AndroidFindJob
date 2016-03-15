@@ -117,7 +117,6 @@
     <string-array name="list_of_work_types">
         <item>Presential</item>
         <item>Remote</item>
-        <item>Word wide</item>
         <item>Any</item>
     </string-array>
 
@@ -201,7 +200,10 @@
     <string name="responsable_email">Email</string>
     <string name="responsable_telefon">Phone</string>
     <string name="responsable_tipus_document">Type</string>
-
+    <string name="press_again_to_exit">Pulsa otra vez para salir</string>
+    <string name="form_condiciones">Condiciones de contratación</string>
+    <string name="action_condiciones">Policy</string>
+    <string name="action_ayuda">Help</string>
 
 
 </resources>
