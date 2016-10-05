@@ -1,9 +1,13 @@
 package com.fish.fishapp;
 
+import android.app.Activity;
 import android.app.Application;
+import android.graphics.Typeface;
+import android.os.Bundle;
+import android.widget.TextView;
 
 import com.parse.Parse;
-import com.parse.ParseFacebookUtils;
+
 
 public class FishApp extends Application{
 
@@ -25,7 +29,6 @@ public class FishApp extends Application{
         // Mètode obsolet
         // PushService.setDefaultPushCallback(this, MainActivity.class);
 
-        ParseFacebookUtils.initialize(getApplicationContext());
 
     }
 

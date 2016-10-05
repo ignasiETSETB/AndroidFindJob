@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fish.fishapp.Geolocalitzacio_Activity"
+    tools:ignore="MergeRootFrame">
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/getting_your_position"
+        android:textColor="@color/Black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        style="@android:style/TextAppearance.Large" />
+
+    <ProgressBar
+        android:id="@+id/progressBarGetPosition"
+        style="@style/fishTheme.ProgressBar.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight=".80" />
+
+    <TextView
+        android:id="@+id/textViewAllowGetYourPosition"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="@string/allow_get_position"
+        android:textColor="@color/Black"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:id="@+id/buttonRetryLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickRetry"
+        android:text="@string/retry"
+        android:enabled="true"
+        android:layout_margin="10dp"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/buttonCancelLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickCancel"
+        android:text="@string/cancel"
+        android:enabled="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textAlignment="center" />
+
+</LinearLayout>

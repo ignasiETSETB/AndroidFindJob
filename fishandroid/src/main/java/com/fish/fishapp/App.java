@@ -2,13 +2,22 @@ package com.fish.fishapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.location.Location;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.fish.fishapp.feines.Job;
 import com.fish.fishapp.utils.Server;
 import com.fish.fishapp.utils.Utils;
+import com.fish.fishapp.workerprofiles.WorkerProfile;
 import com.parse.ParseUser;
+import com.quickblox.chat.QBChatService;
+import com.quickblox.chat.QBPrivateChatManager;
+import com.quickblox.chat.model.QBDialog;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.customobjects.model.QBCustomObject;
 
 import org.jivesoftware.smack.AbstractXMPPConnection;
 import org.jivesoftware.smack.ConnectionConfiguration;
@@ -42,7 +51,13 @@ public class App {
 
 	public Context appContext; 
 	public Server server;
-	public Usuari usuari;
+	public static Usuari usuari;
+	public static int userID;
+	public static String userName;
+	public static String customOId;
+	public static String ID;
+	public static String disponibilidad;
+	public static String tags;
 	public Utils utils;
 
 	public ImageCache imageCache = new ImageCache();
@@ -126,8 +141,21 @@ public class App {
 
 
 
-	public void connectarXMPP (){
+	public void connectarXMPP (Integer opponentId){
 
+		QBPrivateChatManager privateChatManager = QBChatService.getInstance().getPrivateChatManager();
+		privateChatManager.createDialog(opponentId, new QBEntityCallback<QBDialog>() {
+			@Override
+			public void onSuccess(QBDialog dialog, Bundle args) {
+
+			}
+
+			@Override
+			public void onError(QBResponseException errors) {
+
+			}
+		});
+		/*
 
 		// XMPP
 		usuariOrigen_Compte = ParseUser.getCurrentUser().getObjectId().toLowerCase();
@@ -219,6 +247,7 @@ public class App {
 		});
 
 		thread.start();
+		*/
 	}
 
 	/**
@@ -308,10 +337,66 @@ public class App {
 	}
 
 
+	public static void setUserID(int id) {
+		userID = id;
+	}
+
+	public static void setID(String id) {
+		ID = id;
+	}
+
+	public static void setUserData(QBCustomObject co) {
+		usuari.ObjectID = co.getCustomObjectId();
+		usuari.userID = co.getUserId();
+		usuari.profileFirstName = co.getString("username");
+		//usuari.profileGender = co.getInteger("profileGender");
+		usuari.profileCurrency = co.getString("profileCurrency");
+		//Double co.getLocation
+		//usuari.profileLocation = co.getLocation("profileLocation");
+		usuari.profilePhoneNumber = co.getString("profilePhoneNumber");
+	}
 
 
 
+	public static int getUserID(){
+		return userID;
+	}
 
+	public static String getID() {
+		return ID;
+	}
 
+	public static Usuari getUsuari() {
+		return usuari;
+	}
 
+	public static void setUserName (String name){
+		userName=name;
+	}
+	public static String getUserName() {
+		//Treure despres presentació
+		if(userName==null)
+			userName="Andrés Gòmez";
+		return userName;
+	}
+
+	public static void setCustomId (String CustomId){
+		customOId=CustomId;
+	}
+	public static String getCustomId() {
+		return customOId;
+	}
+
+	public static void setDisponibilidad (String disponiBilidad){
+		disponibilidad=disponiBilidad;
+	}
+	public static String getDisponibilidad(){
+		return disponibilidad;
+	}
+	public static void setTags (String tag){
+		tags=tag;
+	}
+	public static String getTags(){
+		return tags;
+	}
 }

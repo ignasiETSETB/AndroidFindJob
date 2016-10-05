@@ -4,18 +4,32 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.fish.fishapp.feines.FeinesLlistat_Activity;
 import com.fish.fishapp.feines.InfoContracteActivity;
 import com.fish.fishapp.utils.Server;
-import com.parse.ParseAnalytics;
-import com.parse.ParseUser;
-import com.parse.PushService;
+
+
+import com.quickblox.auth.QBAuth;
+import com.quickblox.auth.model.QBSession;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.QBSettings;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.customobjects.model.QBCustomObject;
+import com.quickblox.users.model.QBUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 public class Main_Activity extends Activity {
+    // Creddencials Quickblox
+    static final String APP_ID = "40090";
+    static final String AUTH_KEY = "RTRE77YTj83X5js";
+    static final String AUTH_SECRET = "DazYncmnOA2T3ra";
+    static final String ACCOUNT_KEY = "cFLbCoJkVJsHmw6YGduo";
+
+
 
     @Override
     public void onDestroy(){
@@ -30,6 +44,11 @@ public class Main_Activity extends Activity {
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 
+        QBSettings.getInstance().init(getApplicationContext(), APP_ID, AUTH_KEY, AUTH_SECRET);
+        App.getInstance().log("Iniciem conexió amb QB");
+        QBSettings.getInstance().setAccountKey(ACCOUNT_KEY);
+        //Creació de la sessió QB
+
         App.getInstance().log("*");
         App.getInstance().log("************** Iniciem la classe '" + this.getClass().getSimpleName() + "' **************");
         App.getInstance().log("*");
@@ -38,22 +57,27 @@ public class Main_Activity extends Activity {
 
 		// El mètode "trackAppOpened(getIntent())" està obsolet. En el seu lloc es fa servir el mètode "trackAppOpenedInBackground(getIntent())"
 
-        ParseAnalytics.trackAppOpenedInBackground(getIntent());
+       // ParseAnalytics.trackAppOpenedInBackground(getIntent());
 
 		App.getInstance().appContext = this.getApplicationContext();
 
 		App.getInstance().ActualizandoGeoposicionUsuario = false;
 
-        ParseUser pUser = ParseUser.getCurrentUser();
+       // ParseUser pUser = ParseUser.getCurrentUser();
+        QBUser qbUser= new QBUser();
+        QBCustomObject object = new QBCustomObject();
 
+        App.getInstance().log("Sessió no iniciada. Presentem la pantalla prèvia al inici de sessió a través de Facebook");
 
+        Intent intent2 = new Intent(App.getInstance().appContext, Login_Activity.class);
 
+        startActivity(intent2);
 
 
 
         // Comprovem si ha iniciat sessió
 
-        if (pUser == null){
+        if (qbUser.getLogin() == null){
 
             // Sessió no iniciada. Presentem la pantalla prèvia al inici de sessió a través de Facebook
 
@@ -69,7 +93,7 @@ public class Main_Activity extends Activity {
 
             App.getInstance().log("Sessió iniciada");
 
-        	Server.setUserData(pUser);
+        	Server.setUserData(qbUser);
 
             // Comprovem si ha acceptt l'EULA
 

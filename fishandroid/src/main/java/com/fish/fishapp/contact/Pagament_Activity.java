@@ -103,7 +103,7 @@ public class Pagament_Activity extends Activity {
 
             case android.R.id.home:
 
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
 
                 return true;
         }

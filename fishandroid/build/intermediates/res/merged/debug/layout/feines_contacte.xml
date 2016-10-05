@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".contact.FeinesContacte_Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal" >
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_perm_group_personal_info"
+            android:contentDescription="@string/image_view"
+            android:scaleType="centerCrop"
+            app:riv_corner_radius="0dp"
+            app:riv_border_width="1dp"
+            app:riv_border_color="#333333"
+            app:riv_mutate_background="false"
+            app:riv_oval="false"
+            android:layout_margin="2dp" />
+<!--
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/image_view"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_perm_group_personal_info" />
+-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewSup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_medium"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="2dp"
+                android:layout_gravity="left|top" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3.5"
+                android:stepSize="0.5"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/textViewInf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_medium"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:padding="2dp"
+                android:layout_gravity="bottom|left" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/View1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <WebView
+                android:id="@+id/webViewFirstContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@android:color/white" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="clickAccept"
+                android:text="@string/accept"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_margin="10dp"
+                android:singleLine="true"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+

@@ -18,7 +18,7 @@ import android.widget.Spinner;
 
 import com.fish.fishapp.feines.FeinesLlistat_Activity;
 import com.fish.fishapp.utils.Utils;
-import com.parse.ParseFacebookUtils;
+
 import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 
@@ -261,10 +261,6 @@ public class PerfilEditar_Activity extends Activity {
 				ParseInstallation parseInstallation = ParseInstallation.getCurrentInstallation();
 				parseInstallation.remove("user");
 				parseInstallation.saveInBackground();
-
-				if (ParseUser.getCurrentUser() != null) {
-					ParseFacebookUtils.unlinkInBackground(ParseUser.getCurrentUser());
-				}
 
 				try {
 					// clearing app data

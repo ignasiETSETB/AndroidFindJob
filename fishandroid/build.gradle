@@ -18,19 +18,43 @@ android {
     productFlavors {
     }
     */
+
     productFlavors {
     }
+
+    packagingOptions{
+        exclude 'org.jivesoftware.smack.im/smackim.xml'
+        exclude 'org.jivesoftware.smack.tcp/smacktcp.providers'
+        exclude 'org.jivesoftware.smack/smack-config.xml'
+        exclude 'org.jivesoftware.smack/version'
+        exclude 'org.jivesoftware.smack.extensions/extensions.providers'
+        exclude 'org.jivesoftware.smack.extensions/extensions.xml'
+        exclude 'org.jivesoftware.smack.im/smackim.providers'
+        exclude 'org.jivesoftware.smack/jul.properties'
+
+    }
+
 }
+
+
+
+allprojects {
+    repositories {
+    maven {
+        url "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/"
+    }
+    mavenCentral()
+    }
+}
+
 
 repositories {
     mavenCentral()
 }
-
+def qbSdkVersion = '2.5'
 dependencies {
     //compile project(':facebook')
-    compile 'com.facebook.android:facebook-android-sdk:4.7.0'
-    compile 'com.parse:parsefacebookutils-v4-android:1.10.3@aar'
-
+    //compile 'com.facebook.android:facebook-android-sdk:4.8.0'
     compile 'com.android.support:support-v4:21.+'
     //compile fileTree(dir: 'libs', include: ['*.jar'])
     //compile files('libs/Parse-1.8.3.jar')
@@ -46,4 +70,13 @@ dependencies {
     // Per establir el chat
     compile 'com.google.code.gson:gson:2.3'
     // És una llibreria Java per treballar amb JSON dins Android
+    compile 'com.quickblox:quickblox-android-sdk-customobjects:2.6.1@aar'
+    compile 'com.quickblox:quickblox-android-sdk-core:2.6.1@aar'
+    compile('com.quickblox:quickblox-android-sdk-chat:2.6.1@aar') {
+        transitive = true
+    }
+    compile('com.android.support:cardview-v7:23.2.0') {
+        force = true
+    }
+    compile 'com.quickblox:quickblox-android-sdk-location:2.6.1@aar'
 }

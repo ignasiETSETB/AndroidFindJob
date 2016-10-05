@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\com.parse\parse-android\1.10.3\36366e460af2c0f224bb8f70b64e3302f638b138\parse-android-1.10.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="36366e460af2c0f224bb8f70b64e3302f638b138">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\parse-android-1.10.3_cf59cdc9947b71171d63edfbd9a09fe6a0564517.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-im-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1b0f44d1d6a86a61274132238265e432fb7a3da0">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-im-4.1.6-SNAPSHOT_34963beffcca2b47dabec5038c2033eeca29827d.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-android-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1d04ad00fb0c7491aa8d262b3458c6b05440018a">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-android-4.1.6-SNAPSHOT_9d5b91a44111d6c55e42d9cab639455a80fbaf6d.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\de.measite.minidns\minidns\0.1.7\993582d1455b93a5723d2af4b39d8679735b3550\minidns-0.1.7.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="993582d1455b93a5723d2af4b39d8679735b3550">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\minidns-0.1.7_71e5232d0ffee9b2f1e258b332bee2bfedc7e897.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.jxmpp\jxmpp-util-cache\0.4.2\4aa590f2a44d49444dcd3bb082017bf0b46f2ff7\jxmpp-util-cache-0.4.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4aa590f2a44d49444dcd3bb082017bf0b46f2ff7">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\jxmpp-util-cache-0.4.2_0db4a2b50fe05615d3a862cf28f53c13c18c808b.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-resolver-minidns-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a11e3fa0d9a7c44815a0346bd1db1b18f3950770">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-resolver-minidns-4.1.6-SNAPSHOT_fcb3ca66d0daa8cdde91a996fb0481de1ab702b2.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-extensions-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="03433e8a40c6dd2f10d155947ade6ffa6e85b539">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-extensions-4.1.6-SNAPSHOT_1fcbd7aee11d4e95d53ec28ba1958ba496956491.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\internal_impl-21.0.3_5dbc5429a9f965f7e7f89434e8078b148c6741df.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.jxmpp\jxmpp-core\0.4.2\a4c8ce09be6ec90479be74290e381de4288c9569\jxmpp-core-0.4.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a4c8ce09be6ec90479be74290e381de4288c9569">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\jxmpp-core-0.4.2_f5802a7b1fe0c961f6f8b0f58b5b91f54c8e8017.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_76110e7d6735c4beaf5348f1fc9d6d6c7b9766ca.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="da49cee66b85d190d3766f68b0ce503c54d78132">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.quickblox-quickblox-android-sdk-location-2.6.1_7173f9217d44f95f80d20ba5f1b5ce8016eae501.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\jars\libs\qb-gson2.2.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6c57970ea4e56ab3ba566bed5848dba5ae6f3df8">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\qb-gson2.2.1_271388ded5fb17625863c18bf3a0f97bb4e5e652.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\support-annotations-21.0.3_6bc43246b6059a1270d5e0b308113adb8a78cb23.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ef1307c7f41fd37be6fb3f842197c65027a3df33">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.quickblox-quickblox-android-sdk-customobjects-2.6.1_51c6a98125ce84250e156b2fcc6aeee944e57cbb.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-core\4.1.0\ad5c17dc5fe7f383118c5a3f1818b8789b697930\smack-core-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ad5c17dc5fe7f383118c5a3f1818b8789b697930">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-core-4.1.0_cf0284a2a7bed6ade441f81bd91a152cd0e69049.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-core-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="143cea8f9f37319afb5c47c40d2c51da6abe2691">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-core-4.1.6-SNAPSHOT_c90f9b2a49d3547b9966d461919a551d59ae7ee5.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-android-extensions\4.1.0\355b8e606f77ae354e86a84755d2dab9f7536121\smack-android-extensions-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="355b8e606f77ae354e86a84755d2dab9f7536121">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-android-extensions-4.1.0_bceaf3e425876205e90d133881e5206ce7339b10.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.android.support-support-v4-21.0.3_6f7eb2adf4a4c7d36d93b9de35e1e4c6e5d8ec96.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0846aa8e4e32b86e63f820877ab518e09ffa22d3">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.quickblox-quickblox-android-sdk-core-2.6.1_caa8d7de0bd4e596cd799a68419c6d18cbe483ba.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2abde49a8d53539fa902ab5b8d29698023b262dd">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.0.1_9807b9ed8dc99ea1c3ee36571353aebba5e2906e.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3\5fc52c41ef0239d1093a1eb7c3697036183677ce\gson-2.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5fc52c41ef0239d1093a1eb7c3697036183677ce">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\gson-2.3_d53816352f4ff24e433ed29b8011648cfc8dbeb8.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="bc599eb9531da9d18bc58ec4eb0b1a1d895f6839">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.2.0_27464259621d2deec572e26591af4daab1b08049.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-tcp-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="977e0f15437e3135fd71fcfc43ff016d26db6e0c">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-tcp-4.1.6-SNAPSHOT_05144db73e2b59d33ad83161d95ec12b9923e8ac.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-experimental-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b3bdd06e8f3d8e9e7790d7ee5fe7350ce11bd040">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-experimental-4.1.6-SNAPSHOT_046301f3b84c5b20ee166da9815821e0363ae4c0.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-tcp\4.1.0\b5043991d7ed52da15089fcfcbca1dd862d1af42\smack-tcp-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5043991d7ed52da15089fcfcbca1dd862d1af42">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-tcp-4.1.0_180431e1e3a787123430695be547b94e88b27724.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.squareup\android-times-square\1.5.0\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="49a161d665861cd093b0b0ba2bfcfe791f1330ef">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.squareup-android-times-square-1.5.0_874120809b1649b71833f7c3419847d300ece15c.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-android\4.1.0\3da1ad907fe8eb0db80471b8837d3e51690fe13c\smack-android-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3da1ad907fe8eb0db80471b8837d3e51690fe13c">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-android-4.1.0_7a38198f79d6d9da3d2c4f01114a24f7e5174f06.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\bolts-applinks-1.4.0_1d1daf2be8ece6df8d8676b532a94da4a55bfdff.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-sasl-provided\4.1.0\74422a92b7bba8eb633ceecdb017530b67451731\smack-sasl-provided-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="74422a92b7bba8eb633ceecdb017530b67451731">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-sasl-provided-4.1.0_17264b2a881381a093e6afa680ac5ca63935407d.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-resolver-minidns\4.1.0\5b8783270e55f49937492b23df34993c4e51c8d7\smack-resolver-minidns-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5b8783270e55f49937492b23df34993c4e51c8d7">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-resolver-minidns-4.1.0_05cb47911e577344c35b635d1371b240fc5ed097.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-im\4.1.0\4b6d736ad02f64ba54f4a5712a4a453a2c3848b1\smack-im-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b6d736ad02f64ba54f4a5712a4a453a2c3848b1">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-im-4.1.0_b2440c1e5c7aca94ff566ab67e943ba2cb14ac08.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\.gradle\caches\modules-2\files-2.1\org.igniterealtime.smack\smack-extensions\4.1.0\b0968f9b209feb2f51d1a1e72238989271750625\smack-extensions-4.1.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b0968f9b209feb2f51d1a1e72238989271750625">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-extensions-4.1.0_e1b5bf9efc97e1ad49009390d8ab700aad95c3d3.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="720b36b822d3f6a7ec3e32c693e8a7e81ebd0d53">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\com.quickblox-quickblox-android-sdk-chat-2.6.1_1f5d5631c48b537d2d8e7df42c39588d2f4b61e3.jar" />
+    </item>
+    <item
+        jar="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\jars\libs\smack-sasl-provided-4.1.6-SNAPSHOT.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0c0b9c74a41a70e3b3870a2a49eda1b706623f83">
+        <dex dex="D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\pre-dexed\debug\smack-sasl-provided-4.1.6-SNAPSHOT_59fb360a5aa06a9e74439b1dc81b63eec4d35334.jar" />
+    </item>
+
+</items>

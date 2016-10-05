@@ -18,6 +18,11 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.fish.fishapp.feines.FeinesLlistat_Activity;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.location.QBLocations;
+import com.quickblox.location.model.QBLocation;
+import com.quickblox.location.request.QBLocationRequestBuilder;
 
 import java.io.IOException;
 import java.util.List;
@@ -40,6 +45,8 @@ public class Geolocalitzacio_Activity extends Activity {
 	TextView allow = null;
 
     int temps = 0;
+
+    Double altitude, latitude;
 
     // Comptador de seguretat. Esperem 30 segons abans d'aturar la geoposició i de presentar el botó "Reintentar". A cada segon actualitzem el temps dedicat
 
@@ -133,8 +140,9 @@ public class Geolocalitzacio_Activity extends Activity {
     private void tryGetLocation(){
 
    	    App.getInstance().log("Intentant geoposicionar al usuari...");
+        App.getInstance().log("1");
 
-        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         // Obtenim l'estat del GPS
 
@@ -171,16 +179,16 @@ public class Geolocalitzacio_Activity extends Activity {
                     // Obtenim la geoposició mitjançant la xarxa
 
                     locationProvider = LocationManager.NETWORK_PROVIDER;
-
+                    App.getInstance().log("Intentant geoposicionar al usuari...");
                     App.getInstance().log("Obtenim la geoposició mitjançant la xarxa");
 
                 } else if (GPS_Actiu) {
 
+                    locationProvider = LocationManager.GPS_PROVIDER;
+                    App.getInstance().log("Obtenim la geoposició mitjançant el gps");
                     // Obtenim la geoposició mitjançant el GPS
 
-                    locationProvider = LocationManager.GPS_PROVIDER;
 
-                    App.getInstance().log("Xarxa no activa. Obtenim la geoposició mitjançant el GPS");
                 }
             }
         }
@@ -203,6 +211,20 @@ public class Geolocalitzacio_Activity extends Activity {
                 locationManager.removeUpdates(locationListener);
 
                 // Obtenim les dades de la geoposició
+                QBLocation location2 = new QBLocation(location.getLatitude(), location.getLongitude(), "I'm geolocalized!");
+                QBLocations.createLocation(location2, new QBEntityCallback<QBLocation>() {
+                    @Override
+                    public void onSuccess(QBLocation qbLocation, Bundle args) {
+                        App.getInstance().log("Usuari geolocalitzat");
+
+
+                    }
+
+                    @Override
+                    public void onError(QBResponseException errors) {
+                        App.getInstance().log("Error al geolocalitzar");
+                    }
+                });
 
                 Geocoder geo = new Geocoder(App.getInstance().appContext, Locale.getDefault());
 
@@ -272,7 +294,8 @@ public class Geolocalitzacio_Activity extends Activity {
 
                 // Guardem les dades del geoposicionament obtingut, encara que siguin null
 
-                App.getInstance().usuari.setLocation(location, Localitat, CodiPais);
+                //App.getInstance().usuari.setLocation(location, Localitat, CodiPais);
+
 
                 App.getInstance().log("Location: " + location.toString());
 
@@ -284,6 +307,7 @@ public class Geolocalitzacio_Activity extends Activity {
 
                     // Presentem la pantalla principal
 
+                    App.getInstance().log("provo de mostrar pantalla feines llistat");
                     Intent intent = new Intent(App.getInstance().appContext, FeinesLlistat_Activity.class);
 
                     startActivity(intent);
@@ -323,6 +347,7 @@ public class Geolocalitzacio_Activity extends Activity {
         comptador.start();
 
         App.getInstance().log("Comptador iniciat");
+
     }
 
     public void clickRetry(View view){

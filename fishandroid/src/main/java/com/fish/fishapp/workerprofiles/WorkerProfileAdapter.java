@@ -11,11 +11,12 @@ import android.widget.TextView;
 
 import com.fish.fishapp.App;
 import com.fish.fishapp.R;
+import com.fish.fishapp.feines.Job;
 import com.fish.fishapp.utils.Utils;
 
 public class WorkerProfileAdapter extends ArrayAdapter<WorkerProfile>{
 	Context context; 
-    int layoutResourceId;    
+    int layoutResourceId;
     WorkerProfile data[] = null;
     
     public WorkerProfileAdapter(Context context, int layoutResourceId, WorkerProfile[] data) {
@@ -49,15 +50,28 @@ public class WorkerProfileAdapter extends ArrayAdapter<WorkerProfile>{
         {
             holder = (WorkerProfileHolder)row.getTag();
         }
-        
+
         WorkerProfile workerProfile = data[position];
-        
-        holder.foto.setImageResource(0);
-    	holder.precioHora.setText(workerProfile.priceHour.toString());
+        switch(Utils.tagListToString(workerProfile.tags)) {
+            case "Analista": holder.foto.setImageResource(R.drawable.analista);
+                //job.imageInt=R.drawable.analista;
+                break;
+            case "Transportista": holder.foto.setImageResource(R.drawable.transportista);
+                //job.imageInt=R.drawable.transportista;
+                break;
+            case "Ejecutivo": holder.foto.setImageResource(R.drawable.ejecutivo);
+                //job.imageInt=R.drawable.ejecutivo;
+                break;
+            case "Camarera": holder.foto.setImageResource(R.drawable.camarera);
+                //job.imageInt=R.drawable.camarera;
+                break;
+        }
+        //holder.foto.setImageResource(0);
+    	holder.precioHora.setText(workerProfile.precioHora.toString());
     	holder.tags.setText(Utils.tagListToString(workerProfile.tags));
-    	holder.ciudad.setText(workerProfile.locationName + ",");
-    	holder.distancia.setText(workerProfile.distance + " Km");
-    	App.getInstance().imageCache.loadBitmap(workerProfile.pictureURL, holder.foto,workerProfile.picture);
+    	holder.ciudad.setText(workerProfile.ciudad+ ",");
+    	//holder.distancia.setText(workerProfile.distancia + " Km");
+    	//App.getInstance().imageCache.loadBitmap(workerProfile.pictureURL, holder.foto,workerProfile.picture);
     	
         return row;
     }

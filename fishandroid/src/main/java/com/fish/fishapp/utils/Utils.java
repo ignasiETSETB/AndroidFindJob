@@ -187,6 +187,9 @@ public class Utils {
 		String res="";
 		// get strings from resource file
 		String[] workTypes = App.getInstance().getStringArrayResource(R.array.list_of_work_types);
+		if(workerProfileWorkType==null){
+			workerProfileWorkType=255;
+		}
 		switch(workerProfileWorkType){
 		case 1:
 			res = workTypes[0]; //"Presential"

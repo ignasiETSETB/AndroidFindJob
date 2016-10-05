@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.support.v4.view.GravityCompat;
@@ -21,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -50,15 +52,12 @@ import com.fish.fishapp.utils.Utils;
 import com.fish.fishapp.workerprofiles.WorkerProfilesActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.parse.ParseFacebookUtils;
-import com.parse.ParseInstallation;
-import com.parse.ParseUser;
+
 
 import org.jivesoftware.smack.PacketCollector;
 import org.jivesoftware.smack.filter.AndFilter;
 import org.jivesoftware.smack.packet.Message;
 import org.jivesoftware.smack.packet.Packet;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +79,7 @@ public class FeinesLlistat_Activity extends Activity {
     private Object data = null;
     private View linearLayoutSearchSettings;
     private EditText editTextSearch;
+    private Button buttonBuscar2;
     //private EditText editTextPriceSearch;
 	//private Spinner spinnerGenderSearch;
 	private LinearLayout linearLayoutSearch;
@@ -98,7 +98,7 @@ public class FeinesLlistat_Activity extends Activity {
     Thread threadPacketCollector;
 
     private boolean pantallaFavorits = false;
-
+    public static boolean serverDownload = false;
 
 
 	@Override
@@ -124,13 +124,14 @@ public class FeinesLlistat_Activity extends Activity {
 
             // Amaguem el teclat
 
-            this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+            this.getWindow().setSoftInputMode(0);
 
             // Configurem la presentació dels elements de la vista
-
+            App.getInstance().log("Configurem presentacio feines llistat");
             linearLayoutSearchSettings = this.findViewById(R.id.linearLayoutSearchSettings);
             linearLayoutSearchSettings.setVisibility(View.GONE);
             editTextSearch = (EditText) this.findViewById(R.id.editTextSearch);
+            buttonBuscar2 = (Button) this.findViewById(R.id.buttonBuscar2);
             //editTextPriceSearch  = (EditText) this.findViewById(R.id.editTextPriceSearch);
             //spinnerGenderSearch = (Spinner)  this.findViewById(R.id.spinnerGenderSearch);
             //spinnerGenderSearch.setSelection(2);
@@ -200,6 +201,15 @@ public class FeinesLlistat_Activity extends Activity {
             });
 
 
+            buttonBuscar2.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    App.getInstance().log("Amaguem els criteris de cerca i iniciem la cerca");
+                    linearLayoutSearchSettings.setVisibility(View.GONE);
+                    doSearch();
+                }
+            });
+
             // Comprovar si el llista completa o de favorits
             try {
                 Bundle b = getIntent().getExtras();
@@ -219,16 +229,21 @@ public class FeinesLlistat_Activity extends Activity {
 
             queryJobsParameters = new QueryJobsParameters();
 
-            new DownloadTask().execute(queryJobsParameters);
+            //new DownloadTask().execute(queryJobsParameters);
+
+            downloadT(queryJobsParameters);
 
 
+            /*
             // Iniciem la connexió amb el xat
+            App.getInstance().log("Inici conexio amb el chat");
             if (App.getInstance().connection == null || !App.getInstance().connection.isConnected()) {
                 App.getInstance().connectarXMPP();
             }
             createPacketCollector();
             arrayContactes = Utils.carregarContactesSharedPreferences(context);
             comprovarMissatgesPendents();
+        */
         }
 	}
 
@@ -241,123 +256,127 @@ public class FeinesLlistat_Activity extends Activity {
         App.getInstance().log("************** Tanquem la classe '" + this.getClass().getSimpleName() + "' **************");
         App.getInstance().log("*");
 
-        App.getInstance().connection.disconnect();
+        //App.getInstance().connection.disconnect();
         destroyPacketCollector();
         super.onDestroy();
 
         App.getInstance()._jobsActivity = null;
     }
 
+    public void downloadT(QueryJobsParameters... args) {
+        ArrayList<Job> resultObject = new ArrayList<>();
+        App.getInstance().log("************************************************************************************");
+        App.getInstance().log("*                  Detall de les dades per la cerca de feines                      *");
+        App.getInstance().log("************************************************************************************");
 
-	private class DownloadTask extends AsyncTask<QueryJobsParameters, Void, Object> {
+        App.getInstance().log("----------------- Text:              " + args[0].texto);
+        App.getInstance().log("----------------- Preu/hora:         " + args[0].precioHora);
+        App.getInstance().log("----------------- Requisits:         " + args[0].requisitos);
+        //App.getInstance().log("----------------- Sexe:              " + Utils.ObtenirSexeNom(args[0].sexo) + " (" + args[0].sexo + ")");
 
-        @Override
-        protected void onPreExecute() {
+        App.getInstance().log("************************************************************************************");
 
-        }
+        App.getInstance().log("Fem la consulta a Quickblox per obtenir la llista de feines disponibles, segons el filtre donat...");
 
-        @Override
-        protected Object doInBackground(QueryJobsParameters... args) {
+        try {
+            // Llista completa
+            if (!pantallaFavorits) {
+                App.getInstance().log("Fem la query");
+                resultObject = Server.queryJobs(args[0], null);
 
-        	ArrayList<Job> resultObject;
 
-            App.getInstance().log("************************************************************************************");
-            App.getInstance().log("*                  Detall de les dades per la cerca de feines                      *");
-            App.getInstance().log("************************************************************************************");
-
-            App.getInstance().log("----------------- Text:              " + args[0].texto);
-            App.getInstance().log("----------------- Preu/hora:         " + args[0].precioHora);
-            App.getInstance().log("----------------- Requisits:         " + args[0].requisitos);
-            App.getInstance().log("----------------- Sexe:              " + Utils.ObtenirSexeNom(args[0].sexo) + " (" + args[0].sexo + ")");
-
-            App.getInstance().log("************************************************************************************");
-
-            App.getInstance().log("Fem la consulta a parse per obtenir la llista de feines disponibles, segons el filtre donat...");
-
-            try {
-                // Llista completa
-                if (!pantallaFavorits) {
-                    resultObject = Server.queryJobs(args[0], null);
-
+                App.getInstance().log("Després de la query"+resultObject.toString());
                 // Llista favorits
-                } else {
-                    resultObject = Server.queryJobsFavorits(args[0], null);
-                }
-
-            } catch (ServerException e) {
-                App.getInstance().log("Error al intentar obtenir la llista de feines disponibles: " + e.getMessage());
-                e.printStackTrace();
-                App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
-                return null;
-			}
-
-            return resultObject;
-        }
-
-
-
-        @Override
-		protected void onPostExecute(Object result) {
-
-            // Quan acabem de rebre totes les feines resultants, comprovem quàntes hem obtingut
-
-        	if (FeinesLlistat_Activity.this.pd != null) {
-
-        		ArrayList<Job> arr = (ArrayList<Job>) result;
-            	FeinesLlistat_Activity.this.arrayListJob = arr;
-                App.getInstance().log("Total feines obtingudes: " + arr.size());
-
-                // Si no tenim feines, presentem el títol "No hay resultados", si no, l'amaguem
-            	if (arr.size() == 0){
-            		textViewNoHayResultados.setVisibility(View.VISIBLE);
-            	} else {
-            		textViewNoHayResultados.setVisibility(View.GONE);
-            	}
-
-                // Carreguem les dades de les feines obtingudes a la vista 'activity_item_job', i omplim la llista
-        		adapter = new JobAdapter(FeinesLlistat_Activity.this, R.layout.activity_item_job, arrayListJob.toArray(new Job[arrayListJob.size()]));
-        		listViewJobs = (ListView) findViewById(R.id.listViewJobs);
-        		listViewJobs.setAdapter(adapter);
-
-        		 // L'usuari ha seleccionat una feina del llistat mostrat
-        		listViewJobs.setOnItemClickListener(new OnItemClickListener() {
-
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        // Obtenim les dades de la feina seleccionada
-                        Job  itemJob = (Job) listViewJobs.getItemAtPosition(position);
-
-                        App.getInstance().log("Nom del candidat seleccionat: " + itemJob.nombre);
-                        App.getInstance().log("Id del candidat seleccionat: " + itemJob.ObjectId);
-
-                        // Presentem el detall de la feina seleccionada
-                        Intent intent = new Intent(FeinesLlistat_Activity.this, FeinesDetall_Activity.class);
-
-                        // Informem al sistema del ID de la feina seleccionada
-                        Bundle b = new Bundle();
-                        b.putString("JobId", itemJob.ObjectId);
-                        b.putString("jobOffered", itemJob.nombre);
-                        b.putInt("priceHour", itemJob.precioHora);
-
-                        intent.putExtras(b);
-                        startActivity(intent);
-                    }
-                });
-
-        		FeinesLlistat_Activity.this.pd.dismiss();
+            } else {
+                //resultObject = Server.queryJobsFavorits(args[0], null);
             }
+
+        } catch (ServerException e) {
+            App.getInstance().log("Error al intentar obtenir la llista de feines disponibles: " + e.getMessage());
+            e.printStackTrace();
+            App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
         }
+
+
+        Handler handler = new Handler();
+        App.getInstance().log("esperem 2 s");
+        final ArrayList<Job> finalResultObject = resultObject;
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                // Actions to do after 10 seconds
+
+                if (FeinesLlistat_Activity.this.pd != null) {
+                    App.getInstance().log("********** resultobject");
+                    ArrayList<Job> arr = finalResultObject;
+                    FeinesLlistat_Activity.this.arrayListJob = finalResultObject;
+                    App.getInstance().log("Total feines obtingudes: " + arr.size());
+
+                    // Si no tenim feines, presentem el títol "No hay resultados", si no, l'amaguem
+                    if (arr.size() == 0){
+                        textViewNoHayResultados.setVisibility(View.VISIBLE);
+                    } else {
+                        textViewNoHayResultados.setVisibility(View.GONE);
+                    }
+
+                    // Carreguem les dades de les feines obtingudes a la vista 'activity_item_job', i omplim la llista
+                    adapter = new JobAdapter(FeinesLlistat_Activity.this, R.layout.activity_item_job, arrayListJob.toArray(new Job[arrayListJob.size()]));
+                    listViewJobs = (ListView) findViewById(R.id.listViewJobs);
+                    listViewJobs.setAdapter(adapter);
+
+                    // L'usuari ha seleccionat una feina del llistat mostrat
+                    listViewJobs.setOnItemClickListener(new OnItemClickListener() {
+
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            // Obtenim les dades de la feina seleccionada
+                            Job  itemJob = (Job) listViewJobs.getItemAtPosition(position);
+
+                            App.getInstance().log("Nom del candidat seleccionat: " + itemJob.nombre);
+                            App.getInstance().log("Id del candidat seleccionat: " + itemJob.ObjectId);
+                            App.getInstance().log("UserId candidat seleccionat: " + itemJob.userId);
+
+                            // Presentem el detall de la feina seleccionada
+                            Intent intent = new Intent(FeinesLlistat_Activity.this, FeinesDetall_Activity.class);
+
+                            // Informem al sistema del ID de la feina seleccionada
+                            Bundle b = new Bundle();
+                            b.putString("JobId", itemJob.ObjectId);
+                            b.putString("nombre",itemJob.nombre);
+                            b.putString("jobOffered", itemJob.tags);
+                            b.putInt("priceHour", itemJob.precioHora);
+                            b.putString("edad",itemJob.edad);
+                            b.putString("ciudad",itemJob.ciudad);
+                            b.putInt("imageInt",itemJob.imageInt);
+                            b.putString("userid",itemJob.userId);
+                            intent.putExtras(b);
+                            startActivity(intent);
+                        }
+                    });
+
+                    FeinesLlistat_Activity.this.pd.dismiss();
+                }
+            }
+        }, 2000);
     }
 
+    public boolean getServerDownload() {
+        return this.serverDownload;
+    }
+
+    public void setServerDownload(boolean data) {
+        this.serverDownload = data;
+    }
 
     @Override
     protected void onResume() {
         App.getInstance().log("ONRESUME FEINES LLISTAT ACTIVITY");
-
+        /*
         createPacketCollector();
         arrayContactes = Utils.carregarContactesSharedPreferences(context);
         comprovarMissatgesPendents();
+        */
         super.onResume();
+
     }
 
 
@@ -389,7 +408,12 @@ public class FeinesLlistat_Activity extends Activity {
                     App.getInstance().log("Amaguem els criteris de cerca i iniciem la cerca");
                     linearLayoutSearchSettings.setVisibility(View.GONE);
                     doSearch();
-
+                    // HIDE KEYBOARD -- NOT WORKING
+                    View view = this.getCurrentFocus();
+                    if (view != null) {
+                        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                 } else {
                     App.getInstance().log("Visualitzem els criteris de cerca");
                     linearLayoutSearchSettings.setVisibility(View.VISIBLE);
@@ -400,16 +424,17 @@ public class FeinesLlistat_Activity extends Activity {
             case R.id.action_notificaciones:
 
                 App.getInstance().log("Opció notificacions seleccionada");
+                /*
                 Intent intentNotificacions = new Intent(App.getInstance().appContext, LlistaNotificacions_Activity.class);
                 startActivity(intentNotificacions);
-
+                */
                 return true;
 
             case R.id.action_chat:
 
                 App.getInstance().log("Opció xat seleccionada");
                 menu.findItem(R.id.action_chat).setIcon(getResources().getDrawable(R.drawable.ic_action_chat));
-
+                /*
                 // Intent intent_chat = new Intent(App.getInstance().appContext, ChatListActivity.class);
 
                 // Obrim el xat amb el nom de la persona seleccionada per iniciar el xat
@@ -423,7 +448,7 @@ public class FeinesLlistat_Activity extends Activity {
                 //intent_chat.putExtra("nom_contacte", job.nombre);
                 intent_chat.putExtra("nom_contacte", "Remitente");
                 startActivity(intent_chat);
-
+                */
                 return true;
 
             case R.id.action_trabajo:
@@ -439,38 +464,43 @@ public class FeinesLlistat_Activity extends Activity {
 
                 if (!pantallaFavorits) {
                     App.getInstance().log("Opció favorits seleccionada");
+                    /*
                     Intent intent_favorits = new Intent(App.getInstance().appContext, FeinesLlistat_Activity.class);
                     intent_favorits.putExtra("pantallaFavorits", true);
                     intent_favorits.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
                             | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS
                             | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     startActivity(intent_favorits);
+                    */
                 }
                 return true;
 
             case R.id.action_perfil:
 
                 App.getInstance().log("Opció perfil de l'usuari seleccionada");
+                /*
                 Intent intent_perfil = new Intent(App.getInstance().appContext, PerfilEditar_Activity.class);
 
                 startActivity(intent_perfil);
-
+                */
                 return true;
 
             case R.id.action_condiciones:
 
                 App.getInstance().log("Opció Condicions seleccionada");
+                /*
                 Intent intentCondicions = new Intent(App.getInstance().appContext, Condicions_Activity.class);
                 startActivity(intentCondicions);
-
+                */
                 return true;
 
             case R.id.action_ayuda:
 
                 App.getInstance().log("Opció Ajuda seleccionada");
+                /*
                 Intent intentAjuda = new Intent(App.getInstance().appContext, Ajuda_Activity.class);
                 startActivity(intentAjuda);
-
+                */
                 return true;
             /*
             case R.id.action_refresh:
@@ -532,7 +562,8 @@ public class FeinesLlistat_Activity extends Activity {
 */
         // Llencem la cerca
 
-        new DownloadTask().execute(queryJobsParameters);
+        //new DownloadTask().execute(queryJobsParameters);
+        downloadT(queryJobsParameters);
 	}
 
 /*

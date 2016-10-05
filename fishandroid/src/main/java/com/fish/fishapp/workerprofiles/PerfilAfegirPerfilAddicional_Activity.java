@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -44,7 +45,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	String workerProfileId;
 	ImageView imageViewWorkerProfilePicture;
 	Spinner spinnerWorkerProfileWorkType;
-	//TextView textViewWorkerProfileLocationName;
+	TextView textViewWorkerProfileLocationName;
 	//Spinner spinnerWorkerProfileDistance;
 	WebView webMap;
 	LinearLayout linearLayoutWorkerProfileTags;
@@ -53,8 +54,10 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	EditText editTextWorkerProfilePriceHour;
 	EditText editTextWorkerProfilePriceDay;
 	EditText editTextWorkerProfilePriceWeek;
+	EditText editTextDisponibility;
+	TextView editTextTagsActuales;
 	ArrayList<Date> datesList;
-	
+	private static String objectId;
 	ProgressDialog ringProgressDialog;
 	Boolean pictureChanged=false;
 	
@@ -62,6 +65,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	ViewGroup vg;
 	SimpleDateFormat df;
 	Date avui;
+
 
 	CalendarPickerView calendari;
 
@@ -93,12 +97,15 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		App.getInstance().log("*");
 
 		super.onCreate(savedInstanceState);
-
+		Bundle b = getIntent().getExtras();
+		final Bundle extras= getIntent().getExtras();
+		objectId=extras.getString("JobId");
 		setContentView(R.layout.perfil_afegir_perfil_addicional);
 
 		// Habilitem el botó per retrocedir de pantalla
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+
 
 		// Amaguem el teclat
 
@@ -118,7 +125,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 			if (getIntent() != null && getIntent().getExtras() != null){ //retorna el primer Intent quan mor i resuccita es null
 
-				Bundle b = getIntent().getExtras();
+
 
 				workerProfileId = b.getString("workerProfileId");
 
@@ -146,13 +153,16 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 			try {
 
-				workerProfile = Server.readWorkerProfile(workerProfileId);
+				App.getInstance().log("Buscar info de "+ extras.getString("Id"));
+
+				workerProfile = Server.readWorkerProfile(workerProfileId, extras.getString("JobId"));
+
 
 			} catch (ServerException e) {
 
 				e.printStackTrace();
 
-				App.getInstance().log(e.getMessage());
+				App.getInstance().log(e.getMessage()+"");
 
 				App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
 
@@ -161,67 +171,109 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 				return;
 			}
 		}
+		App.getInstance().log("Presentem info perfil");
+		Handler handler = new Handler();
+		handler.postDelayed(new Runnable() {
+			public void run() {
 
-		// Carreguem la imatge del perfil
+				// Carreguem la imatge del perfil
 
-		imageViewWorkerProfilePicture = (ImageView) this.findViewById(R.id.imageViewWorkerProfilePicture);
 
-		App.getInstance().imageCache.loadBitmap(workerProfile.pictureURL, imageViewWorkerProfilePicture, workerProfile.picture);
+				imageViewWorkerProfilePicture = (ImageView) findViewById(R.id.imageViewWorkerProfilePicture);
 
-		//imageViewWorkerProfilePicture.setImageBitmap(workerProfile.picture);
+				switch(Utils.tagListToString(workerProfile.tags)) {
+					case "Analista": imageViewWorkerProfilePicture.setImageResource(R.drawable.analista);
+						//job.imageInt=R.drawable.analista;
+						break;
+					case "Transportista": imageViewWorkerProfilePicture.setImageResource(R.drawable.transportista);
+						//job.imageInt=R.drawable.transportista;
+						break;
+					case "Ejecutivo": imageViewWorkerProfilePicture.setImageResource(R.drawable.ejecutivo);
+						//job.imageInt=R.drawable.ejecutivo;
+						break;
+					case "Camarera": imageViewWorkerProfilePicture.setImageResource(R.drawable.camarera);
+						//job.imageInt=R.drawable.camarera;
+						break;
+				}
+				// App.getInstance().imageCache.loadBitmap(workerProfile.pictureURL, imageViewWorkerProfilePicture, workerProfile.picture);
 
-		// Carreguem la resta de dades del perfil
+				//imageViewWorkerProfilePicture.setImageBitmap(workerProfile.picture);
 
-		spinnerWorkerProfileWorkType = (Spinner) this.findViewById(R.id.spinnerWorkerProfileWorkType);
+				// Carreguem la resta de dades del perfil
 
-		String myString = Utils.getWorkTypeDisplayString(workerProfile.workType);
+				spinnerWorkerProfileWorkType = (Spinner) findViewById(R.id.spinnerWorkerProfileWorkType);
 
-		ArrayAdapter myAdap = (ArrayAdapter) spinnerWorkerProfileWorkType.getAdapter();
+				String myString = Utils.getWorkTypeDisplayString(workerProfile.workType);
 
-		int spinnerPosition = myAdap.getPosition(myString);
+				ArrayAdapter myAdap = (ArrayAdapter) spinnerWorkerProfileWorkType.getAdapter();
 
-		spinnerWorkerProfileWorkType.setSelection(spinnerPosition);
-		
-		//textViewWorkerProfileLocationName = (TextView) this.findViewById(R.id.textViewWorkerProfileLocationName);
-		//textViewWorkerProfileLocationName.setText(workerProfile.locationName);
-		
-		//spinnerWorkerProfileDistance =(Spinner) this.findViewById(R.id.spinnerWorkerProfileDistance);
+				int spinnerPosition = myAdap.getPosition(myString);
 
-		String myString2 = workerProfile.distance + " Km";
+				spinnerWorkerProfileWorkType.setSelection(spinnerPosition);
 
-		//ArrayAdapter myAdap2 = (ArrayAdapter) spinnerWorkerProfileDistance.getAdapter();
-		//int spinnerPosition2 = myAdap2.getPosition(myString2);
-		//spinnerWorkerProfileDistance.setSelection(spinnerPosition2);
-		//spinnerWorkerProfileDistance.setOnItemSelectedListener(new OnDistanceChangedListener());
-		
-		webMap = (WebView) this.findViewById(R.id.webViewWorkerProfileMap);
-		
-		// Carreguem el mapa amb la geoposició
+				//textViewWorkerProfileLocationName = (TextView) this.findViewById(R.id.textViewWorkerProfileLocationName);
+				//textViewWorkerProfileLocationName.setText(workerProfile.locationName);
 
-		setupWebMap(webMap, Utils.getRadiusFromDisplay(workerProfile.distance));
+				//spinnerWorkerProfileDistance =(Spinner) this.findViewById(R.id.spinnerWorkerProfileDistance);
 
-		// Carreguem la resta de dades del perfil
+				//String myString2 = workerProfile.distance + " Km";
+				String myString2 = workerProfile.distancia + " Km";
 
-		tagList = workerProfile.tags;
-		
-		editTextNewTag = (EditText) this.findViewById(R.id.editTextNewTag);
+				//ArrayAdapter myAdap2 = (ArrayAdapter) spinnerWorkerProfileDistance.getAdapter();
+				//int spinnerPosition2 = myAdap2.getPosition(myString2);
+				//spinnerWorkerProfileDistance.setSelection(spinnerPosition2);
+				//spinnerWorkerProfileDistance.setOnItemSelectedListener(new OnDistanceChangedListener());
 
-		linearLayoutWorkerProfileTags = (LinearLayout) this.findViewById(R.id.linearLayoutWorkerProfileTags);
-		
-		updateTags();
+				// Carreguem el mapa amb la geoposició
 
-		// Actualitzem el títol amb la moneda del perfil del treballador
+				//setupWebMap(webMap, Utils.getRadiusFromDisplay(workerProfile.distance));
+				//setupWebMap(webMap, Utils.getRadiusFromDisplay(workerProfile.distancia));
 
-		TextView textViewWorkerProfileCurrency = (TextView) this.findViewById(R.id.TextViewPricesSection);
 
-		textViewWorkerProfileCurrency.setText(App.getInstance().getStringResource(R.string.prices_in) + " " + Utils.getCurrencyDisplayString(workerProfile.currency));
-		
-		editTextWorkerProfilePriceHour = (EditText) this.findViewById(R.id.editTextWorkerProfilePriceHour);
+				// Carreguem la resta de dades del perfil
 
-		if (workerProfile.priceHour > 0){
-			editTextWorkerProfilePriceHour.setText(workerProfile.priceHour.toString());
-		}
-		
+				//if (workerProfile.priceHour > 0){
+
+				webMap = (WebView) findViewById(R.id.webViewWorkerProfileMap);
+
+				tagList = workerProfile.tags;
+
+				editTextNewTag = (EditText) findViewById(R.id.editTextNewTag);
+
+				linearLayoutWorkerProfileTags = (LinearLayout) findViewById(R.id.linearLayoutWorkerProfileTags);
+
+				updateTags();
+
+				TextView textViewWorkerProfileCurrency = (TextView) findViewById(R.id.TextViewPricesSection);
+
+				textViewWorkerProfileCurrency.setText(App.getInstance().getStringResource(R.string.prices_in) + " " + Utils.getCurrencyDisplayString(workerProfile.currency));
+
+				editTextWorkerProfilePriceHour = (EditText) findViewById(R.id.editTextWorkerProfilePriceHour);
+
+				App.getInstance().log("El precio Hora es de "+ extras.getString("priceHour"));
+
+				editTextWorkerProfilePriceHour.setText(extras.getString("priceHour"));//priceHour.toString());
+
+				editTextDisponibility = (EditText) findViewById(R.id.editTextDisponibility);
+
+				editTextDisponibility.setText(workerProfile.disponibilidad);
+
+				editTextTagsActuales = (TextView) findViewById(R.id.textTagsActuales);
+
+				if (workerProfileId.equals("nuevo")) {
+					editTextTagsActuales.setText(" ");
+				}else{
+					editTextTagsActuales.setText(" "+ App.getTags());
+					}
+				}
+
+		}, 1000);
+
+
+		// Getting disponibility
+
+
+		/*
 		editTextWorkerProfilePriceDay = (EditText) this.findViewById(R.id.editTextWorkerProfilePriceDay);
 
 		if (workerProfile.priceDay > 0){
@@ -233,6 +285,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		if (workerProfile.priceWeek > 0){
 			editTextWorkerProfilePriceWeek.setText(workerProfile.priceWeek.toString());
 		}
+		*/
 
 		/*
 		calPart = new CalendarPart();
@@ -266,9 +319,11 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		// Inicialitzem el calendari
 
-		inicialitzarCalendari();
+		//inicialitzarCalendari();
+
 	}
 
+	/*
 	public void inicialitzarCalendari(){
 
 		Calendar dataFinal = Calendar.getInstance();
@@ -323,6 +378,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		return diesSeleccionats;
 	}
+	*/
 
 	private void updateTags(){
 
@@ -464,27 +520,30 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 
 		workerProfile.tags = tagList;
 
-		if (tagList == null || tagList.size() == 0){
-
-			editTextNewTag.setError("Se requiere una etiqueta, como mínimo.");
-
+		if ((tagList == null || tagList.size() == 0)){
+			if (workerProfileId.equals("nuevo")) {
+				editTextNewTag.setError("Se requiere una etiqueta, como mínimo.");
+			}
 			res = false;
 		}
 
-		workerProfile.priceHour = Utils.parseInt(editTextWorkerProfilePriceHour.getText().toString());
+		//workerProfile.priceHour = Utils.parseInt(editTextWorkerProfilePriceHour.getText().toString());
+		workerProfile.precioHora = Utils.parseInt(editTextWorkerProfilePriceHour.getText().toString());
+
 
 		if (editTextWorkerProfilePriceHour.getText().toString().trim().equals("")){
 			editTextWorkerProfilePriceHour.setError( "Price Hour is required!" );
 			res = false;
 		}
 		
-		workerProfile.priceDay = Utils.parseInt(editTextWorkerProfilePriceDay.getText().toString());
-		workerProfile.priceWeek = Utils.parseInt(editTextWorkerProfilePriceWeek.getText().toString());
-		workerProfile.availabilityCalendar = datesList;
+		//workerProfile.priceDay = Utils.parseInt(editTextWorkerProfilePriceDay.getText().toString());
+		//workerProfile.priceWeek = Utils.parseInt(editTextWorkerProfilePriceWeek.getText().toString());
+		//workerProfile.availabilityCalendar = datesList;
+		workerProfile.disponibilidad = editTextDisponibility.getText().toString();
 		
 		return res;
 	}
-
+/*
 	public void clickEditCalendar(View view){
 
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-M-dd");
@@ -496,7 +555,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		startActivity(intent);
 
 	}
-
+*/
 	protected void onActivityResult(int requestCode, int resultCode, Intent imageReturnedIntent) {
 		super.onActivityResult(requestCode, resultCode, imageReturnedIntent);
 		switch(requestCode) {
@@ -525,7 +584,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
         case android.R.id.home:
-            NavUtils.navigateUpFromSameTask(this);
+            finish();
             return true;
         case R.id.action_save:
         	if (readFromControls()){
@@ -537,7 +596,7 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	        			try {
 	        				//Time consuming 
 	        				
-	        				workerProfile.save(pictureChanged);
+	        				//workerProfile.save(pictureChanged);
 	        				pictureChanged=false;
 	        				finish();
 	        				//Refresh
@@ -551,7 +610,13 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
 	        			ringProgressDialog.dismiss();
 	        		}
 	        	}).start();
-        	}
+				try {
+
+					Server.saveWorkerProfile(workerProfile, false, objectId);
+				} catch (ServerException e) {
+					e.printStackTrace();
+				}
+			}
         	return true;
         case R.id.action_delete:
         	ringProgressDialog = ProgressDialog.show(this, "", App.getInstance().getStringResource(R.string.downloading), true, false);
@@ -576,5 +641,11 @@ public class PerfilAfegirPerfilAddicional_Activity extends Activity {
         }
 		
 	}
+
+	@Override
+	public void onBackPressed() {
+		finish();
+	}
+
 }
 
