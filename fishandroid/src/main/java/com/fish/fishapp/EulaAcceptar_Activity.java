@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fish.fishapp.feines.FeinesLlistat_Activity;
+import com.fish.fishapp.utils.Server;
 
 public class EulaAcceptar_Activity extends Activity {
 
@@ -73,7 +74,7 @@ public class EulaAcceptar_Activity extends Activity {
 
         // Presentem el nom i cognoms, i el correu electrònic
 
-		textViewUserName.setText(App.getInstance().usuari.profileFirstName + " " + App.getInstance().usuari.profileLastName);
+		textViewUserName.setText(App.getUserName());
 
 		textViewUserEmail.setText(App.getInstance().usuari.profileEmail);
 
@@ -112,6 +113,7 @@ public class EulaAcceptar_Activity extends Activity {
         // Informem que l'usuari ha acceptat l'EULA
 
 		App.getInstance().usuari.EULA_Aceptado();
+		Server.setEULA(true);
 
         // Comprovem si tenim la geoposició, si no, la obtenim
 
@@ -160,7 +162,7 @@ public class EulaAcceptar_Activity extends Activity {
 
             case android.R.id.home:
 
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
 
                 return true;
         }

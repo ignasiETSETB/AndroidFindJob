@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="3dp">
+
+
+    <LinearLayout
+        android:id="@+id/layout_dades"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="50dp"
+        android:weightSum="1"
+        android:paddingLeft="16dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/xat_list_missatge_pendent"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_gravity="center_vertical"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:background="@color/Red"
+            android:paddingRight="10dp"/>
+
+        <TextView
+            android:id="@+id/xat_list_nom_contacte"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textStyle="bold"
+            android:layout_gravity="center_vertical"
+            android:text="NOM CONTACTE"
+            android:gravity="right"
+            android:paddingRight="14dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

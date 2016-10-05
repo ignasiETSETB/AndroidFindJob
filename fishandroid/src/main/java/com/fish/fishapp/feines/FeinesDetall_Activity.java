@@ -3,6 +3,7 @@ package com.fish.fishapp.feines;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,7 +21,6 @@ import com.fish.fishapp.contact.Pagament_Activity;
 import com.fish.fishapp.contact.Xat_Activity;
 import com.fish.fishapp.utils.Server;
 import com.fish.fishapp.utils.ServerException;
-import com.parse.ParseUser;
 import com.squareup.timessquare.CalendarPickerView;
 
 import java.util.ArrayList;
@@ -31,7 +31,12 @@ public class FeinesDetall_Activity extends Activity {
 
     private String jobId;
     private String jobOffered;
+    private String jobNombre;
     private int priceHour;
+    private String edad;
+    private String ciudad;
+    private Integer imageInt;
+    private String userid;
 
 	private Job job;
 
@@ -100,12 +105,20 @@ public class FeinesDetall_Activity extends Activity {
 			Bundle b = getIntent().getExtras();
 
             jobId = b.getString("JobId");
+            jobNombre=b.getString("nombre");
             jobOffered = b.getString("jobOffered");
             priceHour = b.getInt("priceHour");
+            edad = b.getString("edad");
+            ciudad=b.getString("ciudad");
+            imageInt=b.getInt("imageInt");
+            userid=b.getString("userid");
 
             App.getInstance().log("ID JOB:      " + jobId);
+            App.getInstance().log("NOMBRE:      " + jobNombre);
             App.getInstance().log("JOB OFFERED: " + jobOffered);
             App.getInstance().log("PRICE HOUR:  " + priceHour);
+            App.getInstance().log("EDAD:  " + edad);
+            App.getInstance().log("CIUDAD:  " + ciudad);
 
             botoFavorit = (Button) findViewById(R.id.btnFavorits);
             esFavorit = Server.esFavorit(jobId);
@@ -120,11 +133,11 @@ public class FeinesDetall_Activity extends Activity {
 
         // Obtenim les dades de la feina seleccionada
 
-		ArrayList<Job> resultObject;
+		final ArrayList<Job> resultObject;
 
         try {
 
-            App.getInstance().log("Fem la consulta a parse per obtenir la feina seleccionada");
+            App.getInstance().log("Fem la consulta a Quickblox per obtenir la feina seleccionada");
 
             resultObject = Server.queryJobs(new QueryJobsParameters(), jobId);
 
@@ -143,9 +156,19 @@ public class FeinesDetall_Activity extends Activity {
 
         // Comprovem si hem obtingut les dades de la consulta de la feina seleccionada
 
+        Handler handler = new Handler();
+        App.getInstance().log("esperem 4 s");
+
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                App.getInstance().log("wait");
+
+
+
 		if (resultObject.size() == 1){
 
             job = resultObject.get(0);
+            App.getInstance().log("Total feines obtingudes: " + resultObject.size());
 
 		} else {
 
@@ -153,35 +176,41 @@ public class FeinesDetall_Activity extends Activity {
 
 			App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
 
-			this.finish();
+			finish();
 
 			return;
 		}
+            }
+
+
+        }, 400000);
 
 		// Carreguem la foto de la persona seleccionada
 
         imageViewPicture = (ImageView) this.findViewById(R.id.imageViewPicture);
+        imageViewPicture.setImageResource(imageInt);
 
-        App.getInstance().imageCache.loadBitmap(job.fotoURL, imageViewPicture, job.foto);
+       // App.getInstance().imageCache.loadBitmap(job.fotoURL, imageViewPicture, job.foto);
 
         // Presentem les dades de la persona seleccionada
 
         textViewNombre = (TextView)this.findViewById(R.id.textViewNombre);
-		textViewNombre.setText(job.nombre);
+		textViewNombre.setText(jobNombre);
 
 		textViewEdad = (TextView) this.findViewById(R.id.textViewEdad);
-		textViewEdad.setText(job.edad);
+		textViewEdad.setText(edad);
 
         textViewLocationName = (TextView) this.findViewById(R.id.textViewLocationName);
-		textViewLocationName.setText(job.ciudad);
 
-		textViewDistancia = (TextView)this.findViewById(R.id.textViewDistancia);
-		textViewDistancia.setText(job.distancia);
+        textViewLocationName.setText(ciudad);
+
+		//textViewDistancia = (TextView)this.findViewById(R.id.textViewDistancia);
+		//textViewDistancia.setText(job.distancia);
 
 		gridviewTarifa = (GridView)this.findViewById(R.id.gridviewTarifa);
 
-		textViewTags = (TextView)this.findViewById(R.id.textViewTags);
-		textViewTags.setText(job.tags);
+		//textViewTags = (TextView)this.findViewById(R.id.textViewTags);
+		//textViewTags.setText(job.tags);
 
 		ratingBar = (RatingBar)this.findViewById(R.id.ratingBar);
 
@@ -189,7 +218,7 @@ public class FeinesDetall_Activity extends Activity {
 		//ratingBar.setRating(3); // Float.parseFloat("3.0"));
 
 		textViewRatings = (TextView)this.findViewById(R.id.textViewRatings);
-
+/*
 		if (job.ratings != null){
 
 			textViewRatings.setText(job.ratings);
@@ -199,6 +228,7 @@ public class FeinesDetall_Activity extends Activity {
 			textViewRatings.setText(App.getInstance().getStringResource(R.string.no_ratings));
             textViewRatings.setVisibility(View.INVISIBLE);
 		}
+		*/
 /*
 		// Configuramos y añadimos el calendario
 
@@ -216,9 +246,9 @@ public class FeinesDetall_Activity extends Activity {
 */
         // Inicialitzem el calendari
 
-        inicialitzarCalendari();
+       // inicialitzarCalendari();
     }
-
+/*
     public void inicialitzarCalendari(){
 
         Calendar dataFinal = Calendar.getInstance();
@@ -242,10 +272,11 @@ public class FeinesDetall_Activity extends Activity {
 
         // Marquem les dates disponibles del treballador
 
-        calendari.highlightDates(diesSeleccionats());
+        //calendari.highlightDates(diesSeleccionats());
         //calendari.setEnabled(false);
     }
-
+    */
+/*
     private ArrayList<Date> diesSeleccionats(){
 
         App.getInstance().log("Actualitzant el calendari amb les dates disponibles del treballador '" + job.nombre + "'...");
@@ -272,7 +303,7 @@ public class FeinesDetall_Activity extends Activity {
 
             }
         }
-
+*/
         /*
 
         // Algunes dates d'exemple
@@ -306,10 +337,10 @@ public class FeinesDetall_Activity extends Activity {
         }
 
         */
-
+/*
         return diesSeleccionats;
     }
-
+*/
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -325,7 +356,7 @@ public class FeinesDetall_Activity extends Activity {
 
             case android.R.id.home:
 
-                NavUtils.navigateUpFromSameTask(this);
+                finish();
 
                 return true;
         }
@@ -333,12 +364,18 @@ public class FeinesDetall_Activity extends Activity {
         return super.onOptionsItemSelected(item);
 	}
 
+    @Override
+    public void onBackPressed() {
+        finish();
+    }
+
 	public void clickContact(View view){
 
-		App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.id);
+		App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.ObjectID);
 		App.getInstance().log("Id de la feina (perfil) de l'usuari seleccionat: " + jobId);
-        App.getInstance().log("Id de l'usuari(perfil) seleccionat: " + job.workerProfileId);
-        App.getInstance().log("Id de l'usuari seleccionat: " + job.workerUser.getObjectId());
+        App.getInstance().log("Id de la feina (perfil) de l'usuari seleccionat: ");
+        //App.getInstance().log("Id de l'usuari(perfil) seleccionat: " + job.workerProfileId);
+        //App.getInstance().log("Id de l'usuari seleccionat: " + job.workerUser.getObjectId());
 
         //Si no ha contactado antes, pantalla de aceptación
         //Si ya ha contactado, directo al chat
@@ -356,25 +393,27 @@ public class FeinesDetall_Activity extends Activity {
 
 		//intent.putExtras(b);
         App.getInstance().log("----------------------------------------");
-        App.getInstance().log(job.workerUser.toString());
-        App.getInstance().log(job.workerUser.getObjectId());
+        App.getInstance().log(jobNombre);
+        App.getInstance().log(jobId);
 
-        intent.putExtra("worker_id", job.workerUser.getObjectId());
-        intent.putExtra("nom_contacte", job.nombre);
-        intent.putExtra("usuari_contacte", job.workerUser.getObjectId().toLowerCase());
+        intent.putExtra("worker_id", jobId);
+        intent.putExtra("nom_contacte", jobNombre);
+        intent.putExtra("userid", userid);
+        intent.putExtra("userName",App.getInstance().getUserName());
+        //intent.putExtra("usuari_contacte", job.nombre.toLowerCase());
 
         startActivity(intent);
 
-        finish();
+        //finish();
 	}
 
 
     public void clickContract(View view){
 
-        App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.id);
+        App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.ObjectID);
         App.getInstance().log("Id de la feina (perfil) de l'usuari seleccionat: " + jobId);
-        App.getInstance().log("Id de l'usuari seleccionat: " + job.workerProfileId);
-        App.getInstance().log("Id de l'usuari seleccionat: " + job.workerUser.getObjectId());
+        //App.getInstance().log("Id de l'usuari seleccionat: " + job.workerProfileId);
+        //App.getInstance().log("Id de l'usuari seleccionat: " + job.workerUser.getObjectId());
 
         Intent intent = new Intent(App.getInstance().appContext, FormulariContracte_Activity.class);
 
@@ -382,14 +421,14 @@ public class FeinesDetall_Activity extends Activity {
 
         //intent.putExtras(b);
 
-        intent.putExtra("worker_profile_id", job.workerProfileId);
-        intent.putExtra("worker_id", job.workerUser.getObjectId());
+        //intent.putExtra("worker_profile_id", job.workerProfileId);
+        //intent.putExtra("worker_id", job.workerUser.getObjectId());
         intent.putExtra("jobOffered", jobOffered);
         intent.putExtra("priceHour", priceHour);
 
         startActivity(intent);
 
-        finish();
+        //finish();
     }
 
 
@@ -399,12 +438,12 @@ public class FeinesDetall_Activity extends Activity {
         // Si és favorit, eliminar de favorits
         if (esFavorit) {
             esFavorit = false;
-            Server.addFavorite(jobId, false);
+            //Server.addFavorite(jobId, false);
 
         // Si no és favorit, afegir a favorits
         }else {
             esFavorit = true;
-            Server.addFavorite(jobId, true);
+            //Server.addFavorite(jobId, true);
         }
 
         actualitzaBotoFavorit();
@@ -414,17 +453,17 @@ public class FeinesDetall_Activity extends Activity {
 
     public void clickPagament(View view){
 
-        App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.id);
+        App.getInstance().log("Id de l'usuari identificat: " + App.getInstance().usuari.ObjectID);
         App.getInstance().log("Id de la feina (perfil) de l'usuari seleccionat: " + jobId);
-        App.getInstance().log("Id de l'usuari seleccionat: " + job.workerProfileId);
+        //App.getInstance().log("Id de l'usuari seleccionat: " + job.workerProfileId);
 
         // Iniciem el formulari de pagament
         Intent intent = new Intent(App.getInstance().appContext, Pagament_Activity.class);
-        intent.putExtra("id_Emissor", App.getInstance().usuari.id);
-        intent.putExtra("id_Receptor", job.workerProfileId);
+        intent.putExtra("id_Emissor", App.getInstance().usuari.ObjectID);
+        //intent.putExtra("id_Receptor", job.workerProfileId);
         startActivity(intent);
 
-        finish();
+        //finish();
     }
 
     private void actualitzaBotoFavorit(){

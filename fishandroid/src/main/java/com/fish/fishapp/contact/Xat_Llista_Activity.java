@@ -90,7 +90,7 @@ public class Xat_Llista_Activity extends Activity {
         App.getInstance().usuariOrigen_Password = ParseUser.getCurrentUser().getObjectId();
 
         if (App.getInstance().connection == null || !App.getInstance().connection.isConnected()){
-            App.getInstance().connectarXMPP();
+           // App.getInstance().connectarXMPP();
         }
 
         llistaContactes = (ListView)findViewById(R.id.xat_llista_contactes);
@@ -215,7 +215,7 @@ public class Xat_Llista_Activity extends Activity {
             public void run() {
 
                 if (!App.getInstance().connection.isConnected()){
-                    App.getInstance().connectarXMPP();
+                   // App.getInstance().connectarXMPP();
                 }else {
 
 

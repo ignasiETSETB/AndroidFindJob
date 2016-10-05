@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\worker_profiles.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\worker_profiles.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\accept_eula.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\accept_eula.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\jobs_searchable.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\jobs_searchable.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\job_detail.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\job_detail.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\calendar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\calendar.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\edit_worker_profile.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\edit_worker_profile.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\chat_list.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\chat_list.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\mnu_perfil_editar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\mnu_perfil_editar.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\chat.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\chat.xml"
+    },
+    {
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\menu\\mnu_main.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\menu\\mnu_main.xml"
+    }
+]

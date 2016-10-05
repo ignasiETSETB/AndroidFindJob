@@ -16,6 +16,9 @@ import android.widget.ListView;
 
 import com.fish.fishapp.App;
 import com.fish.fishapp.R;
+import com.fish.fishapp.feines.FeinesDetall_Activity;
+import com.fish.fishapp.feines.FeinesLlistat_Activity;
+import com.fish.fishapp.feines.Job;
 import com.fish.fishapp.utils.Server;
 import com.fish.fishapp.utils.ServerException;
 
@@ -26,6 +29,7 @@ public class WorkerProfilesActivity extends Activity {
 	public static final int REFRESH = 100;
 	
 	private ListView listViewWorkerProfiles;
+	// ArrayList WorkerProfile
 	ArrayList<WorkerProfile> arrayListWorkerProfiles;
 	WorkerProfileAdapter adapter;
 	
@@ -43,7 +47,7 @@ public class WorkerProfilesActivity extends Activity {
 				WorkerProfilesActivity.this.pd = ProgressDialog.show(WorkerProfilesActivity.this, "", App.getInstance().getStringResource(R.string.downloading), true, false);
 				
 		        // Start a new thread that will download all the data
-		        new DownloadTask().execute("Any parameters my download task needs here");
+		        DownloadT();
 			}
 			
 			return true;
@@ -88,69 +92,98 @@ public class WorkerProfilesActivity extends Activity {
         this.pd = ProgressDialog.show(WorkerProfilesActivity.this, "", App.getInstance().getStringResource(R.string.downloading), true, false);
 
         // Start a new thread that will download all the data
-        new DownloadTask().execute("Any parameters my download task needs here");
+        this.DownloadT();
         
 	}
 
-	private class DownloadTask extends AsyncTask<String, Void, Object> {
-        protected Object doInBackground(String... args) {
-            // This is where you would do all the work of downloading your data
-        	//Time consuming
-        	ArrayList<WorkerProfile> resultObject = null;
-			try {
-				resultObject = Server.queryWorkerProfiles("");
-			} catch (ServerException e) {
-				e.printStackTrace();
-				App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
-				return null;
-			} catch (Exception e) {
-                App.getInstance().log("DownloadTask Exception");
-                e.printStackTrace();
-            }
-            return resultObject;
-        }
+	public void DownloadT(String... args){
+		// This is where you would do all the work of downloading your data
+		//Time consuming
+		ArrayList<WorkerProfile> resultObject = null;
+		try {
+			resultObject = Server.queryWorkerProfiles("");
+		} catch (ServerException e) {
+			e.printStackTrace();
+			App.getInstance().missatgeEnPantalla(App.getInstance().getStringResource(R.string.server_error));
 
-        protected void onPostExecute(Object result) {
-            // Pass the result data back to the mnu_main activity
-            if (result == null) {
-                App.getInstance().log("WorkerProfilesActivity onPostExecute (NULL)");
-            } else {
-                App.getInstance().log("WorkerProfilesActivity onPostExecute " + result.toString());
-            }
-        	if (WorkerProfilesActivity.this.pd != null) {
-        		WorkerProfilesActivity.this.arrayListWorkerProfiles=(ArrayList<WorkerProfile>) result;
-        		adapter = new WorkerProfileAdapter(WorkerProfilesActivity.this, R.layout.item_worker_profile, arrayListWorkerProfiles.toArray(new WorkerProfile[arrayListWorkerProfiles.size()]));
-        		listViewWorkerProfiles = (ListView) findViewById(R.id.listViewWorkerProfiles);
-        		listViewWorkerProfiles.setAdapter(adapter);
-        		
-        		 // ListView Item Click Listener
-        		listViewWorkerProfiles.setOnItemClickListener(new OnItemClickListener() {
+		} catch (Exception e) {
+			App.getInstance().log("DownloadTask Exception");
+			e.printStackTrace();
+		}
 
-                      @Override
-                      public void onItemClick(AdapterView<?> parent, View view,
-                         int position, long id) {
-                        
-                       // ListView Clicked item index
-                       int itemPosition     = position;
-                       
-                       // ListView Clicked item value
-                       WorkerProfile  itemValue    = (WorkerProfile) listViewWorkerProfiles.getItemAtPosition(position);
+		Handler handler = new Handler();
+		App.getInstance().log("esperem 10 s");
+		final ArrayList<WorkerProfile> finalResultObject = resultObject;
+		handler.postDelayed(new Runnable() {
+			public void run() {
+				// Actions to do after 10 seconds
 
-                       Intent intent = new Intent(App.getInstance().appContext, PerfilAfegirPerfilAddicional_Activity.class);
-        	           Bundle b = new Bundle();
-        	           b.putString("workerProfileId",itemValue.workerProfileObjectId);
-        	           intent.putExtras(b); //Put your id to your next Intent
-                       startActivity(intent);
-                     
-                      }
+				// Pass the result data back to the mnu_main activity
+				if (finalResultObject == null) {
+					App.getInstance().log("WorkerProfilesActivity onPostExecute (NULL)");
+				} else {
+					App.getInstance().log("WorkerProfilesActivity onPostExecute " + finalResultObject.toString());
+				}
+				if (WorkerProfilesActivity.this.pd != null) {
+					ArrayList<WorkerProfile> arr = finalResultObject;
+					WorkerProfilesActivity.this.arrayListWorkerProfiles = arr;
 
-                 }); 
-        		
-        		
-        		WorkerProfilesActivity.this.pd.dismiss();
-            }
-        }
-   }  
+					WorkerProfilesActivity.this.arrayListWorkerProfiles = (ArrayList<WorkerProfile>) finalResultObject;
+					adapter = new WorkerProfileAdapter(WorkerProfilesActivity.this, R.layout.item_worker_profile, arrayListWorkerProfiles.toArray(new WorkerProfile[arrayListWorkerProfiles.size()]));
+					listViewWorkerProfiles = (ListView) findViewById(R.id.listViewWorkerProfiles);
+					listViewWorkerProfiles.setAdapter(adapter);
+
+					// ListView Item Click Listener
+					listViewWorkerProfiles.setOnItemClickListener(new OnItemClickListener() {
+
+						@Override
+						public void onItemClick(AdapterView<?> parent, View view,
+												int position, long id) {
+							/*
+							// ListView Clicked item index
+							int itemPosition = position;
+
+							// ListView Clicked item value
+							WorkerProfile itemValue = (WorkerProfile) listViewWorkerProfiles.getItemAtPosition(position);
+
+							Intent intent = new Intent(App.getInstance().appContext, PerfilAfegirPerfilAddicional_Activity.class);
+							Bundle b = new Bundle();
+							b.putString("workerProfileId", itemValue.workerProfileObjectId);
+							intent.putExtras(b); //Put your id to your next Intent
+							startActivity(intent);
+							*/
+							// Obtenim les dades de la feina seleccionada
+							WorkerProfile  itemJob = (WorkerProfile) listViewWorkerProfiles.getItemAtPosition(position);
+
+							//App.getInstance().log("Nom del candidat seleccionat: " + itemJob.nombre);
+							App.getInstance().log("Id del candidat seleccionat: " + itemJob.ObjectId);
+
+							// Presentem el detall de la feina seleccionada
+							Intent intent = new Intent(App.getInstance().appContext, PerfilAfegirPerfilAddicional_Activity.class);//FeinesDetall_Activity.class);
+
+							// Informem al sistema del ID de la feina seleccionada
+							Bundle b = new Bundle();
+							// sirve para saber si se añade uno nuevo o se edita uno antiguo
+							b.putString("workerProfileId","old");
+							b.putString("JobId", itemJob.ObjectId);
+							b.putInt("Id",itemJob.userID);
+							//b.putString("nombre",itemJob.nombre);
+							b.putString("jobOffered", itemJob.tags.get(0));
+							b.putString("priceHour", itemJob.precioHora.toString());
+							//b.putString("edad",itemJob.edad);
+							b.putString("ciudad",itemJob.ciudad);
+							intent.putExtras(b);
+							startActivity(intent);
+						}
+
+					});
+
+
+					WorkerProfilesActivity.this.pd.dismiss();
+				}
+			}
+		}, 4000);
+	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -167,7 +200,7 @@ public class WorkerProfilesActivity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
         case android.R.id.home:
-            NavUtils.navigateUpFromSameTask(this);
+            finish();
             return true;
         case R.id.action_add_worker_profile:
         	Intent intent = new Intent(App.getInstance().appContext, PerfilAfegirPerfilAddicional_Activity.class);
@@ -180,4 +213,10 @@ public class WorkerProfilesActivity extends Activity {
             return super.onOptionsItemSelected(item);
         }
 	}
+
+	@Override
+	public void onBackPressed() {
+		finish();
+	}
+
 }

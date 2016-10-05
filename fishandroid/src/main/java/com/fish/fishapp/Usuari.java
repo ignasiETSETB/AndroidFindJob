@@ -12,7 +12,8 @@ import java.util.Date;
 
 public class Usuari {
 
-	public String id;
+	public String ObjectID;
+	public int userID;
 	public String profileEmail;
 	public String profileFirstName;
 	public String profileLastName;
@@ -20,7 +21,7 @@ public class Usuari {
 	public String profileCurrency;
 	public String profileLocationName;
 	public String profileLocationCountry;
-
+	public String profileFacebookId;
     public Location profileLocation;
 
     public Date profileBirthDay;
@@ -30,6 +31,9 @@ public class Usuari {
 	public String profilePictureURL;
 
 	public Integer profileGender;
+	public Integer profileId;
+
+	public Object ProfileCustomData;
 
 /**
  * Informem que l'usuari ha acceptat l'EULA

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="quickblox-android-sdk-location-2.6.1">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/fishandroid/build/intermediates/exploded-aar/com.quickblox/quickblox-android-sdk-location/2.6.1/res" />
+      <root url="jar://$PROJECT_DIR$/fishandroid/build/intermediates/exploded-aar/com.quickblox/quickblox-android-sdk-location/2.6.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

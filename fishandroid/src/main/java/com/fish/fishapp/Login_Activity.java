@@ -1,27 +1,53 @@
 package com.fish.fishapp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.os.SystemClock;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
-
+import android.widget.Toast;
 import com.fish.fishapp.feines.FeinesLlistat_Activity;
 import com.fish.fishapp.utils.Server;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
-import com.parse.ParseFacebookUtils;
 import com.parse.ParseInstallation;
 import com.parse.ParsePush;
 import com.parse.ParseUser;
+import com.quickblox.auth.QBAuth;
+import com.quickblox.auth.model.QBProvider;
+import com.quickblox.auth.model.QBSession;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.QBEntityCallbackImpl;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.core.helper.StringifyArrayList;
+import com.quickblox.core.request.QBRequestBuilder;
+import com.quickblox.core.request.QBRequestGetBuilder;
+import com.quickblox.customobjects.QBCustomObjects;
+import com.quickblox.customobjects.model.QBCustomObject;
+import com.quickblox.users.QBUsers;
+import com.quickblox.users.model.QBUser;
 
+import org.json.JSONObject;
+
+import java.net.NetworkInterface;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class Login_Activity extends Activity {
+
+	public static String adress1;
 
 	@Override
 	public void onStart()
@@ -44,7 +70,7 @@ public class Login_Activity extends Activity {
 	}
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
 
         App.getInstance().log("*");
         App.getInstance().log("************** Iniciem la classe '" + this.getClass().getSimpleName() + "' **************");
@@ -78,27 +104,201 @@ public class Login_Activity extends Activity {
 
         //btnfacebook.setTypeface(type);
 
+		xatSesion();
+
 	}
 
-	public void facebookLogin(View view){
+	public void facebookLogin(View view) {
 
-		/*
-		List<String> permissions = Arrays.asList(Permissions.User.EMAIL,
-				ParseFacebookUtils.Permissions.User.ABOUT_ME,
-				ParseFacebookUtils.Permissions.User.BIRTHDAY,
-				ParseFacebookUtils.Permissions.User.HOMETOWN,
-				ParseFacebookUtils.Permissions.User.PHOTOS);
-				
-		ParseUser.logOut();
-		
-		ParseFacebookUtils.logIn(permissions, this, new LogInCallback() {
+		final EditText[] et1 = new EditText[1];
+		final EditText[] et2 = new EditText[1];
+		//Creació de la sessió QB
 
-*/
+		QBAuth.createSession(new QBEntityCallback<QBSession>() {
 
-		ParseUser.logOut();
+			@Override
+			public void onSuccess(QBSession session, Bundle params) {
+				// You have successfully created the session
+				//
+				// Now you can use QuickBlox API!
+				App.getInstance().log("Sessió de QB creada");
+				et1[0] = (EditText)findViewById(R.id.nombre);
+				et2[0] = (EditText)findViewById(R.id.password);
+				final String nombre= et1[0].getText().toString();
+				final String password=et2[0].getText().toString();
+				App.getInstance().log("Crear usuari amb Nombre:"+nombre+" password:"+password);
+				final QBUser user = new QBUser(nombre, password);
+				//user.setEmail("introduce tu email");
 
-		List<String> permissions = Arrays.asList("email", "user_about_me", "user_birthday", "user_hometown", "user_photos");
+				QBUsers.signUp(user, new QBEntityCallback<QBUser>() {
+					@Override
+					public void onSuccess(QBUser user, Bundle args) {
+						App.getInstance().log("creat nou usuari");
+						//iniciar sessio
+						QBUser user_signin = new QBUser(nombre, password);
+						QBUsers.signIn(user_signin, new QBEntityCallback<QBUser>() {
+							@Override
+							public void onSuccess(QBUser user, Bundle params) {
+								App.getInstance().log("sesio iniciada");
 
+								//creo un custom object per l'usuari nou
+
+								final QBCustomObject object = new QBCustomObject();
+								object.setClassName("users");
+								object.putString("username",nombre);
+								object.putString("password",password);
+								object.putBoolean("eulaAccepted",false);
+
+								QBCustomObjects.createObject(object, new QBEntityCallback<QBCustomObject>() {
+									@Override
+									public void onSuccess(QBCustomObject createdObject, Bundle params) {
+										App.getInstance().log("creats customobject users per al nou usuari");
+										//Comprovem si ha acceptat l'EULA
+										if(object.getBoolean("eulaAccepted")==true){
+
+											App.getInstance().log("Presentem la pantalla principal. Ha iniciat sessió i ha acceptat l'EULA");
+
+											Intent intent = new Intent(App.getInstance().appContext, FeinesLlistat_Activity.class);
+
+
+
+											startActivity(intent);
+
+											finish();
+
+										}else{
+											App.getInstance().log("Presentem la pantalla de l'EULA perquè les accepti");
+
+											Intent intent = new Intent(App.getInstance().appContext, EulaAcceptar_Activity.class);
+
+											startActivity(intent);
+
+											finish();
+										}
+										int userID = createdObject.getUserId();
+										String ID = createdObject.getCustomObjectId();
+										App.setUserID(userID);
+										App.setID(ID);
+										App.setUserData(createdObject);
+									}
+
+									@Override
+									public void onError(QBResponseException errors) {
+										App.getInstance().log("Error al crear customobject users per al nou usuari");
+									}
+								});
+							}
+
+							@Override
+							public void onError(QBResponseException errors) {
+								App.getInstance().log("error al iniciar sessio");
+							}
+						});
+
+
+
+
+
+
+					}
+
+
+
+					@Override
+					public void onError(QBResponseException errors) {
+						App.getInstance().log("error al crear usuari, potser ja te conta, provem de log in");
+
+						//QBUser user = new QBUser(nombre, password);
+
+						QBUsers.signIn(user, new QBEntityCallback<QBUser>() {
+							@Override
+							public void onSuccess(QBUser user, Bundle params) {
+								App.getInstance().log("Iniciar sessio usuari amb Nombre:"+nombre+" password:"+password);
+								App.getInstance().log("user ID:"+Integer.toString(user.getId()) );
+
+								QBRequestGetBuilder req = new QBRequestGetBuilder();
+								req.eq("user_id", Integer.toString(user.getId()) );
+
+								QBCustomObjects.getObjects("users", req, new QBEntityCallback<ArrayList<QBCustomObject>>(){
+									@Override
+									public void onSuccess(ArrayList<QBCustomObject> customObject, Bundle params) {
+										// Check the 1st (and only!) result of the query, if it has eulaAccepted or not
+										if(customObject.get(0).getBoolean("eulaAccepted")==true){
+
+											App.getInstance().log("Presentem la pantalla principal. Ha iniciat sessió i ha acceptat l'EULA");
+
+											Intent intent = new Intent(App.getInstance().appContext, FeinesLlistat_Activity.class);
+
+
+
+											startActivity(intent);
+
+											finish();
+										} else {
+											App.getInstance().log("Presentem la pantalla de l'EULA perquè les accepti");
+
+											Intent intent = new Intent(App.getInstance().appContext, EulaAcceptar_Activity.class);
+
+											startActivity(intent);
+
+											finish();
+										}
+										int userID = customObject.get(0).getUserId();
+										String ID = customObject.get(0).getCustomObjectId();
+										App.setUserID(userID);
+										App.setID(ID);
+										App.setUserData(customObject.get(0));
+									}
+
+									@Override
+									public void onError(QBResponseException errors) {
+
+									}
+								});
+
+
+							}
+
+							@Override
+							public void onError(QBResponseException errors) {
+								App.getInstance().log("error al iniciar sessió");
+							}
+						});
+
+
+					}
+				});
+
+
+				// ALF *** http://quickblox.com/developers/SimpleSample-users-android#Sign_In_using_Facebook.2FTwitter_access_token
+				// *** Enabling social integration
+				/*
+				QBUsers.signInUsingSocialProvider(QBProvider.FACEBOOK, token , null, new QBEntityCallback<QBUser>() {
+					@Override
+					public void onSuccess(QBUser user, Bundle args) {
+						App.getInstance().log("FB OK");
+					}
+
+					@Override
+					public void onError(QBResponseException errors) {
+						App.getInstance().log("Error FB");
+					}
+				});
+				*/
+
+			}
+
+
+
+			@Override
+			public void onError(QBResponseException errors) {
+				App.getInstance().log("Problema al crear sessió de QB");
+			}
+		});
+
+
+
+	/*
 		ParseFacebookUtils.logInWithReadPermissionsInBackground(this, permissions, new LogInCallback() {
 
 			@Override
@@ -163,9 +363,10 @@ public class Login_Activity extends Activity {
 				}
             }
     	});
-
-
+		*/
 	}
+
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -191,7 +392,21 @@ public class Login_Activity extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
 	  	super.onActivityResult(requestCode, resultCode, data);
-		ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
+		//ParseFacebookUtils.onActivityResult(requestCode, resultCode, data);
 		//ParseFacebookUtils.finishAuthentication(requestCode, resultCode, data);
+	}
+
+	private void xatSesion() {
+		QBAuth.createSession(new QBEntityCallback<QBSession>() {
+			@Override
+			public void onSuccess(QBSession result, Bundle params) {
+				App.getInstance().log("Sessió de XAT creada");
+			}
+
+			@Override
+			public void onError(QBResponseException e) {
+
+			}
+		});
 	}
 }

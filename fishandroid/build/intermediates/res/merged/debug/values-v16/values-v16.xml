@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="fishTheme" parent="android:Theme.Holo.Light">
+
+        <item name="android:windowBackground">@android:color/white</item>
+
+    </style>
+    <style name="fishTheme.NoActionBar.FullScreen" parent="android:Theme.Holo.Light.NoActionBar.Fullscreen"/>
+    <style name="fishTheme.ProgressBar.Large" parent="android:Widget.Holo.ProgressBar"/>
+</resources>

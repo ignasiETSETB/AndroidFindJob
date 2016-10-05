@@ -115,7 +115,7 @@ public class ChatActivity extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		switch (item.getItemId()) {
         case android.R.id.home:
-            NavUtils.navigateUpFromSameTask(this);
+            finish();
             return true;
         default:
             return super.onOptionsItemSelected(item);
@@ -129,9 +129,9 @@ public class ChatActivity extends Activity {
 		adapter = new DiscussArrayAdapter(getApplicationContext(), R.layout.listitem_discuss);
 		if (messages!=null){
 			for (int i = messages.size()-1; i >=0; i--) {
-				App.getInstance().log("userid:" + App.getInstance().usuari.id);
+				App.getInstance().log("userid:" + App.getInstance().usuari.ObjectID);
 				App.getInstance().log("sender:" + messages.get(i).sender);
-				if (messages.get(i).sender.compareTo(App.getInstance().usuari.id)==0) {
+				if (messages.get(i).sender.compareTo(App.getInstance().usuari.ObjectID)==0) {
 					App.getInstance().log("left false");
 					messages.get(i).left=false; //mis mensajes a la derecha
 				} else {

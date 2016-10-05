@@ -2,6 +2,7 @@
 <resources>
     <string name="aceptar_condiciones">Pulsando en \"Aceptar\" confirmas que estás de acuerdo con nuestros</string>
     <string name="action_add_worker_profile">Añadir perfil de trabajador</string>
+    <string name="Text_Tags_Actuales">Tags actuales: </string>
     <string name="action_work">Trabajo</string>
     <string name="allow_get_position">Fish necesita obtener tu posición. Revisa tus ajustes y reinténtalo.</string>
     <string name="be_happy">* be happy *</string>
@@ -43,9 +44,9 @@
     <string name="title_activity_edit_worker_profile">Editar perfil trabajador</string>
     <string name="title_activity_first_contact">Primer contacto</string>
     <string name="title_activity_get_location">Obtener localización</string>
-    <string name="title_activity_job_detail">Detalle del trabajo</string>
-    <string name="title_activity_jobs">Trabajos</string>
-    <string name="title_activity_worker_profiles">Perfiles de los trabajadores</string>
+    <string name="title_activity_job_detail">Profesional</string>
+    <string name="title_activity_jobs">Profesionales</string>
+    <string name="title_activity_worker_profiles">Perfiles Profesionales</string>
     <string name="uploading">Actualizando datos...</string>
     <string name="working">Por favor, espera...</string>
     <string name="connect_with_facebook">Únete con Facebook</string>
@@ -81,6 +82,7 @@
     <string name="phone">Teléfono</string>
     <string name="position">Posición</string>
     <string name="update_location">Actualizar posición</string>
+    <string name="facebook_app_id">666151743449496</string>
 
     <string-array name="list_of_currencies">
         <item>€ EUR</item>
@@ -133,7 +135,7 @@
     <string name="action_chats">Chats</string>
     <string name="action_favoritos">Favoritos</string>
     <string name="action_notificaciones">Notificaciones</string>
-    <string name="action_trabajos">Trabajos</string>
+    <string name="action_trabajos">Perfil Profesional</string>
     <string name="app_id">666151743449496</string>
     <string name="barcelona">Barcelona</string>
     <string name="action_hire">Contratar</string>
@@ -148,7 +150,7 @@
     <string name="fake_price">35</string>
     <string name="condiciones_de_uso">Términos y condiciones</string>
     <string name="action_logout">Logout</string>
-    <string name="action_perfil">Perfil</string>
+    <string name="action_perfil">Cuenta</string>
     <string name="title_login">fish</string>
     <string name="title_activity_jobs_searchable">JobsSearchableActivity</string>
     <string name="title_activity_chat_list">ChatListActivity</string>
@@ -166,7 +168,7 @@
     <string name="location">Localización</string>
     <string name="prices_in">Precios en</string>
     <string name="action_pagar">Pagar</string>
-    <string name="action_contacto">Contactar</string>
+    <string name="action_contacto">Chat</string>
     <string name="contracte_data_inici">Fecha de inicio</string>
     <string name="contracte_data_fi">Fecha final</string>
     <string name="contracte_tipus_Feina_Ofertada">Empleo ofertado</string>
@@ -217,12 +219,11 @@
         <item>09</item>
     </string-array>
 
-
     <string name="form_label_dades_fiscals">Datos fiscales</string>
     <string name="form_label_identificacio">Identificación</string>
     <string name="form_label_signant">Persona firmante</string>
     <string name="form_label_lloc_treball">Lugar de trabajo</string>
-    <string name="form_label_treballador">Trabajador</string>
+    <string name="form_label_treballador">Profesional</string>
 
 
     <string name="form_cif">CIF</string>
@@ -263,11 +264,12 @@
     <string name="form_nivell_formatiu">Nivel formativo</string>
     <string name="form_iban">IBAN</string>
     <string name="form_swift">SWIFT/BIC</string>
-    <string name="form_nacionalitat">Nacionalitat</string>
+    <string name="form_nacionalitat">Nacionalidad</string>
     <string name="press_again_to_exit">Pulsa otra vez para salir</string>
     <string name="form_condiciones">Condiciones de contratación</string>
     <string name="action_condiciones">Condiciones</string>
     <string name="action_ayuda">Ayuda</string>
+    <string name="profesion">Profesión</string>
 
 
 </resources>

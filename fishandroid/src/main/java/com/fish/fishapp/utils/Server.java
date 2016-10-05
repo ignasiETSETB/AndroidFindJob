@@ -1,12 +1,20 @@
 package com.fish.fishapp.utils;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.content.ContextCompat;
+import android.view.View;
 
 import com.fish.fishapp.App;
+import com.fish.fishapp.R;
 import com.fish.fishapp.Usuari;
 import com.fish.fishapp.contact.Chat;
 import com.fish.fishapp.contact.ChatMessage;
+import com.fish.fishapp.feines.FeinesLlistat_Activity;
 import com.fish.fishapp.feines.FormulariEmpresa;
 import com.fish.fishapp.feines.FormulariTreballador;
 import com.fish.fishapp.feines.Job;
@@ -25,12 +33,36 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.SendCallback;
+import com.quickblox.auth.QBAuth;
+import com.quickblox.auth.model.QBSession;
+import com.quickblox.chat.QBChatService;
+import com.quickblox.core.Consts;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.QBProgressCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.core.helper.StringifyArrayList;
+import com.quickblox.core.model.QBBaseCustomObject;
+import com.quickblox.core.request.QBRequestGetBuilder;
+import com.quickblox.core.request.QBRequestUpdateBuilder;
+import com.quickblox.core.result.Result;
+import com.quickblox.customobjects.QBCustomObjects;
+import com.quickblox.customobjects.QBCustomObjectsFiles;
+import com.quickblox.customobjects.model.QBCustomObject;
+import com.quickblox.users.model.QBUser;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,44 +73,41 @@ import java.util.Objects;
 
 public class Server {
 
-	//encapsula las llamadas a parse
+	//encapsula las llamadas a quickblox
 	//no todas, las que están vinculadas a la interfaz no, ya que supondria una considerable sobrecarga de trabajo innecesaria
 
+
 	static boolean done = false;
-    static ParseObject auxFormulariEmpresa;
+    static QBCustomObject object = new QBCustomObject();
 
     public static void EULA_Aceptado(){
 
-        ParseUser.getCurrentUser().put("eulaAccepted", true);
+        object.putBoolean("eulaAccepted", true);
 
-        ParseUser.getCurrentUser().saveInBackground();
-
-        App.getInstance().log("Actualitzem el perfil amb l'EULA acceptat");
+         App.getInstance().log("Actualitzem el perfil amb l'EULA acceptat");
     }
 
     public static void EULA_No_Aceptado() {
 
-        ParseUser.getCurrentUser().put("eulaAccepted", false);
-
-        ParseUser.getCurrentUser().saveInBackground();
+        object.putBoolean("eulaAccepted", false);
 
         App.getInstance().log("Actualitzem el perfil amb l'EULA no acceptat");
     }
 
-    public static void setUserData(ParseUser user){
+    public static void setUserData(QBUser user){
 
         // Ens guardem les dades de l'usuari identificat
-
         Usuari myuser = App.getInstance().usuari;
 
         App.getInstance().log("Actualitzem el perfil amb les dades de l'usuari identificat");
 
-        myuser.id = user.getObjectId();                                     // Id
-        myuser.profileEmail = user.getString("profileEmail");               // Email
-        myuser.profileFirstName = user.getString("profileFirstName");       // Nom
-        myuser.profileGender = user.getInt("profileGender");                // Sexe
-        myuser.profileLastName = user.getString("profileLastName");         // Cognoms
+        myuser.ObjectID = user.getExternalId();                                     // Id
+        myuser.profileEmail = user.getEmail();                                // Email
+        myuser.profileFirstName = user.getFullName();                         // Nom
+        myuser.profileFacebookId=user.getFacebookId();                        // Facebook ID
+        myuser.profileId=user.getId();                                        // User ID
 
+        /*
         ParseFile fileObject = (ParseFile) user.get("profilePicture");
 
         // Foto del perfil
@@ -94,9 +123,9 @@ public class Server {
         myuser.profileCurrency = user.getString("profileCurrency");         // Moneda
 
         ParseGeoPoint point = (ParseGeoPoint) user.get("profileLocation");
-
+        */
         // Obtenim les dades de la geolocalització
-
+        /*
         if (point != null){
 
             myuser.profileLocation = new Location("dummyprovider");
@@ -111,14 +140,14 @@ public class Server {
 
         myuser.profileLocationName = user.getString("profileLocationName");
         myuser.profileLocationCountry = user.getString("profileLocationCountry");
-
+        */
         // Presentem totes les dades guardades
 
         App.getInstance().log("************************************************************************************");
         App.getInstance().log("*              Detall de les dades guardades de l'usuari identificat               *");
         App.getInstance().log("************************************************************************************");
 
-        App.getInstance().log("----------------- Id:                " + myuser.id);
+        App.getInstance().log("----------------- Id:                " + myuser.ObjectID);
         App.getInstance().log("----------------- Email:             " + myuser.profileEmail);
         App.getInstance().log("----------------- Nom:               " + myuser.profileFirstName);
         App.getInstance().log("----------------- Cognoms:           " + myuser.profileLastName);
@@ -131,7 +160,7 @@ public class Server {
 
         App.getInstance().log("----------------- Localitat:         " + myuser.profileLocationName);
         App.getInstance().log("----------------- País:              " + myuser.profileLocationCountry);
-
+        /*
         if (point!=null){
 
             App.getInstance().log("----------------- Latitud:           " + myuser.profileLocation.getLatitude());
@@ -143,6 +172,7 @@ public class Server {
         }
 
         App.getInstance().log("************************************************************************************");
+       */
     }
 
     public static void saveLocation(Usuari usuari, final MyCallback myCallback) {
@@ -188,28 +218,183 @@ public class Server {
     }
 
 
-    public static ArrayList<Job> queryJobs(QueryJobsParameters queryJobsParameters, String objectId) throws ServerException{
+    // Global ArrayList of the jobs to query
+    private static ArrayList<Job> queryJobs = new ArrayList<Job>();
 
-        final ArrayList<Job> res = new ArrayList<>();
+    private static ArrayList<WorkerProfile> queryWorkerProfiles = new ArrayList<>();
 
-        List<ParseObject> jobs;
 
-        ParseQuery<ParseObject> query = new ParseQuery<>("JobsWorkerProfileVw");
+    // Push a job to the list
+    public static void queryJobsPushJob(QBCustomObject co) {
+        final Job job = new Job();
+        job.ObjectId = co.getCustomObjectId();
+        App.getInstance().log("OBJECTID:"+ job.ObjectId);
+        job.nombre = co.getString("nombre");
+        job.edad = co.getString("edad");
+        job.userId=co.getUserId().toString();
+        /*
+        QBCustomObjectsFiles.downloadFile(co, "imagenTrabajo", new QBEntityCallback<InputStream>(){
 
-        query.whereDoesNotExist("deletedAt");
 
+            @Override
+            public void onSuccess(InputStream result, Bundle params) {
+                App.getInstance().log("Imagen perfil Success");
+                job.fotoURL=result.toString();
+                }
+
+
+            @Override
+            public void onError(QBResponseException errors) {
+                App.getInstance().log("Imagen perfil ERROR");
+            }
+        }, new QBProgressCallback() {
+            @Override
+            public void onProgressUpdate(int progress) {
+
+            }
+        });
+        //job.sexo = co.getInteger("sexo");
+        //job.fotoURL = (String) co.get("fotoURL");
+        //job.foto
+        /*
+        try {
+            byte[] byteArray;
+            byteArray = fileObject.getData();
+            Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            //job.setFotoURL(fileObject.getUrl());
+            job.foto=bmp;
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        */
+        job.moneda = co.getString("moneda");
+        job.precioHora = co.getInteger("precioHora");
+        job.ciudad = co.getString("ciudad");
+        //job.distancia = (String) co.get("distancia");
+        job.tags = co.getString("tags");
+        //job.ratings = (String) co.get("ratings");
+        job.disponibilidad = co.getString("disponibilidad");
+/*
+        String tags = "";
+
+        ArrayList<String> listaTags;
+        listaTags = (ArrayList<String>) co.get("Tags");
+
+        if (listaTags != null){
+
+            for (String s : listaTags){
+                tags = tags + " · " + s;
+            }
+        }
+
+        job.tags = tags;
+*/
+
+        /*ParseGeoPoint point =  (ParseGeoPoint) po.get("location");
+
+        if (point != null){
+
+            Location loc = new Location("dummyprovider");
+
+            loc.setLatitude(point.getLatitude());
+
+            loc.setLongitude(point.getLongitude());
+
+            job.distancia = Utils.distancia(loc, App.getInstance().usuari.profileLocation);
+
+        } else {
+
+            job.distancia = "?";
+        }
+        */
+
+        //job.ciudad = co.locationName;
+        //job.moneda = Utils.getCurrencySymbolString(co.currency);
+        //job.availabilityCalendar = (List<Date>) co.workDays;
+
+
+        // ADDING JOB TO queryJobs ARRAYLIST
+        queryJobs.add(job);
+    }
+
+    public static void queryWorkerProfilesPush(QBCustomObject co) {
+        WorkerProfile wp = new WorkerProfile();
+        wp.ObjectId = co.getCustomObjectId();
+        App.getInstance().log("OBJECTID:"+ wp.ObjectId);
+        wp.precioHora = co.getInteger("precioHora");
+        wp.ciudad = co.getString("ciudad");
+        wp.workType=co.getInteger("tipoTrabajo");
+        //wp.distancia = (String) co.get("distancia");
+        //wp.tags = (String) co.get("tags"); //tags.setText(Utils.tagListToString(workerProfile.tags));
+        //wp.tags = (ArrayList<String>) co.get("tags");
+        String tagg = co.getString("tags");
+        App.setTags(tagg);
+        if (tagg != null) {
+            wp.tags = new ArrayList<>();
+            wp.tags.add(tagg);
+        }
+
+        // ADDING WORKERPROFILE TO queryWorkerProfiles ARRAYLIST
+        queryWorkerProfiles.add(wp);
+    }
+
+    public void uploadWorkerProfile(WorkerProfile wp) {
+
+    }
+
+
+    // Return the list
+    public static ArrayList<Job> getQueryJobsList() {
+        return queryJobs;
+    }
+
+    public static ArrayList<WorkerProfile> getQueryWorkerProfilesList() { return queryWorkerProfiles; }
+
+
+
+    public static ArrayList<Job> queryJobs(QueryJobsParameters queryJobsParameters, final String objectId) throws ServerException{
+
+        queryJobs = new ArrayList<Job>();
+
+        //final ArrayList<Job> res = new ArrayList<>();
+        //Job job = new Job();
+
+        // Request the retrieving
+        //QBRequestGetBuilder requestBuilder = new QBRequestGetBuilder();
+        //QBCustomObject customObject = new QBCustomObject("Job", objectId);
+
+        // Check if params needed
         if (objectId != null){
 
             App.getInstance().log("Cerquem la feina per Id = " + objectId);
 
-            query.whereEqualTo("objectId", objectId);
+            //query.whereEqualTo("objectId", objectId);
+            //requestBuilder.sortAsc("UserID");
+
+            // "JobsSearch" class depends on the QB database
+
+            QBCustomObject customObject = new QBCustomObject("JobsSearch", objectId);
+
+            QBCustomObjects.getObject(customObject, new QBEntityCallback<QBCustomObject>(){
+                @Override
+                public void onSuccess(QBCustomObject customObject, Bundle params) {
+                    App.getInstance().log("Feina amb id " + objectId+" trobada.");
+                }
+
+                @Override
+                public void onError(QBResponseException errors) {
+
+                }
+            });
 
         } else {
 
             App.getInstance().log("Cerquem les feines pels paràmetres donats = " + queryJobsParameters.texto);
 
-            // Obtenim les paraules per la cerca
+            // Search with parameters
+            QBRequestGetBuilder requestBuilder = new QBRequestGetBuilder();
 
+            // Obtenim les paraules per la cerca
             ArrayList<String> palabras = new ArrayList<>();
 
             if (queryJobsParameters.texto != null){
@@ -225,10 +410,13 @@ public class Server {
                         palabras.add(str);
                     }
                 }
+
+                // text != null --> request builder for tags
+                requestBuilder.ctn("tags", queryJobsParameters.texto);
             }
 
+            /* MORE PARAMS: requisitos, precioHora, sexo, localizacion
             // Obtenim els requisits per la cerca, és a dir, les etiquetes o paraules clau
-
             if (queryJobsParameters.requisitos.size() > 0){
 
                 for (int i = 0; i < queryJobsParameters.requisitos.size(); i++){
@@ -240,204 +428,78 @@ public class Server {
             }
 
             // Afegim les paraules al criteri de cerca
-
             if (palabras.size() > 0){
+                // query.whereContainsAll("tagsSearch", palabras);
+                requestBuilder.in("tags", palabras);
 
-                query.whereContainsAll("tagsSearch", palabras);
             }
 
             // Acotem la cerca al preu igual o menor que el seleccionat
-
+            App.getInstance().log("Acotem per preu hora");
             if (queryJobsParameters.precioHora > 0){
 
-                query.whereLessThanOrEqualTo("priceHour", queryJobsParameters.precioHora);
+                //query.whereLessThanOrEqualTo("priceHour", queryJobsParameters.precioHora);
+                requestBuilder.lte("Price Hour",queryJobsParameters.precioHora);
             }
 
             // Comprovem si s'ha especificat el sexe per la cerca
-
             if (queryJobsParameters.sexo != null){
-
                 // Acotem la cerca per sexe: Home = 1, Dona = 2 i Qualsevol = 3
 
                 if (queryJobsParameters.sexo == 1 || queryJobsParameters.sexo == 2){
 
-                    query.whereEqualTo("gender", queryJobsParameters.sexo);
+                    //query.whereEqualTo("gender", queryJobsParameters.sexo);
+                    requestBuilder.eq("Sexo",queryJobsParameters.sexo);
                 }
             }
 
             // Si tenim la geolocalització de l'usuari, l'afegim al criteri de cerca
-
             Location myLocation = App.getInstance().usuari.profileLocation;
 
             if (myLocation != null){
-
-                query.whereGreaterThanOrEqualTo("locationMaxLatitude", myLocation.getLatitude());
-                query.whereLessThanOrEqualTo("locationMinLatitude", myLocation.getLatitude());
-                query.whereGreaterThanOrEqualTo("locationMaxLongitude", myLocation.getLongitude());
-                query.whereLessThanOrEqualTo("locationMinLongitude", myLocation.getLongitude());
+                Double lat = myLocation.getLatitude();
+                Double longitud = myLocation.getLongitude();
+                Double[] location = {lat, longitud};
+                // Searching near 10km radius
+                requestBuilder.near("user_location", location, 10000);
             }
-        }
+            */
 
-        // Llencem la cerca de feines amb els criteris establerts
-
-        jobs = null;
-        try {
-
-            jobs = query.find();
-
-        } catch (ParseException e2) {
-
-            App.getInstance().log("Error al executar la cerca: " + e2.getMessage());
-
-            throw new ServerException();
-        } catch (Exception e){
-            App.getInstance().log("Error: " + e.toString());
-        }
-
-        // Si tenim resultats de la cerca, els tractem per separat
-
-        if (jobs != null){
-
-            App.getInstance().log("Llista amb " + jobs.size() + " feines obtingudes de la cerca llençada: " + jobs.toString());
-
-            int j = 0;
-
-            while (j < jobs.size()) {
-
-                ParseObject po = jobs.get(j);
-
-                Job job = new Job();
-
-                job.ObjectId = po.getObjectId();
-
-                ParseObject wp = (ParseObject) po.get("workerProfile");
-
-                job.workerProfileId = wp.getObjectId();
-
-                job.workerUser= (ParseUser) po.get("user");
-
-                job.nombre = po.getString("firstName");
-
-                job.edad = Utils.getEdad(po.getDate("birthday"));
-
-                job.sexe = po.getInt("gender");
-
-                //TODO: get user pointer objectid:    job.userId = po.getString("user");
-
-                ParseFile fileObject = (ParseFile)po.get("pictureThumbnail");
-
-                job.fotoURL = fileObject.getUrl();
-
-	    		/*
-	    		try {
-	    			byte[] byteArray;
-					byteArray = fileObject.getData();
-					Bitmap bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-		    		//job.setFotoURL(fileObject.getUrl());
-		    		job.foto=bmp;
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
-	    		*/
-
-                job.precioHora = po.getInt("priceHour");
-
-                String tags = null;
-
-                ArrayList<String> listaTags;
-
-                listaTags = (ArrayList<String>) po.get("tags");
-
-                if (listaTags != null){
-
-                    for (String s : listaTags){
-
-                        if(tags == null){
-
-                            tags = s;
-
-                        } else {
-
-                            tags = tags + " · " + s;
-                        }
+            // Llencem la cerca de feines amb els criteris establerts
+            App.getInstance().log("Fem la consulta QB");
+            QBCustomObjects.getObjects("JobsSearch", requestBuilder, new QBEntityCallback<ArrayList<QBCustomObject>>() {
+                @Override
+                public void onSuccess(ArrayList<QBCustomObject> customObjects, Bundle params) {
+                    //int skip = params.getInt(Consts.SKIP);
+                    //int limit = params.getInt(Consts.LIMIT);
+                    App.getInstance().log("Llista de feines mostrada OK");
+                    // method to save the Jobs 1234ABCD***
+                    for (QBCustomObject job: customObjects) {
+                        // method to save the Jobs 1234ABCD***
+                        queryJobsPushJob(job);
                     }
+                    //FeinesLlistat_Activity.jobAdapterShow(getQueryJobsList());
                 }
 
-                job.tags = tags;
-
-                ParseGeoPoint point =  (ParseGeoPoint) po.get("location");
-
-                if (point != null){
-
-                    Location loc = new Location("dummyprovider");
-
-                    loc.setLatitude(point.getLatitude());
-
-                    loc.setLongitude(point.getLongitude());
-
-                    job.distancia = Utils.distancia(loc, App.getInstance().usuari.profileLocation);
-
-                } else {
-
-                    job.distancia = "?";
+                @Override
+                public void onError(QBResponseException errors) {
+                    App.getInstance().log("Llista de feines mostrada ERROR");
+                    FeinesLlistat_Activity.serverDownload = true;
                 }
-
-
-                job.ciudad = po.getString("locationName");
-
-                job.moneda = Utils.getCurrencySymbolString(po.getString("currency"));
-
-                job.availabilityCalendar = (List<Date>) po.get("workDays");
-
-                res.add(job);
-
-                // Presentem la feina obtinguda
-
-                /*
-                App.getInstance().log("************************************************************************************");
-                App.getInstance().log("*                               Detall de la feina " + (j + 1) + "                               *");
-                App.getInstance().log("************************************************************************************");
-
-                App.getInstance().log("----------------- Id Feina:          " + job.ObjectId);
-                App.getInstance().log("----------------- Id Perfil Usuari:  " + job.workerProfileId);
-                App.getInstance().log("----------------- Id Usuari:         " + job.workerUser.getObjectId());
-                App.getInstance().log("----------------- Nom:               " + job.nombre);
-                App.getInstance().log("----------------- Edat:              " + job.edad);
-                App.getInstance().log("----------------- Sexe:              " + Utils.ObtenirSexeNom(job.sexe) + " (" + job.sexe + ")");
-                App.getInstance().log("----------------- Foto:              " + job.fotoURL);
-                App.getInstance().log("----------------- Preu/hora:         " + job.precioHora);
-                App.getInstance().log("----------------- Moneda:            " + job.moneda);
-                App.getInstance().log("----------------- Etiquetes:         " + listaTags.toString());
-                App.getInstance().log("----------------- Distància:         " + job.distancia);
-
-                App.getInstance().log("----------------- Localitat:         " + job.ciudad);
-                App.getInstance().log("----------------- Disponibilitat:    " + job.availabilityCalendar.toString());
-
-                if (point != null){
-
-                    App.getInstance().log("----------------- Latitud:           " + point.getLatitude());
-                    App.getInstance().log("----------------- Longitud:          " + point.getLongitude());
-
-                } else {
-
-                    App.getInstance().log("----------------- Localització:      " + "No disponible");
-                }
-*/
-                j++;
-            }
+            });
         }
-
         App.getInstance().log("************************************************************************************");
 
         // Tornem la matriu amb totes les feines obtingudes
 
-        return res;
+        // RETURN THE LIST OF JOBS WE FOUND WITH ALL THE PARAMETERS
+        return getQueryJobsList();
     }
 
 
 
 
-
+/*
     public static ArrayList<Job> queryJobsFavorits(QueryJobsParameters queryJobsParameters, String objectId) throws ServerException{
 
         App.getInstance().log("---QUERY Favorits");
@@ -608,7 +670,7 @@ public class Server {
 
                     job.edad = Utils.getEdad(po.getDate("birthday"));
 
-                    job.sexe = po.getInt("gender");
+                    job.sexo = po.getInt("gender");
 
                     //TODO: get user pointer objectid:    job.userId = po.getString("user");
 
@@ -627,7 +689,7 @@ public class Server {
                         e.printStackTrace();
                     }
                     */
-
+/*
                     job.precioHora = po.getInt("priceHour");
 
                     String tags = null;
@@ -711,7 +773,7 @@ public class Server {
                         App.getInstance().log("----------------- Localització:      " + "No disponible");
                     }
 */
-                    j++;
+/*                    j++;
                 }
             }
 
@@ -723,7 +785,7 @@ public class Server {
         return res;
     }
 
-
+*/
 
 
 
@@ -992,7 +1054,7 @@ public class Server {
 
         // Per seguretat, tornem a obtenir, de Parse, totes les dades del perfil de l'usauri
 
-        setUserData(ParseUser.getCurrentUser());
+      //  setUserData(ParseUser.getCurrentUser());
     }
 
 
@@ -1317,6 +1379,31 @@ public class Server {
 		HashMap<String, Object> hm= new HashMap<String, Object>();
 		hm.put("searchText", str);
 		hm.put("limit", 20);
+
+        QBRequestGetBuilder requestBuilder = new QBRequestGetBuilder();
+        requestBuilder.ctn("tags", str);
+
+        QBCustomObjects.getObjects("JobsSearch", requestBuilder, new QBEntityCallback<ArrayList<QBCustomObject>>() {
+            @Override
+            public void onSuccess(ArrayList<QBCustomObject> customObjects, Bundle params) {
+                //int skip = params.getInt(Consts.SKIP);
+                //int limit = params.getInt(Consts.LIMIT);
+                ArrayList<String> arrResult = new ArrayList<String>();
+                App.getInstance().log("Llista de feines mostrada OK");
+                for (QBCustomObject job: customObjects) {
+                    App.getInstance().log("string devuelto:" + job.getString("tags"));
+                    arrResult.add(job.getString("tags"));
+                }
+                myCallback.done(arrResult, null);
+            }
+
+            @Override
+            public void onError(QBResponseException errors) {
+                App.getInstance().log("Llista de feines mostrada ERROR");
+                FeinesLlistat_Activity.serverDownload = true;
+            }
+        });
+        /*
 		ParseCloud.callFunctionInBackground("findJobsSearch", hm, new FunctionCallback<Object>() {
             @Override
             public void done(Object object, ParseException e) {
@@ -1336,7 +1423,7 @@ public class Server {
                 myCallback.done(arrResult, e);
             }
         });
-		
+		*/
 		
 		
 		
@@ -1379,8 +1466,62 @@ public class Server {
 
 
 
-	public static void saveWorkerProfile(WorkerProfile workerProfile, Boolean pictureChanged) throws ServerException {
-		ParseObject jwp=null;
+	public static void saveWorkerProfile(WorkerProfile wp, Boolean pictureChanged, String jobId) throws ServerException {
+		Usuari user = App.getInstance().usuari;
+        App.getInstance().log("Saving worker profile with Object ID= "+ jobId);
+        final QBCustomObject obj = new QBCustomObject();
+        obj.setClassName("JobsSearch");
+
+        obj.putString("nombre", user.profileFirstName);
+        obj.putString("edad", Utils.getEdad(user.profileBirthDay));
+        obj.putString("moneda", user.profileCurrency);
+        obj.putString("ciudad", user.profileLocationName);
+        obj.putInteger("precioHora", wp.precioHora);
+        obj.putString("tags", Utils.tagListToString(wp.tags));
+        obj.putString("disponibilidad", wp.disponibilidad);
+        obj.putInteger("tipoTrabajo", wp.workType);
+        obj.putFile("imagenTrabajo", String.valueOf(wp.picture));
+
+        QBCustomObject record = new QBCustomObject();
+        record.setClassName("JobsSearch");
+        HashMap<String, Object> fields = new HashMap<String, Object>();
+        fields.put("precioHora", wp.precioHora);
+        fields.put("tags",wp.tags);
+        fields.put("tipoTrabajo",wp.workType);
+        record.setFields(fields);
+        record.setCustomObjectId(jobId);
+
+        QBCustomObjects.updateObject(record, null, new QBEntityCallback<QBCustomObject>() {
+            @Override
+            public void onSuccess(QBCustomObject object, Bundle params) {
+                App.getInstance().log("WorkerProfile actualizat amb éxit");
+            }
+
+            @Override
+            public void onError(QBResponseException errors) {
+                App.getInstance().log("El WorferProfile no existeix, creant-ne un de nou");
+                QBCustomObjects.createObject(obj, new QBEntityCallback<QBCustomObject>() {
+                    @Override
+                    public void onSuccess(QBCustomObject createdObject, Bundle params) {
+                        App.getInstance().log("Creació de nou WorkerProfile existosa");
+                    }
+
+                    @Override
+                    public void onError(QBResponseException errors) {
+                        App.getInstance().log("Creació de nou WorkerProfile ERROR");
+                    }
+                });
+
+
+            }
+        });
+
+
+
+
+
+
+        /*ParseObject jwp=null;
 		if (workerProfile.workerProfileObjectId==null){
 			jwp = ParseObject.create("JobsWorkerProfile");			
 		} else {
@@ -1426,11 +1567,11 @@ public class Server {
 				point.setLatitude(workerProfile.location.getLatitude());
 				point.setLongitude(workerProfile.location.getLongitude()); 
 				jwp.put("location", prepareForParse(point));
-				jwp.put("locationName",prepareForParse(workerProfile.locationName));
+				jwp.put("locationName",prepareForParse(workerProfile.ciudad));//locationName));
 				jwp.put("locationCountry",prepareForParse(workerProfile.locationCountry));
 
 				jwp.put("currency", prepareForParse(workerProfile.currency));
-				String str = workerProfile.distance;
+				String str = workerProfile.distancia;//distance;
 				str=str.replace(" Km","");
 				jwp.put("workMaxDistance",prepareForParse(Utils.parseInt(str))); //TODO: +50 is string but column is number! so?
 
@@ -1440,7 +1581,7 @@ public class Server {
 					jwp.remove("tags");
 				}
 
-				jwp.put("priceHour", prepareForParse(workerProfile.priceHour));
+				jwp.put("priceHour", prepareForParse(workerProfile.precioHora));//priceHour));
 				jwp.put("priceDay", prepareForParse(workerProfile.priceDay));
 				jwp.put("priceWeek", prepareForParse(workerProfile.priceWeek));
 
@@ -1461,13 +1602,41 @@ public class Server {
 				e.printStackTrace();
 				throw new ServerException();
 			}
-		}
+		}*/
 	}
 
 
 	
-	public static WorkerProfile readWorkerProfile(String objectId) throws ServerException{
-		
+	public static WorkerProfile readWorkerProfile(String objectId, String customId) throws ServerException{
+        App.getInstance().log("Reading WorkerProfile with id:" + objectId);
+        App.getInstance().log("Reading WorkerProfile with id:" + customId);
+        final WorkerProfile wp = new WorkerProfile();
+        QBCustomObject customObject = new QBCustomObject("JobsSearch", customId);
+
+        QBCustomObjects.getObject(customObject, new QBEntityCallback<QBCustomObject>(){
+            @Override
+            public void onSuccess(QBCustomObject customObject, Bundle params) {
+                wp.ciudad=customObject.getString("ciudad");
+                wp.precioHora=customObject.getInteger("precioHora");
+                wp.trabajo=customObject.getString("tags");
+                wp.currency=customObject.getString("moneda");
+                wp.workType=customObject.getInteger("tipoTrabajo");
+                App.getInstance().log("Reading WorkerProfile sucess");
+                wp.ObjectId=customObject.getCustomObjectId();
+                wp.disponibilidad=customObject.getString("disponibilidad");
+            }
+
+            @Override
+            public void onError(QBResponseException errors) {
+                App.getInstance().log("Reading WorkerProfile error");
+            }
+        });
+
+
+            return wp;
+
+
+        /*
 		App.getInstance().log("Reading WorkerProfile with id:" + objectId);
 		WorkerProfile wp = new WorkerProfile();
 		ParseObject jwp=null;
@@ -1501,14 +1670,17 @@ public class Server {
 		loc.setLatitude(point.getLatitude());
 		loc.setLongitude(point.getLongitude());
 		wp.location=loc;
-		wp.locationName=jwp.getString("locationName");
+		//wp.locationName=jwp.getString("locationName");
+        wp.ciudad=jwp.getString("locationName");
 		wp.locationCountry=jwp.getString("locationCountry");
 		wp.currency=jwp.getString("currency");
 		Integer i = jwp.getInt("workMaxDistance");
-		wp.distance=i.toString();
+		//wp.distance=i.toString();
+        //wp.distancia=i.toString();
 		
 		wp.tags = (ArrayList<String>) jwp.get("tags");
-		wp.priceHour=jwp.getInt("priceHour");
+		//wp.priceHour=jwp.getInt("priceHour");
+        wp.precioHora=jwp.getInt("priceHour");
 		wp.priceDay=jwp.getInt("priceDay");
 		wp.priceWeek=jwp.getInt("priceWeek");
 		
@@ -1516,6 +1688,8 @@ public class Server {
 		App.getInstance().inEditionAvailabylity.clear();
 		App.getInstance().inEditionAvailabylity = wp.availabilityCalendar;
 		return wp;
+
+        */
 	}
 
 
@@ -1533,17 +1707,19 @@ public class Server {
 
 
 	public static ArrayList<WorkerProfile> queryWorkerProfiles(String string) throws ServerException {
-		final ArrayList<WorkerProfile> res=new ArrayList<WorkerProfile>();
+		final ArrayList<WorkerProfile> res = new ArrayList<WorkerProfile>();
 		List<ParseObject> workerProfiles = null;
 
         App.getInstance().log("Server.quertWorkerProfiles");
 		
 		//ask parse
+        /*
 		ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("JobsWorkerProfile");
 		query.include("user");
 		query.whereEqualTo("user", ParseUser.getCurrentUser());
 		query.whereDoesNotExist("deletedAt");
-		
+
+
 		try {
 			workerProfiles=query.find();
 		} catch (ParseException e2) {
@@ -1562,8 +1738,43 @@ public class Server {
 	    		j++;
 	    	}
     	}
+    	*/
+
+        final int userID = App.getUserID();
+
+        queryWorkerProfiles = new ArrayList<WorkerProfile>();
+
+        //final ArrayList<Job> res = new ArrayList<>();
+        //Job job = new Job();
+
+        // Request the retrieving
+        QBRequestGetBuilder requestBuilder = new QBRequestGetBuilder();
+        requestBuilder.eq("user_id", userID);
+
+
+        App.getInstance().log("Cerquem la feina per Id = " + userID);
+
+
+
+        QBCustomObjects.getObjects("JobsSearch", requestBuilder, new QBEntityCallback<ArrayList<QBCustomObject>>() {
+            @Override
+            public void onSuccess(ArrayList<QBCustomObject> customObject, Bundle params) {
+                App.getInstance().log("Feina amb id " + userID+" trobada.");
+
+                for (QBCustomObject wp: customObject) {
+                    queryWorkerProfilesPush(wp);
+                }
+            }
+
+            @Override
+            public void onError(QBResponseException errors) {
+
+            }
+        });
+
+
     	
-		return res;
+		return getQueryWorkerProfilesList();
 	}
 
 
@@ -1693,5 +1904,81 @@ public class Server {
 
     }
 
+    public static void setEULA(boolean eula) {
+        final int userID = App.getUserID();
+        final String ID = App.getID();
+
+        QBCustomObject record = new QBCustomObject();
+        record.setClassName("users");
+        record.setCustomObjectId(ID);
+        //record.setCustomObjectId("57d17790a28f9af54000000e");
+        //record.setUserId(userID);
+
+        // Request the retrieving
+        /*QBRequestUpdateBuilder updateBuilder = new QBRequestUpdateBuilder();
+        updateBuilder.updateArrayValue("eulaAccepted", true);
+        updateBuilder.set*/
+        HashMap<String, Object> fields = new HashMap<String, Object>();
+        fields.put("eulaAccepted", true);
+        record.setFields(fields);
+        record.setUserId(userID);
+
+        App.getInstance().log("Update EULA de user_id = " + userID);
+
+        QBCustomObjects.updateObject(record, null, new QBEntityCallback<QBCustomObject>() {
+            @Override
+            public void onSuccess(QBCustomObject object, Bundle params) {
+                App.getInstance().log("Update correcto " + userID);
+            }
+
+            @Override
+            public void onError(QBResponseException errors) {
+                App.getInstance().log("Update INcorrecto " + userID);
+            }
+        });
+    }
+
+
+
+    static class FlushedInputStream extends FilterInputStream {
+        public FlushedInputStream(InputStream inputStream) {
+            super(inputStream);
+        }
+
+        @Override
+        public long skip(long n) throws IOException {
+            long totalBytesSkipped = 0L;
+            while (totalBytesSkipped < n) {
+                long bytesSkipped = in.skip(n - totalBytesSkipped);
+                if (bytesSkipped == 0L) {
+                    int b = read();
+                    if (b < 0) {
+                        break;  // we reached EOF
+                    } else {
+                        bytesSkipped = 1; // we read one byte
+                    }
+                }
+                totalBytesSkipped += bytesSkipped;
+            }
+            return totalBytesSkipped;
+        }
+    }
+/*
+    public static void chatInit(){
+
+            QBAuth.createSession(new QBEntityCallback<QBSession>() {
+                @Override
+                public void onSuccess(QBSession result, Bundle params) {
+                    App.getInstance().log("Sessió de XAT creada");
+                }
+
+                @Override
+                public void onError(QBResponseException e) {
+
+                }
+            });
+
+    }
+*/
 
 }

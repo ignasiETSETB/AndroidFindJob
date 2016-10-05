@@ -47,7 +47,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
 public class Xat_Activity extends Activity {
-
+    public static Boolean fake=true;
     Context context;
 
     XMPPTCPConnectionConfiguration.Builder configBuilder;
@@ -60,13 +60,15 @@ public class Xat_Activity extends Activity {
 
     ArrayList<Xat_Missatge> arrayMissatges;
     ArrayList<Xat_Contacte> arrayContactes;
+    //Borrar després presentació
+
 
     private ChatManager chatManager;
     private ChatMessageListener messageListener;
     private ChatManagerListener chatManagerListener;
 
     private String usuariDesti_Nom, usuariDesti_Compte, usuariDesti_ObjectId;
-
+    private int userid;
     private boolean finalitzar = false;
 
     Button botoEnviar;
@@ -99,7 +101,7 @@ public class Xat_Activity extends Activity {
 
         finalitzar = true;
 
-        chatManager.removeChatListener(chatManagerListener);
+        //chatManager.removeChatListener(chatManagerListener);
 
         // Guardem els missatges del xat
 
@@ -111,7 +113,6 @@ public class Xat_Activity extends Activity {
         //}
 
         // Tanquem el temporitzador
-
         scheduler.shutdown();
 
         App.getInstance().log("*");
@@ -139,10 +140,13 @@ public class Xat_Activity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Obtenim les dades de contacte del propietari de la conversa
-
+        App.getInstance().usuariOrigen_Nom= App.getInstance().getUserName();
+        /*
         if (App.getInstance().connection == null || !App.getInstance().connection.isConnected()){
-            App.getInstance().connectarXMPP();
+            userid=Integer.parseInt(getIntent().getStringExtra("userid"));
+            App.getInstance().connectarXMPP(userid);
         }
+
 
         App.getInstance().usuariOrigen_Nom = ParseUser.getCurrentUser().getString("profileFirstName").trim() + " " + ParseUser.getCurrentUser().getString("profileLastName").trim();
         try {
@@ -152,13 +156,13 @@ public class Xat_Activity extends Activity {
         }
         App.getInstance().usuariOrigen_Compte = ParseUser.getCurrentUser().getObjectId().toLowerCase();
         App.getInstance().usuariOrigen_Password = ParseUser.getCurrentUser().getObjectId();
-
+        */
         // Obtenim les dades de l'usuari destí, per iniciar el xat i recuperar la conversa anterior, si existeix
 
-        usuariDesti_Nom = getIntent().getStringExtra("nom_contacte");
+        //usuariDesti_Nom = getIntent().getStringExtra("nom_contacte");
         usuariDesti_ObjectId = getIntent().getStringExtra("worker_id");
-        usuariDesti_Compte = getIntent().getStringExtra("usuari_contacte").toLowerCase() + "@" + App.getInstance().servidor_Nom;
-
+        usuariDesti_Compte = getIntent().getStringExtra("nom_contacte").toLowerCase() + "@" + App.getInstance().servidor_Nom;
+        usuariDesti_Nom= getIntent().getStringExtra("nom_contacte");
         //usuariDesti_Compte = "test" + "@" + servidor_Nom;
         //usuariDesti_Compte = "fishapp" + "@" + servidor_Nom;
 
@@ -191,26 +195,61 @@ public class Xat_Activity extends Activity {
         carregarMissatgesSharedPreferences();
 
         // Carreguem la matriu amb els missatges, a la llista
-        adapter = new Xat_Missatge_Adapter_Activity(this, arrayMissatges);
-        llistaMissatges.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
-        llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
 
 
+            arrayMissatges.clear();
+            Date date = new Date();
+            Date date2 = new Date();
+            Xat_Missatge fakeMissatge = new Xat_Missatge(userid, "Hola, podrias empezar este lunes?", App.getInstance().usuariOrigen_Nom, date, true);
+            Xat_Missatge fakeMissatge2 = new Xat_Missatge(userid + 2, "Sin problema, a que hora me presento?", usuariDesti_Nom, date2, false);
+            arrayMissatges.add(fakeMissatge);
+            arrayMissatges.add(fakeMissatge2);
+            adapter = new Xat_Missatge_Adapter_Activity(this, arrayMissatges);
+
+            llistaMissatges.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
+            llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
+            fake=false;
+
+        /*
         if (!App.getInstance().connection.isConnected()) {
             //botoEnviar.setEnabled(false);
-            App.getInstance().connectarXMPP();
+            App.getInstance().connectarXMPP(userid);
         }
-
+           */
         createChatManager();
 
         // Comprovem la connexió al servidor cada 5 segons
-        scheduler = Executors.newSingleThreadScheduledExecutor();
+       scheduler = Executors.newSingleThreadScheduledExecutor();
 
 
         // Enviem el missatge escrit per l'usuari, al premer el botó "Enviar"
         botoEnviar.setOnClickListener( new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               if (textEnviar.getText().length() > 0) {
+                   Date date2=new Date();
+                   Xat_Missatge fakeMissatge =new Xat_Missatge(userid,textEnviar.getText().toString(),usuariDesti_Nom,date2,true);
+                   arrayMissatges.add(fakeMissatge);
+                   textEnviar.setText("");
+               }
+               runOnUiThread(new Runnable() {
 
+                   @Override
+                   public void run() {
+
+                       llistaMissatges.setAdapter(adapter);
+                       adapter.notifyDataSetChanged();
+                       llistaMissatges.setSelection(llistaMissatges.getCount() - 1);
+                   }
+               });
+
+
+
+           }
+
+
+            /*
                     public void onClick(View v) {
 
                         if (App.getInstance().connection.isConnected()) {
@@ -348,8 +387,10 @@ public class Xat_Activity extends Activity {
                             App.getInstance().missatgeEnPantalla("No estás conectado prueba en unos segundos");
                         }
                     }
+            */
                 }
             );
+
         }
 
 
@@ -462,6 +503,7 @@ public class Xat_Activity extends Activity {
 
 
     private void createChatManager(){
+        /*
         chatManager = ChatManager.getInstanceFor(App.getInstance().connection);
         chatManagerListener =  new ChatManagerListener() {
 
@@ -513,6 +555,7 @@ public class Xat_Activity extends Activity {
         };
 
         chatManager.addChatListener(chatManagerListener);
+        */
 
     }
 

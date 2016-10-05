@@ -205,7 +205,7 @@ public class CalendarViewActivity extends Activity {
 		switch (item.getItemId()) {
         case android.R.id.home:
         	//recogerFechasSeleccionadas();
-            NavUtils.navigateUpFromSameTask(this);
+            finish();
             return true;
         default:
             return super.onOptionsItemSelected(item);
