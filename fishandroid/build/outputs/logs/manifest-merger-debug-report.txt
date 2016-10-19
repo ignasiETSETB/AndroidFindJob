@@ -1,482 +1,471 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:2:1-215:12
-	xmlns:android
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:2:11-69
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:2:1-215:12
 	package
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:3:5-31
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:7:5-67
-MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:13:5-67
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:14:5-67
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:13:5-67
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:14:5-67
-MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:11:5-67
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:7:5-67
+MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:13:5-67
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:13:5-67
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:14:5-67
+MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:7:22-64
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:8:5-79
-MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:22:5-79
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:23:5-79
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:22:5-79
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:23:5-79
-MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:12:5-79
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:8:5-79
+MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:22:5-79
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:22:5-79
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:23:5-79
+MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:12:5-79
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:8:22-76
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:8:22-76
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:9:5-79
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:9:22-76
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:10:5-68
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:10:5-68
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:10:22-65
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:10:22-65
 uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:11:5-81
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:11:22-78
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.VIBRATE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:12:5-66
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:12:5-66
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:12:22-63
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:12:22-63
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:13:5-71
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:13:5-71
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:13:22-68
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:13:22-68
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:14:5-82
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:14:5-82
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:14:22-79
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:14:22-79
 uses-permission#com.fish.fishapp.permission.C2D_MESSAGE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:15:5-79
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:15:22-76
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:15:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:17:5-80
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:17:5-80
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:17:22-77
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:17:22-77
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:18:5-75
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:18:5-75
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:18:22-73
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:18:22-73
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:19:5-80
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:19:5-80
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:19:22-78
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:19:22-78
 permission#com.fish.fishapp.permission.C2D_MESSAGE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:21:5-23:47
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:21:5-23:47
 	android:protectionLevel
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:23:9-44
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:23:9-44
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:22:9-63
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:22:9-63
 application
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:26:5-213:19
-MERGED from [com.android.support:support-v4:21.0.3] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:16:5-19
-MERGED from [com.android.support:cardview-v7:23.2.0] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:22:5-20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:26:5-213:19
+MERGED from [com.android.support:support-v4:21.0.3] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:16:5-19
+MERGED from [com.android.support:cardview-v7:23.2.0] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:30:9-41
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:30:9-41
 	android:allowBackup
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:28:9-35
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:28:9-35
 	android:icon
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:29:9-45
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:29:9-45
 	android:theme
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:31:9-41
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:31:9-41
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:27:9-32
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:27:9-32
 meta-data#com.parse.push.notification_icon
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:32:9-34:56
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:32:9-34:56
 	android:resource
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:34:13-53
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:34:13-53
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:33:13-60
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:33:13-60
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:35:9-107
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:35:20-65
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:35:9-107
 	android:value
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:35:66-105
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:35:66-105
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:35:20-65
 activity#com.fish.fishapp.Main_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:36:9-39:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:36:9-39:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:39:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:39:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:38:13-56
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:38:13-56
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:37:13-42
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:37:13-42
 activity#com.fish.fishapp.Presentacio_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:40:9-50:20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:40:9-50:20
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:44:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:44:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:42:13-56
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:41:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:42:13-56
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:43:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:43:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:41:13-49
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:45:13-49:29
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:45:13-49:29
 action#android.intent.action.MAIN
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:46:17-69
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:46:17-69
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:46:25-66
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:46:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:48:17-77
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:48:27-74
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:48:27-74
 activity#com.fish.fishapp.Login_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:51:9-55:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:51:9-55:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:55:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:55:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:53:13-45
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:52:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:53:13-45
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:54:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:54:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:52:13-43
 activity#com.facebook.FacebookActivity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:62:9-66:75
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:62:9-66:75
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:65:13-45
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:65:13-45
 	android:configChanges
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:64:13-96
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:64:13-96
 	android:theme
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:66:13-72
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:66:13-72
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:63:13-57
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:63:13-57
 activity#com.fish.fishapp.EulaAcceptar_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:67:9-71:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:67:9-71:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:71:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:71:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:69:13-63
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:68:13-50
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:69:13-63
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:70:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:70:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:68:13-50
 activity#com.fish.fishapp.Eula_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:72:9-77:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:72:9-77:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:77:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:77:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:74:13-56
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:74:13-56
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:76:13-64
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:73:13-42
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:76:13-64
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:75:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:75:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:73:13-42
 activity#com.fish.fishapp.feines.FeinesLlistat_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:78:9-82:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:78:9-82:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:82:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:82:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:80:13-56
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:79:13-58
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:80:13-56
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:81:13-42
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:81:13-42
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:79:13-58
 activity#com.fish.fishapp.PerfilEditar_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:83:9-88:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:83:9-88:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:88:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:88:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:85:13-64
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:85:13-64
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:87:13-72
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:84:13-50
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:87:13-72
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:86:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:86:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:84:13-50
 activity#com.fish.fishapp.Geolocalitzacio_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:89:9-92:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:89:9-92:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:92:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:92:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:91:13-64
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:91:13-64
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:90:13-53
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:90:13-53
 activity#com.fish.fishapp.workerprofiles.WorkerProfilesActivity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:93:9-98:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:93:9-98:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:98:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:98:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:95:13-67
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:95:13-67
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:97:13-72
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:94:13-66
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:97:13-72
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:96:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:96:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:94:13-66
 activity#com.fish.fishapp.workerprofiles.PerfilAfegirPerfilAddicional_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:99:9-104:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:99:9-104:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:104:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:104:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:101:13-71
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:101:13-71
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:103:13-80
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:100:13-81
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:103:13-80
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:102:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:102:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:100:13-81
 activity#com.fish.fishapp.workerprofiles.CalendarViewActivity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:105:9-110:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:105:9-110:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:110:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:110:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:107:13-80
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:107:13-80
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:109:13-95
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:106:13-64
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:109:13-95
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:108:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:108:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:106:13-64
 activity#com.fish.fishapp.feines.FeinesDetall_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:111:9-116:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:111:9-116:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:116:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:116:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:113:13-62
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:113:13-62
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:115:13-72
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:112:13-57
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:115:13-72
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:114:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:114:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:112:13-57
 activity#com.fish.fishapp.contact.FeinesContacte_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:117:9-120:75
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:117:9-120:75
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:119:13-65
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:119:13-65
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:120:13-72
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:120:13-72
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:118:13-60
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:118:13-60
 activity#com.fish.fishapp.contact.Xat_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:121:9-125:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:121:9-125:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:125:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:125:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:123:13-56
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:123:13-56
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:124:13-72
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:124:13-72
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:122:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:122:13-49
 activity#com.fish.fishapp.contact.Xat_Llista_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:126:9-130:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:126:9-130:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:130:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:130:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:128:13-56
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:128:13-56
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:129:13-72
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:129:13-72
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:127:13-56
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:127:13-56
 activity#com.fish.fishapp.contact.Pagament_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:131:9-136:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:131:9-136:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:136:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:136:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:133:13-60
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:133:13-60
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:135:13-68
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:132:13-54
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:135:13-68
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:134:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:134:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:132:13-54
 activity#com.fish.fishapp.feines.FormulariContracte_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:137:9-142:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:137:9-142:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:142:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:142:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:139:13-71
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:139:13-71
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:141:13-77
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:138:13-63
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:141:13-77
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:140:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:140:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:138:13-63
 activity#com.fish.fishapp.feines.FormulariTreballador_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:143:9-148:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:143:9-148:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:148:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:148:13-49
 	android:label
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:145:13-71
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:145:13-71
 	android:parentActivityName
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:147:13-77
-	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:144:13-65
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:147:13-77
 	android:launchMode
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:146:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:146:13-43
+	android:name
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:144:13-65
 service#com.parse.PushService
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:169:9-57
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:169:9-57
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:169:18-54
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:169:18-54
 receiver#com.parse.GcmBroadcastReceiver
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:171:9-180:20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:171:9-180:20
 	android:permission
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:173:13-73
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:173:13-73
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:172:13-58
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:172:13-58
 intent-filter#com.fish.fishapp+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:174:13-179:29
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:174:13-179:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:175:17-81
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:175:17-81
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:175:25-78
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:175:25-78
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:176:17-86
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:176:17-86
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:176:25-83
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:176:25-83
 category#com.fish.fishapp
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:178:17-61
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:178:17-61
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:178:27-58
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:178:27-58
 receiver#com.parse.ParseBroadcastReceiver
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:181:9-186:20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:181:9-186:20
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:181:19-66
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:181:19-66
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:182:13-185:29
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:182:13-185:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:183:17-79
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:183:17-79
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:183:25-76
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:183:25-76
 action#android.intent.action.USER_PRESENT
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:184:17-77
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:184:17-77
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:184:25-74
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:184:25-74
 receiver#com.fish.fishapp.MyPushReceiver
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:187:9-196:20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:187:9-196:20
 	android:exported
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:189:13-37
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:189:13-37
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:188:13-43
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:188:13-43
 intent-filter#com.fish.fishapp.UPDATE_STATUS+com.parse.push.intent.DELETE+com.parse.push.intent.OPEN+com.parse.push.intent.RECEIVE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:190:13-195:29
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:190:13-195:29
 action#com.parse.push.intent.RECEIVE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:191:17-72
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:191:17-72
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:191:25-69
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:191:25-69
 action#com.parse.push.intent.OPEN
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:192:17-69
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:192:17-69
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:192:25-66
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:192:25-66
 action#com.parse.push.intent.DELETE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:193:17-71
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:193:17-71
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:193:25-68
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:193:25-68
 action#com.fish.fishapp.UPDATE_STATUS
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:194:17-73
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:194:17-73
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:194:25-70
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:194:25-70
 receiver#com.parse.ParsePushBroadcastReceiver
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:197:9-205:20
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:197:9-205:20
 	android:exported
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:199:13-37
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:199:13-37
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:198:13-64
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:198:13-64
 intent-filter#com.parse.push.intent.DELETE+com.parse.push.intent.RECEIVE
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:200:13-204:29
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:200:13-204:29
 activity#com.fish.fishapp.feines.InfoContracteActivity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:207:9-66
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:207:9-66
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:207:19-63
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:207:19-63
 activity#com.fish.fishapp.notificacions.LlistaNotificacions_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:208:9-210:52
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:208:9-210:52
 	android:screenOrientation
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:210:13-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:210:13-49
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:209:13-71
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:209:13-71
 activity#com.fish.fishapp.Condicions_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:211:9-57
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:211:9-57
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:211:19-54
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:211:19-54
 activity#com.fish.fishapp.Ajuda_Activity
-ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:212:9-61
+ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:212:9-61
 	android:name
-		ADDED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml:212:19-49
+		ADDED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml:212:19-49
 uses-sdk
-INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:support-v4:21.0.3] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:15:5-42
-MERGED from [com.makeramen:roundedimageview:2.0.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.0.1\AndroidManifest.xml:7:5-9:41
-MERGED from [com.squareup:android-times-square:1.5.0] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.squareup\android-times-square\1.5.0\AndroidManifest.xml:8:5-72
-MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:6:5-8:41
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:5:5-7:41
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.support:cardview-v7:23.2.0] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:20:5-43
-MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:support-v4:21.0.3] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\AndroidManifest.xml:15:5-42
+MERGED from [com.makeramen:roundedimageview:2.0.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.0.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.squareup:android-times-square:1.5.0] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.squareup\android-times-square\1.5.0\AndroidManifest.xml:8:5-72
+MERGED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.support:cardview-v7:23.2.0] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.quickblox:quickblox-android-sdk-location:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-location\2.6.1\AndroidManifest.xml:5:5-7:41
 	android:targetSdkVersion
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
-		INJECTED from D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\src\main\AndroidManifest.xml
 uses-permission#android.permission.CAMERA
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:11:5-65
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:12:5-65
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:11:5-65
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:12:5-65
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:11:5-65
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:11:5-65
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:11:22-62
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:11:22-62
 uses-permission#android.permission.FLASHLIGHT
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:12:5-69
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:13:5-69
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:12:5-69
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:13:5-69
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:12:5-69
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:12:5-69
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:13:5-69
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:12:22-66
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:12:22-66
 uses-feature#android.hardware.camera
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:15:5-60
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:16:5-60
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:15:5-60
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:16:5-60
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:15:5-60
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:15:5-60
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:16:5-60
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:15:19-57
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:15:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:16:5-70
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:17:5-70
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:16:5-70
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:17:5-70
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:16:5-70
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:16:5-70
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:17:5-70
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:16:19-67
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:16:19-67
 uses-feature#android.hardware.camera.flash
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:17:5-66
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:18:5-66
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:17:5-66
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:18:5-66
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:17:5-66
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:17:5-66
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:18:5-66
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:17:19-63
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:17:19-63
 uses-permission#android.permission.RECORD_AUDIO
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:19:5-71
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:20:5-71
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:19:5-71
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:20:5-71
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:19:5-71
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:19:5-71
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:20:5-71
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:19:22-68
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:19:22-68
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:20:5-81
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:21:5-81
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:20:5-81
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:21:5-81
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:20:5-81
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:20:5-81
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:21:5-81
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:20:22-78
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:20:22-78
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:21:5-80
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:22:5-80
-MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:21:5-80
-MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:22:5-80
+ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:21:5-80
+MERGED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:21:5-80
+MERGED from [com.quickblox:quickblox-android-sdk-core:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-core\2.6.1\AndroidManifest.xml:22:5-80
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:21:22-77
+		ADDED from [com.quickblox:quickblox-android-sdk-customobjects:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-customobjects\2.6.1\AndroidManifest.xml:21:22-77
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:23:5-75
+ADDED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:23:5-75
 	android:name
-		ADDED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\2016-10-05v2\Fish 2\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:23:22-72
+		ADDED from [com.quickblox:quickblox-android-sdk-chat:2.6.1] D:\Users\Isangi\Documents\GitHub\Fish_3\fishandroid\build\intermediates\exploded-aar\com.quickblox\quickblox-android-sdk-chat\2.6.1\AndroidManifest.xml:23:22-72

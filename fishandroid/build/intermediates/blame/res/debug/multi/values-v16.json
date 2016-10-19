@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\values-v16\\values-v16.xml",
+        "outputFile": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 202
                 },
                 "from": {
-                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
+                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -32,7 +32,7 @@
                     "endOffset": 312
                 },
                 "from": {
-                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
+                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -51,7 +51,7 @@
                     "endOffset": 401
                 },
                 "from": {
-                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
+                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\values-v16\\styles.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,

@@ -1,154 +1,154 @@
 [
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\string_row.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\string_row.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\perfil_editar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\perfil_editar.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info_contracte.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_info_contracte.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_llistat.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\feines_llistat.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_condicions_.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_condicions_.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_condicions_.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_condicions_.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\simple_list_tag.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\simple_list_tag.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_contacte.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\feines_contacte.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_llista_notificacions.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_llista_notificacions.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_jobs_searchable.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_jobs_searchable.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_jobs_searchable.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_jobs_searchable.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_worker_profiles.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_worker_profiles.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\xat.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_llista.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\xat_llista.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\eula.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\eula.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\login.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\chatlistrow.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\chatlistrow.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\formulari_contracte.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\formulari_contracte.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_llistat.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\feines_llistat.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_detall.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\feines_detall.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\perfil_editar.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\perfil_editar.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ajuda_.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_ajuda_.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\llista_notificacions_item.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\llista_notificacions_item.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\month.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\layout\\month.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_worker_profiles.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_worker_profiles.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\calendar_item.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\calendar_item.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat_list.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_chat_list.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_discuss.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\listitem_discuss.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\presentacio.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\presentacio.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_missatges.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\xat_missatges.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_contacte_list_item.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\xat_contacte_list_item.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\chatlistrow.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\chatlistrow.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_missatges.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\xat_missatges.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\xat.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_detall.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\feines_detall.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\formulari_treballador.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\formulari_treballador.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\listitem_discuss.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\listitem_discuss.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\week.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\layout\\week.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\formulari_contracte.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\formulari_contracte.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\presentacio.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\presentacio.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\item_worker_profile.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\item_worker_profile.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat_list.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_chat_list.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\perfil_afegir_perfil_addicional.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\perfil_afegir_perfil_addicional.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\eula_acceptar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\eula_acceptar.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\calendar.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\calendar.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_item_job.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_item_job.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_ajuda_.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_ajuda_.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_contacte_list_item.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\xat_contacte_list_item.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\eula_acceptar.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\eula_acceptar.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\perfil_afegir_perfil_addicional.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\perfil_afegir_perfil_addicional.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_calendar.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_calendar.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\eula.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\eula.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\login.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\login.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\llista_notificacions_item.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\llista_notificacions_item.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\month.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\layout\\month.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_chat.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\calendar_item.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\calendar_item.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\geolocalitzacio.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\geolocalitzacio.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\xat_llista.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\xat_llista.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_llista_notificacions.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_llista_notificacions.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\feines_contacte.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\feines_contacte.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_calendar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_calendar.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_chat.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_chat.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_info_contracte.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\activity_info_contracte.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\tag_item.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\tag_item.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\tag_item.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\tag_item.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\formulari_treballador.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\formulari_treballador.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\pagament.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\pagament.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\week.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\layout\\week.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\string_row.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\string_row.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\activity_item_job.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\activity_item_job.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\simple_list_tag.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\simple_list_tag.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\pagament.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\pagament.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\calendar.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\calendar.xml"
     },
     {
-        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\geolocalitzacio.xml",
-        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\src\\main\\res\\layout\\geolocalitzacio.xml"
+        "merged": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\res\\merged\\debug\\layout\\item_worker_profile.xml",
+        "source": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\src\\main\\res\\layout\\item_worker_profile.xml"
     }
 ]

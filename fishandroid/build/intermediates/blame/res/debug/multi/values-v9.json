@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\res\\merged\\debug\\values-v9\\values-v9.xml",
+        "outputFile": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v9\\values-v9.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 106
                 },
                 "from": {
-                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\2016-10-05v2\\Fish 2\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\values-v9\\strings.xml",
+                    "file": "D:\\Users\\Isangi\\Documents\\GitHub\\Fish_3\\fishandroid\\build\\intermediates\\exploded-aar\\com.squareup\\android-times-square\\1.5.0\\res\\values-v9\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 2,
